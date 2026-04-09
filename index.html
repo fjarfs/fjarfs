@@ -1,57 +1,425 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<!-- Required meta tags -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="icon" href="https://ui-avatars.com/api/?name=Fajar+Sujito&background=4458dc&color=fff" type="image/png">
-	<title>Fajar Sujito</title>
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="assets/css/bootstrap.css">
-	<!-- main css -->
-	<link rel="stylesheet" href="assets/css/style.css">
-	<script src="https://www.googleoptimize.com/optimize.js?id=OPT-T47BCL5"></script>	   
-	   <meta name="google-site-verification" content="NP3DygTsm_PXDT4qIR-yFfW4aiE9AykfRwcvYVm2Dkk" />
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-78838426-2"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'UA-78838426-2');
-    </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fajar Sujito — Head of IT</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0a0f;--card:#12121a;--border:#1e1e2e;--accent:#6366f1;--accent2:#818cf8;--text:#e2e8f0;--muted:#94a3b8;--gradient:linear-gradient(135deg,#6366f1,#8b5cf6,#a78bfa)}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+::selection{background:var(--accent);color:#fff}
 
+/* Navbar */
+nav{position:fixed;top:0;width:100%;z-index:100;backdrop-filter:blur(20px);background:rgba(10,10,15,.8);border-bottom:1px solid var(--border);transition:.3s}
+nav .inner{max-width:1100px;margin:auto;padding:.8rem 1.5rem;display:flex;justify-content:space-between;align-items:center}
+nav .logo{font-weight:700;font-size:1.1rem;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+nav ul{list-style:none;display:flex;gap:1.5rem}
+nav a{color:var(--muted);text-decoration:none;font-size:.85rem;font-weight:500;transition:.2s}
+nav a:hover{color:#fff}
+.menu-btn{display:none;background:none;border:none;color:var(--text);font-size:1.3rem;cursor:pointer}
+
+/* Hero */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:6rem 1.5rem 4rem;position:relative}
+.hero::before{content:'';position:absolute;width:600px;height:600px;background:radial-gradient(circle,rgba(99,102,241,.15),transparent 70%);top:10%;left:50%;transform:translateX(-50%);pointer-events:none}
+.hero-content{position:relative;z-index:1;max-width:700px}
+.avatar{width:130px;height:130px;border-radius:50%;background:var(--gradient);margin:0 auto 1.5rem;box-shadow:0 0 40px rgba(99,102,241,.3);overflow:hidden;padding:3px}
+.avatar img{width:100%;height:100%;border-radius:50%;object-fit:cover}
+.hero h1{font-size:2.8rem;font-weight:800;margin-bottom:.5rem;letter-spacing:-.02em}
+.hero h1 span{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero .tagline{font-size:1.1rem;color:var(--muted);margin-bottom:1rem;font-weight:400}
+.hero .location{color:var(--muted);font-size:.9rem;margin-bottom:2rem}
+.hero .location i{margin-right:.3rem;color:var(--accent2)}
+.stats{display:flex;gap:2rem;justify-content:center;margin-bottom:2rem;flex-wrap:wrap}
+.stats .stat{text-align:center}
+.stats .num{font-size:1.5rem;font-weight:700;color:#fff}
+.stats .label{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.cta-row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn{padding:.7rem 1.8rem;border-radius:50px;font-size:.85rem;font-weight:600;text-decoration:none;transition:.3s;cursor:pointer;border:none}
+.btn-primary{background:var(--gradient);color:#fff;box-shadow:0 4px 20px rgba(99,102,241,.3)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 6px 30px rgba(99,102,241,.4)}
+.btn-outline{background:transparent;color:var(--text);border:1px solid var(--border)}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent2)}
+
+/* Sections */
+section{max-width:1100px;margin:auto;padding:5rem 1.5rem}
+.section-title{font-size:1.8rem;font-weight:700;margin-bottom:.5rem}
+.section-title span{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.section-sub{color:var(--muted);margin-bottom:2.5rem;font-size:.95rem}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.about-text{font-size:.95rem;color:var(--muted);line-height:1.8}
+.about-text p{margin-bottom:1rem}
+.passion-list{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+.passion-list li{display:flex;align-items:center;gap:.6rem;font-size:.9rem;color:var(--text)}
+.passion-list li i{color:var(--accent2);font-size:.7rem}
+
+/* Skills */
+.skills-grid{display:flex;flex-wrap:wrap;gap:.6rem}
+.skill-tag{padding:.5rem 1rem;background:var(--card);border:1px solid var(--border);border-radius:50px;font-size:.8rem;color:var(--muted);transition:.2s}
+.skill-tag:hover{border-color:var(--accent);color:var(--accent2)}
+
+/* Experience */
+.timeline{position:relative;padding-left:2rem}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--border)}
+.timeline-item{position:relative;margin-bottom:2.5rem;padding-left:1.5rem}
+.timeline-item::before{content:'';position:absolute;left:-2rem;top:.4rem;width:12px;height:12px;border-radius:50%;background:var(--accent);border:3px solid var(--bg);z-index:1}
+.timeline-item h3{font-size:1.1rem;font-weight:600;margin-bottom:.2rem}
+.timeline-item .company{color:var(--accent2);font-size:.9rem;font-weight:500}
+.timeline-item .period{color:var(--muted);font-size:.8rem;margin-bottom:.5rem}
+.timeline-item .desc{color:var(--muted);font-size:.85rem;line-height:1.7}
+.timeline-item .desc li{margin-bottom:.3rem}
+
+/* Projects */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.2rem}
+.project-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;transition:.3s}
+.project-card:hover{border-color:var(--accent);transform:translateY(-3px)}
+.project-card h3{font-size:1rem;font-weight:600;margin-bottom:.3rem}
+.project-card .date{color:var(--muted);font-size:.8rem;margin-bottom:.5rem}
+.project-card p{color:var(--muted);font-size:.85rem;line-height:1.6}
+.project-card a{color:var(--accent2);font-size:.8rem;text-decoration:none;display:inline-block;margin-top:.5rem}
+
+/* Education */
+.edu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem}
+.edu-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;transition:.3s}
+.edu-card:hover{border-color:var(--accent)}
+.edu-card h3{font-size:1rem;font-weight:600;margin-bottom:.2rem}
+.edu-card .degree{color:var(--accent2);font-size:.85rem}
+.edu-card .year{color:var(--muted);font-size:.8rem}
+
+/* Publications */
+.pub-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:1.2rem;transition:.3s}
+.pub-card:hover{border-color:var(--accent)}
+.pub-card h3{font-size:1rem;font-weight:600;margin-bottom:.3rem}
+.pub-card .journal{color:var(--accent2);font-size:.85rem;margin-bottom:.5rem}
+.pub-card p{color:var(--muted);font-size:.85rem;line-height:1.6}
+.pub-card a{color:var(--accent2);font-size:.8rem;text-decoration:none;display:inline-block;margin-top:.5rem}
+
+/* Awards */
+.awards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.2rem}
+.award-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;transition:.3s}
+.award-card:hover{border-color:var(--accent)}
+.award-card h3{font-size:.95rem;font-weight:600;margin-bottom:.2rem}
+.award-card .org{color:var(--accent2);font-size:.85rem}
+.award-card .year{color:var(--muted);font-size:.8rem}
+
+/* Certifications */
+.cert-list{display:flex;flex-wrap:wrap;gap:.8rem}
+.cert-badge{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.6rem 1rem;font-size:.8rem;color:var(--muted);transition:.2s}
+.cert-badge:hover{border-color:var(--accent);color:var(--accent2)}
+.cert-badge i{margin-right:.4rem;color:var(--accent2)}
+
+/* Languages */
+.lang-grid{display:flex;flex-wrap:wrap;gap:1rem}
+.lang-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1rem 1.5rem;text-align:center;min-width:140px;transition:.3s}
+.lang-card:hover{border-color:var(--accent)}
+.lang-card h3{font-size:.95rem;font-weight:600;margin-bottom:.2rem}
+.lang-card p{color:var(--muted);font-size:.75rem}
+
+/* Footer */
+footer{text-align:center;padding:3rem 1.5rem;border-top:1px solid var(--border);color:var(--muted);font-size:.85rem}
+footer .social{display:flex;justify-content:center;gap:1.2rem;margin-bottom:1rem}
+footer .social a{color:var(--muted);font-size:1.2rem;transition:.2s}
+footer .social a:hover{color:var(--accent2)}
+
+/* Mobile */
+@media(max-width:768px){
+  nav ul{display:none;position:absolute;top:100%;left:0;width:100%;background:rgba(10,10,15,.95);flex-direction:column;padding:1rem 1.5rem;gap:1rem;border-bottom:1px solid var(--border)}
+  nav ul.open{display:flex}
+  .menu-btn{display:block}
+  .hero h1{font-size:2rem}
+  .about-grid{grid-template-columns:1fr}
+  .stats{gap:1.2rem}
+}
+</style>
 </head>
-
 <body>
-	<!--================ Start Home Banner Area =================-->
-	<section class="home_banner_area">
-		<div class="banner_inner">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-8">
-						<div class="banner_content">
-							<h3 class="text-uppercase">HELLO</h3>
-							<h1 class="text-uppercase">I AM FAJAR SUJITO</h1>
-							<h5 class="text-uppercase">SOFTWARE ENGINEER FROM INDONESIA</h5>
-							<div class="d-flex align-items-center">
-								<a style="display: block !important" class="primary_btn" href="https://id.linkedin.com/in/fajar-sujito?trk=profile-badge"><span>View Profile</span></a>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4">
-						<div class="home_right_img">
-							<img class="circle" style="border-radius: 500px;" height="400" src="assets/img/banner/fajar.jpeg" alt="">
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!--================ End Home Banner Area =================-->
 
+<nav>
+  <div class="inner">
+    <div class="logo">FS</div>
+    <button class="menu-btn" onclick="document.querySelector('nav ul').classList.toggle('open')" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#awards">Awards</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="avatar"><img src="https://fajarsujito.my.id/assets/img/banner/fajar.jpeg" alt="Fajar Sujito"></div>
+    <h1>Fajar <span>Sujito</span></h1>
+    <p class="tagline">Head of IT | Engineering &amp; R&amp;D Leader | Driving Scalable Architecture, Security, and Digital Transformation in Financial Systems</p>
+    <p class="location"><i class="fas fa-map-marker-alt"></i> Jakarta, Indonesia</p>
+    <div class="stats">
+      <div class="stat"><div class="num">10+</div><div class="label">Years Experience</div></div>
+      <div class="stat"><div class="num">1K+</div><div class="label">Followers</div></div>
+      <div class="stat"><div class="num">500+</div><div class="label">Connections</div></div>
+      <div class="stat"><div class="num">13+</div><div class="label">Projects</div></div>
+    </div>
+    <div class="cta-row">
+      <a href="https://www.linkedin.com/in/fajar-sujito/" target="_blank" class="btn btn-primary"><i class="fab fa-linkedin"></i>&nbsp; LinkedIn</a>
+      <a href="https://fajarsujito.my.id" target="_blank" class="btn btn-outline"><i class="fas fa-globe"></i>&nbsp; Portfolio</a>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <h2 class="section-title">About <span>Me</span></h2>
+  <p class="section-sub">Technology leader bridging software engineering and IT strategy</p>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>Technology leader with 10+ years of experience bridging software engineering and IT strategy. Currently serving as Head of IT at PT Surya Anugrah Mulya, leading architecture modernization, infrastructure reliability, and system automation across multiple financial platforms.</p>
+      <p>I combine hands-on technical expertise with strategic leadership — overseeing software development, cloud infrastructure (AWS, Laravel, React), and cybersecurity initiatives that support high-availability trading and liquidity services.</p>
+    </div>
+    <div>
+      <h3 style="font-size:.95rem;margin-bottom:.8rem;font-weight:600">Passionate About</h3>
+      <ul class="passion-list">
+        <li><i class="fas fa-circle"></i> Building high-performance engineering teams</li>
+        <li><i class="fas fa-circle"></i> Scalable backend architectures (Laravel, Node.js, Golang, Microservices)</li>
+        <li><i class="fas fa-circle"></i> System continuity, security &amp; compliance (BCP, failover, monitoring)</li>
+        <li><i class="fas fa-circle"></i> Translating business goals into measurable technology outcomes</li>
+        <li><i class="fas fa-circle"></i> Digital transformation &amp; fintech innovation</li>
+      </ul>
+      <div style="margin-top:1.5rem">
+        <h3 style="font-size:.95rem;margin-bottom:.8rem;font-weight:600">Tech Stack</h3>
+        <div class="skills-grid">
+          <span class="skill-tag">AWS</span><span class="skill-tag">Laravel</span><span class="skill-tag">React</span><span class="skill-tag">Node.js</span><span class="skill-tag">PHP</span><span class="skill-tag">Docker</span><span class="skill-tag">Jenkins</span><span class="skill-tag">Redis</span><span class="skill-tag">MySQL</span><span class="skill-tag">PostgreSQL</span><span class="skill-tag">Microservices</span><span class="skill-tag">Angular</span><span class="skill-tag">React Native</span><span class="skill-tag">ECS</span><span class="skill-tag">EC2</span><span class="skill-tag">RDS</span><span class="skill-tag">Lumen</span><span class="skill-tag">Golang</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <h2 class="section-title">Work <span>Experience</span></h2>
+  <p class="section-sub">Professional journey in technology leadership</p>
+  <div class="timeline">
+    <div class="timeline-item">
+      <h3>Head of Information Technology</h3>
+      <div class="company">PT Surya Anugrah Mulya</div>
+      <div class="period"><i class="fas fa-calendar-alt"></i> Oct 2024 – Present · Indonesia</div>
+      <div class="desc">
+        <ul style="padding-left:1rem">
+          <li>Lead end-to-end IT strategy, including cloud migration, infrastructure optimization, and compliance readiness</li>
+          <li>Architected failover gateway system to ensure business continuity for high-frequency trading operations</li>
+          <li>Directed cross-department collaboration between IT, Product, Corporate Strategy and Operations</li>
+          <li>Migrated production environment to AWS, improving uptime and observability</li>
+          <li>Built and mentored multi-disciplinary team (Backend, DevOps, QA)</li>
+          <li>Established internal BCP framework and monitoring standards across critical systems</li>
+        </ul>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <h3>Head of Back-End Engineer / Engineering Lead</h3>
+      <div class="company">MIFX (PT Monex Investindo Futures)</div>
+      <div class="period"><i class="fas fa-calendar-alt"></i> Previous Role</div>
+      <div class="desc">
+        <ul style="padding-left:1rem">
+          <li>Led the backend engineering team for forex &amp; CFD trading platform</li>
+          <li>Improved application performance and team skill development</li>
+          <li>Hired and managed Backend Developers, QA Engineers, and IT Project Managers</li>
+        </ul>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <h3>Lead Backend Developer</h3>
+      <div class="company">DXTR</div>
+      <div class="period"><i class="fas fa-calendar-alt"></i> Jul 2018 – Apr 2022</div>
+      <div class="desc">
+        <ul style="padding-left:1rem">
+          <li>Led backend development for 7 integrated applications (principals, wholesalers, retailers, customers, associations, cashiers, field forces)</li>
+          <li>Built with Laravel backend, Angular frontend, React Native mobile</li>
+          <li>Implemented AWS EC2, ECS, RDS, Redis, Docker, Jenkins with Microservices architecture</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2 class="section-title">Featured <span>Projects</span></h2>
+  <p class="section-sub">Selected projects from my portfolio</p>
+  <div class="projects-grid">
+    <div class="project-card">
+      <h3>M2 (Valutrades)</h3>
+      <div class="date">Oct 2022</div>
+      <p>Trade forex, CFDs and commodities with confidence and transparency.</p>
+      <a href="https://www.valutrades.com/" target="_blank">View Project →</a>
+    </div>
+    <div class="project-card">
+      <h3>AMB Megatrend</h3>
+      <div class="date">May 2022</div>
+      <p>Liquidity Provider platform for financial trading operations.</p>
+      <a href="https://dashboard.amb.id/ue-admin" target="_blank">View Project →</a>
+    </div>
+    <div class="project-card">
+      <h3>Sampoerna Retail Community (SRC)</h3>
+      <div class="date">Jul 2018 – Apr 2022</div>
+      <p>7 integrated apps with Laravel, Angular, React Native, and Microservices on AWS.</p>
+      <a href="http://src.id" target="_blank">View Project →</a>
+    </div>
+    <div class="project-card">
+      <h3>APTIKOM Jawa Tengah</h3>
+      <div class="date">Feb – Mar 2022</div>
+      <p>Website for Central Java Computer Science Association.</p>
+      <a href="http://aptikomjateng.or.id/" target="_blank">View Project →</a>
+    </div>
+    <div class="project-card">
+      <h3>ERP Khasanahsari</h3>
+      <div class="date">Jan – Dec 2021</div>
+      <p>Enterprise Resource Planning system.</p>
+      <a href="https://erpkhasanahsari.com/" target="_blank">View Project →</a>
+    </div>
+    <div class="project-card">
+      <h3>EMOP POGI</h3>
+      <div class="date">May – Jun 2021</div>
+      <p>Medical organization platform.</p>
+      <a href="https://emop.pogi.or.id" target="_blank">View Project →</a>
+    </div>
+    <div class="project-card">
+      <h3>Travel Pass</h3>
+      <div class="date">Feb – Mar 2021</div>
+      <p>Travel management platform.</p>
+      <a href="https://travelpass.co.id/" target="_blank">View Project →</a>
+    </div>
+    <div class="project-card">
+      <h3>QuickMath</h3>
+      <div class="date">Jan – Apr 2020</div>
+      <p>Math learning platform with management system.</p>
+      <a href="https://quickmath.id" target="_blank">View Project →</a>
+    </div>
+    <div class="project-card">
+      <h3>Lumbung Media</h3>
+      <div class="date">Jul 2016</div>
+      <p>Online media storage for Universitas Negeri Semarang. Built with Laravel &amp; MySQL.</p>
+      <a href="http://media.lp3.unnes.ac.id/" target="_blank">View Project →</a>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <h2 class="section-title"><span>Education</span></h2>
+  <p class="section-sub">Academic background &amp; continuous learning</p>
+  <div class="edu-grid">
+    <div class="edu-card">
+      <h3>Universitas Negeri Semarang</h3>
+      <div class="degree">Bachelor's Degree, Computer Science</div>
+      <div class="year">2013 – 2017 · Graduated Cumlaude</div>
+    </div>
+    <div class="edu-card">
+      <h3>Hiroshima University</h3>
+      <div class="degree">Short Course — IDEC</div>
+      <div class="year">2016</div>
+    </div>
+    <div class="edu-card">
+      <h3>Continuous Learning</h3>
+      <div class="degree">Online Courses</div>
+      <div class="year">Test Automation University · BlazeMeter · Cisco · Dicoding · Oracle · Saylor · freeCodeCamp</div>
+    </div>
+  </div>
+</section>
+
+<section id="certifications">
+  <h2 class="section-title"><span>Certifications</span></h2>
+  <p class="section-sub">Professional credentials &amp; courses</p>
+  <div class="cert-list">
+    <span class="cert-badge"><i class="fab fa-aws"></i> AWS Solutions Architect Associate</span>
+    <span class="cert-badge"><i class="fab fa-aws"></i> Amazon EC2 Ultimate</span>
+    <span class="cert-badge"><i class="fab fa-aws"></i> Amazon EKS Ultimate</span>
+    <span class="cert-badge"><i class="fab fa-aws"></i> Amazon Redshift Ultimate</span>
+    <span class="cert-badge"><i class="fab fa-aws"></i> Cloud Practitioner Essentials</span>
+    <span class="cert-badge"><i class="fas fa-shield-alt"></i> Cyber Security Beginner</span>
+    <span class="cert-badge"><i class="fab fa-laravel"></i> Laravel Blueprint</span>
+    <span class="cert-badge"><i class="fas fa-code"></i> SOLID Principles</span>
+    <span class="cert-badge"><i class="fab fa-java"></i> Java Programming</span>
+  </div>
+</section>
+
+<section id="publications">
+  <h2 class="section-title"><span>Publications</span></h2>
+  <p class="section-sub">Research contributions</p>
+  <div class="pub-card">
+    <h3>An Analysis of User Interface and User Experience Using System Usability Scale and GOMS Method</h3>
+    <div class="journal">Journal of Advances In Information Systems and Technology · Oct 2019</div>
+    <p>Study examining UI/UX of Lumbung Media using SUS questionnaire and GOMS analysis. Revealed significant improvement in searching and production processes.</p>
+    <a href="https://journal.unnes.ac.id/sju/index.php/jaist/article/view/36503" target="_blank">Read Publication →</a>
+  </div>
+  <div class="pub-card">
+    <h3>Applying an MVC Framework for The System Development Life Cycle with Waterfall Model Extended</h3>
+    <div class="journal">Journal of Physics: Conference Series (JPCS) · Jan 2017</div>
+    <p>Extension of the waterfall model using MVC architectural pattern for software development, improving performance in security, validation, database access, and routing.</p>
+    <a href="http://iopscience.iop.org/article/10.1088/1742-6596/824/1/012007/meta" target="_blank">Read Publication →</a>
+  </div>
+</section>
+
+<section id="awards">
+  <h2 class="section-title">Honors &amp; <span>Awards</span></h2>
+  <p class="section-sub">Recognition &amp; achievements</p>
+  <div class="awards-grid">
+    <div class="award-card">
+      <h3>🏆 Best Graduate</h3>
+      <div class="org">Universitas Negeri Semarang</div>
+      <div class="year">Dec 2017 · Best graduate in Computer Science</div>
+    </div>
+    <div class="award-card">
+      <h3>🎓 Graduated Cumlaude</h3>
+      <div class="org">Universitas Negeri Semarang</div>
+      <div class="year">Dec 2017</div>
+    </div>
+    <div class="award-card">
+      <h3>🎤 Keynote Speaker — Mobile Learning</h3>
+      <div class="org">Universitas Negeri Semarang</div>
+      <div class="year">Dec 2017</div>
+    </div>
+    <div class="award-card">
+      <h3>🎤 Speaker — Learning Media Development</h3>
+      <div class="org">Universitas Negeri Semarang</div>
+      <div class="year">May 2017 · Training for teachers in Semarang</div>
+    </div>
+    <div class="award-card">
+      <h3>🌏 International Symposium</h3>
+      <div class="org">Hiroshima University, Japan</div>
+      <div class="year">Jul 2016 · Diversification of Islamic Education</div>
+    </div>
+    <div class="award-card">
+      <h3>☢️ Phoenix Leader Education Program</h3>
+      <div class="org">Hiroshima University, Japan</div>
+      <div class="year">Jul 2016 · Renaissance from Radiation Disaster</div>
+    </div>
+  </div>
+</section>
+
+<section id="languages">
+  <h2 class="section-title"><span>Languages</span></h2>
+  <p class="section-sub">Communication capabilities</p>
+  <div class="lang-grid">
+    <div class="lang-card"><h3>🇮🇩 Indonesian</h3><p>Full Professional</p></div>
+    <div class="lang-card"><h3>🇬🇧 English</h3><p>Limited Working</p></div>
+    <div class="lang-card"><h3>☕ Javanese</h3><p>Native / Bilingual</p></div>
+    <div class="lang-card"><h3>🌿 Sundanese</h3><p>Native / Bilingual</p></div>
+  </div>
+</section>
+
+<footer>
+  <div class="social">
+    <a href="https://www.linkedin.com/in/fajar-sujito/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="https://fajarsujito.my.id" target="_blank" aria-label="Portfolio"><i class="fas fa-globe"></i></a>
+  </div>
+  <p>&copy; 2026 Fajar Sujito. All rights reserved.</p>
+</footer>
+
+<script>
+document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>document.querySelector('nav ul').classList.remove('open')));
+</script>
 </body>
-
 </html>
