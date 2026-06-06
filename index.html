@@ -1,425 +1,564 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fajar Sujito — Head of IT</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fajar Sujito | Technical Leader &amp; IT Strategist</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Geist:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-tint": "#e9c349",
+                    "on-secondary-container": "#352800",
+                    "tertiary-container": "#d2b100",
+                    "surface-container-lowest": "#0e0e0e",
+                    "secondary-fixed": "#ffe08b",
+                    "on-error": "#690005",
+                    "surface-container-highest": "#353534",
+                    "tertiary-fixed-dim": "#e9c400",
+                    "error-container": "#93000a",
+                    "on-primary-fixed-variant": "#574500",
+                    "secondary": "#eac249",
+                    "primary": "#f2ca50",
+                    "primary-fixed": "#ffe088",
+                    "error": "#ffb4ab",
+                    "on-primary": "#3c2f00",
+                    "surface-container-high": "#2a2a2a",
+                    "on-secondary-fixed": "#241a00",
+                    "surface-bright": "#3a3939",
+                    "surface-variant": "#353534",
+                    "secondary-fixed-dim": "#eac249",
+                    "on-primary-fixed": "#241a00",
+                    "on-tertiary-fixed-variant": "#544600",
+                    "on-background": "#e5e2e1",
+                    "tertiary-fixed": "#ffe16d",
+                    "inverse-primary": "#735c00",
+                    "outline-variant": "#4d4635",
+                    "surface-container-low": "#1c1b1b",
+                    "on-tertiary-fixed": "#221b00",
+                    "surface-dim": "#131313",
+                    "on-error-container": "#ffdad6",
+                    "on-tertiary": "#3a3000",
+                    "background": "#131313",
+                    "secondary-container": "#b08c10",
+                    "surface": "#131313",
+                    "inverse-surface": "#e5e2e1",
+                    "primary-fixed-dim": "#e9c349",
+                    "on-secondary-fixed-variant": "#584400",
+                    "on-secondary": "#3d2f00",
+                    "on-primary-container": "#554300",
+                    "surface-container": "#201f1f",
+                    "primary-container": "#d4af37",
+                    "inverse-on-surface": "#313030",
+                    "on-surface-variant": "#d0c5af",
+                    "tertiary": "#f2cc00",
+                    "on-surface": "#e5e2e1",
+                    "outline": "#99907c",
+                    "on-tertiary-container": "#534400",
+                    "border-subtle": "#353534",
+                    "surface-card": "#1c1b1b",
+                    "text-primary": "#e5e2e1",
+                    "text-secondary": "#d0c5af"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-desktop": "64px",
+                    "gutter": "24px",
+                    "container-max": "1120px",
+                    "margin-mobile": "16px",
+                    "unit": "4px",
+                    "element-gap": "1.5rem",
+                    "card-padding": "2rem",
+                    "section-gap": "8rem"
+            },
+            "fontFamily": {
+                    "mono-data": ["Geist Mono"],
+                    "body-md": ["Geist"],
+                    "headline-lg-mobile": ["Geist"],
+                    "body-lg": ["Geist"],
+                    "headline-lg": ["Geist"],
+                    "label-sm": ["Geist"],
+                    "headline-md": ["Geist"],
+                    "display-hero": ["Geist"],
+                    "section-header": ["Geist"],
+                    "label-caps": ["Geist"],
+                    "mono-stats": ["Geist"],
+                    "body-sm": ["Geist"]
+            },
+            "fontSize": {
+                    "display-hero": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "mono-data": ["14px", {"lineHeight": "1.4", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                    "section-header": ["14px", {"lineHeight": "1.5", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "mono-stats": ["20px", {"lineHeight": "1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#0a0a0f;--card:#12121a;--border:#1e1e2e;--accent:#6366f1;--accent2:#818cf8;--text:#e2e8f0;--muted:#94a3b8;--gradient:linear-gradient(135deg,#6366f1,#8b5cf6,#a78bfa)}
-html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
-::selection{background:var(--accent);color:#fff}
-
-/* Navbar */
-nav{position:fixed;top:0;width:100%;z-index:100;backdrop-filter:blur(20px);background:rgba(10,10,15,.8);border-bottom:1px solid var(--border);transition:.3s}
-nav .inner{max-width:1100px;margin:auto;padding:.8rem 1.5rem;display:flex;justify-content:space-between;align-items:center}
-nav .logo{font-weight:700;font-size:1.1rem;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-nav ul{list-style:none;display:flex;gap:1.5rem}
-nav a{color:var(--muted);text-decoration:none;font-size:.85rem;font-weight:500;transition:.2s}
-nav a:hover{color:#fff}
-.menu-btn{display:none;background:none;border:none;color:var(--text);font-size:1.3rem;cursor:pointer}
-
-/* Hero */
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:6rem 1.5rem 4rem;position:relative}
-.hero::before{content:'';position:absolute;width:600px;height:600px;background:radial-gradient(circle,rgba(99,102,241,.15),transparent 70%);top:10%;left:50%;transform:translateX(-50%);pointer-events:none}
-.hero-content{position:relative;z-index:1;max-width:700px}
-.avatar{width:130px;height:130px;border-radius:50%;background:var(--gradient);margin:0 auto 1.5rem;box-shadow:0 0 40px rgba(99,102,241,.3);overflow:hidden;padding:3px}
-.avatar img{width:100%;height:100%;border-radius:50%;object-fit:cover}
-.hero h1{font-size:2.8rem;font-weight:800;margin-bottom:.5rem;letter-spacing:-.02em}
-.hero h1 span{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero .tagline{font-size:1.1rem;color:var(--muted);margin-bottom:1rem;font-weight:400}
-.hero .location{color:var(--muted);font-size:.9rem;margin-bottom:2rem}
-.hero .location i{margin-right:.3rem;color:var(--accent2)}
-.stats{display:flex;gap:2rem;justify-content:center;margin-bottom:2rem;flex-wrap:wrap}
-.stats .stat{text-align:center}
-.stats .num{font-size:1.5rem;font-weight:700;color:#fff}
-.stats .label{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
-.cta-row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-.btn{padding:.7rem 1.8rem;border-radius:50px;font-size:.85rem;font-weight:600;text-decoration:none;transition:.3s;cursor:pointer;border:none}
-.btn-primary{background:var(--gradient);color:#fff;box-shadow:0 4px 20px rgba(99,102,241,.3)}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 6px 30px rgba(99,102,241,.4)}
-.btn-outline{background:transparent;color:var(--text);border:1px solid var(--border)}
-.btn-outline:hover{border-color:var(--accent);color:var(--accent2)}
-
-/* Sections */
-section{max-width:1100px;margin:auto;padding:5rem 1.5rem}
-.section-title{font-size:1.8rem;font-weight:700;margin-bottom:.5rem}
-.section-title span{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.section-sub{color:var(--muted);margin-bottom:2.5rem;font-size:.95rem}
-
-/* About */
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
-.about-text{font-size:.95rem;color:var(--muted);line-height:1.8}
-.about-text p{margin-bottom:1rem}
-.passion-list{list-style:none;display:flex;flex-direction:column;gap:.6rem}
-.passion-list li{display:flex;align-items:center;gap:.6rem;font-size:.9rem;color:var(--text)}
-.passion-list li i{color:var(--accent2);font-size:.7rem}
-
-/* Skills */
-.skills-grid{display:flex;flex-wrap:wrap;gap:.6rem}
-.skill-tag{padding:.5rem 1rem;background:var(--card);border:1px solid var(--border);border-radius:50px;font-size:.8rem;color:var(--muted);transition:.2s}
-.skill-tag:hover{border-color:var(--accent);color:var(--accent2)}
-
-/* Experience */
-.timeline{position:relative;padding-left:2rem}
-.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--border)}
-.timeline-item{position:relative;margin-bottom:2.5rem;padding-left:1.5rem}
-.timeline-item::before{content:'';position:absolute;left:-2rem;top:.4rem;width:12px;height:12px;border-radius:50%;background:var(--accent);border:3px solid var(--bg);z-index:1}
-.timeline-item h3{font-size:1.1rem;font-weight:600;margin-bottom:.2rem}
-.timeline-item .company{color:var(--accent2);font-size:.9rem;font-weight:500}
-.timeline-item .period{color:var(--muted);font-size:.8rem;margin-bottom:.5rem}
-.timeline-item .desc{color:var(--muted);font-size:.85rem;line-height:1.7}
-.timeline-item .desc li{margin-bottom:.3rem}
-
-/* Projects */
-.projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.2rem}
-.project-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;transition:.3s}
-.project-card:hover{border-color:var(--accent);transform:translateY(-3px)}
-.project-card h3{font-size:1rem;font-weight:600;margin-bottom:.3rem}
-.project-card .date{color:var(--muted);font-size:.8rem;margin-bottom:.5rem}
-.project-card p{color:var(--muted);font-size:.85rem;line-height:1.6}
-.project-card a{color:var(--accent2);font-size:.8rem;text-decoration:none;display:inline-block;margin-top:.5rem}
-
-/* Education */
-.edu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem}
-.edu-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;transition:.3s}
-.edu-card:hover{border-color:var(--accent)}
-.edu-card h3{font-size:1rem;font-weight:600;margin-bottom:.2rem}
-.edu-card .degree{color:var(--accent2);font-size:.85rem}
-.edu-card .year{color:var(--muted);font-size:.8rem}
-
-/* Publications */
-.pub-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:1.2rem;transition:.3s}
-.pub-card:hover{border-color:var(--accent)}
-.pub-card h3{font-size:1rem;font-weight:600;margin-bottom:.3rem}
-.pub-card .journal{color:var(--accent2);font-size:.85rem;margin-bottom:.5rem}
-.pub-card p{color:var(--muted);font-size:.85rem;line-height:1.6}
-.pub-card a{color:var(--accent2);font-size:.8rem;text-decoration:none;display:inline-block;margin-top:.5rem}
-
-/* Awards */
-.awards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.2rem}
-.award-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;transition:.3s}
-.award-card:hover{border-color:var(--accent)}
-.award-card h3{font-size:.95rem;font-weight:600;margin-bottom:.2rem}
-.award-card .org{color:var(--accent2);font-size:.85rem}
-.award-card .year{color:var(--muted);font-size:.8rem}
-
-/* Certifications */
-.cert-list{display:flex;flex-wrap:wrap;gap:.8rem}
-.cert-badge{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.6rem 1rem;font-size:.8rem;color:var(--muted);transition:.2s}
-.cert-badge:hover{border-color:var(--accent);color:var(--accent2)}
-.cert-badge i{margin-right:.4rem;color:var(--accent2)}
-
-/* Languages */
-.lang-grid{display:flex;flex-wrap:wrap;gap:1rem}
-.lang-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1rem 1.5rem;text-align:center;min-width:140px;transition:.3s}
-.lang-card:hover{border-color:var(--accent)}
-.lang-card h3{font-size:.95rem;font-weight:600;margin-bottom:.2rem}
-.lang-card p{color:var(--muted);font-size:.75rem}
-
-/* Footer */
-footer{text-align:center;padding:3rem 1.5rem;border-top:1px solid var(--border);color:var(--muted);font-size:.85rem}
-footer .social{display:flex;justify-content:center;gap:1.2rem;margin-bottom:1rem}
-footer .social a{color:var(--muted);font-size:1.2rem;transition:.2s}
-footer .social a:hover{color:var(--accent2)}
-
-/* Mobile */
-@media(max-width:768px){
-  nav ul{display:none;position:absolute;top:100%;left:0;width:100%;background:rgba(10,10,15,.95);flex-direction:column;padding:1rem 1.5rem;gap:1rem;border-bottom:1px solid var(--border)}
-  nav ul.open{display:flex}
-  .menu-btn{display:block}
-  .hero h1{font-size:2rem}
-  .about-grid{grid-template-columns:1fr}
-  .stats{gap:1.2rem}
-}
-</style>
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            scroll-behavior: smooth;
+        }
+        .glass-nav {
+            background: rgba(19, 19, 19, 0.8);
+            backdrop-filter: blur(12px);
+        }
+        .hero-glow {
+            background: radial-gradient(circle at center, rgba(233, 195, 73, 0.1) 0%, transparent 70%);
+        }
+        .card-hover:hover {
+            border-color: #f2ca50;
+            background: #201f1f;
+        }
+        .gold-glow {
+            box-shadow: 0 0 15px rgba(242, 202, 80, 0.2);
+        }
+        .gold-gradient {
+            background: linear-gradient(135deg, #f2ca50 0%, #b08c10 100%);
+        }
+    </style>
 </head>
-<body>
-
-<nav>
-  <div class="inner">
-    <div class="logo">FS</div>
-    <button class="menu-btn" onclick="document.querySelector('nav ul').classList.toggle('open')" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#publications">Publications</a></li>
-      <li><a href="#awards">Awards</a></li>
-    </ul>
-  </div>
-</nav>
-
-<section class="hero">
-  <div class="hero-content">
-    <div class="avatar"><img src="https://fajarsujito.my.id/assets/img/banner/fajar.jpeg" alt="Fajar Sujito"></div>
-    <h1>Fajar <span>Sujito</span></h1>
-    <p class="tagline">Head of IT | Engineering &amp; R&amp;D Leader | Driving Scalable Architecture, Security, and Digital Transformation in Financial Systems</p>
-    <p class="location"><i class="fas fa-map-marker-alt"></i> Jakarta, Indonesia</p>
-    <div class="stats">
-      <div class="stat"><div class="num">10+</div><div class="label">Years Experience</div></div>
-      <div class="stat"><div class="num">1K+</div><div class="label">Followers</div></div>
-      <div class="stat"><div class="num">500+</div><div class="label">Connections</div></div>
-      <div class="stat"><div class="num">13+</div><div class="label">Projects</div></div>
-    </div>
-    <div class="cta-row">
-      <a href="https://www.linkedin.com/in/fajar-sujito/" target="_blank" class="btn btn-primary"><i class="fab fa-linkedin"></i>&nbsp; LinkedIn</a>
-      <a href="https://fajarsujito.my.id" target="_blank" class="btn btn-outline"><i class="fas fa-globe"></i>&nbsp; Portfolio</a>
-    </div>
-  </div>
-</section>
-
-<section id="about">
-  <h2 class="section-title">About <span>Me</span></h2>
-  <p class="section-sub">Technology leader bridging software engineering and IT strategy</p>
-  <div class="about-grid">
-    <div class="about-text">
-      <p>Technology leader with 10+ years of experience bridging software engineering and IT strategy. Currently serving as Head of IT at PT Surya Anugrah Mulya, leading architecture modernization, infrastructure reliability, and system automation across multiple financial platforms.</p>
-      <p>I combine hands-on technical expertise with strategic leadership — overseeing software development, cloud infrastructure (AWS, Laravel, React), and cybersecurity initiatives that support high-availability trading and liquidity services.</p>
-    </div>
-    <div>
-      <h3 style="font-size:.95rem;margin-bottom:.8rem;font-weight:600">Passionate About</h3>
-      <ul class="passion-list">
-        <li><i class="fas fa-circle"></i> Building high-performance engineering teams</li>
-        <li><i class="fas fa-circle"></i> Scalable backend architectures (Laravel, Node.js, Golang, Microservices)</li>
-        <li><i class="fas fa-circle"></i> System continuity, security &amp; compliance (BCP, failover, monitoring)</li>
-        <li><i class="fas fa-circle"></i> Translating business goals into measurable technology outcomes</li>
-        <li><i class="fas fa-circle"></i> Digital transformation &amp; fintech innovation</li>
-      </ul>
-      <div style="margin-top:1.5rem">
-        <h3 style="font-size:.95rem;margin-bottom:.8rem;font-weight:600">Tech Stack</h3>
-        <div class="skills-grid">
-          <span class="skill-tag">AWS</span><span class="skill-tag">Laravel</span><span class="skill-tag">React</span><span class="skill-tag">Node.js</span><span class="skill-tag">PHP</span><span class="skill-tag">Docker</span><span class="skill-tag">Jenkins</span><span class="skill-tag">Redis</span><span class="skill-tag">MySQL</span><span class="skill-tag">PostgreSQL</span><span class="skill-tag">Microservices</span><span class="skill-tag">Angular</span><span class="skill-tag">React Native</span><span class="skill-tag">ECS</span><span class="skill-tag">EC2</span><span class="skill-tag">RDS</span><span class="skill-tag">Lumen</span><span class="skill-tag">Golang</span>
+<body class="font-body-md text-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="docked full-width top-0 sticky z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-md border-b border-border-subtle dark:border-border-subtle">
+<div class="flex justify-between items-center px-gutter py-4 w-full max-w-container-max mx-auto z-50">
+<div class="font-headline-md text-headline-md font-bold text-on-surface dark:text-on-surface tracking-tighter">
+            Fajar Sujito
         </div>
-      </div>
-    </div>
-  </div>
+<!-- Desktop Links -->
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant font-medium font-body-sm text-body-sm hover:text-primary transition-colors duration-200" href="#about">Expertise</a>
+<a class="text-on-surface-variant font-medium font-body-sm text-body-sm hover:text-primary transition-colors duration-200" href="#experience">Experience</a>
+<a class="text-on-surface-variant font-medium font-body-sm text-body-sm hover:text-primary transition-colors duration-200" href="#projects">Projects</a>
+<a class="text-on-surface-variant font-medium font-body-sm text-body-sm hover:text-primary transition-colors duration-200" href="#education">Education</a>
+<a class="text-on-surface-variant font-medium font-body-sm text-body-sm hover:text-primary transition-colors duration-200" href="#contact">Contact</a>
+<a class="gold-gradient text-on-primary-container px-6 py-2 font-bold font-body-sm text-body-sm rounded hover:opacity-90 transition-all gold-glow" href="#">Resume</a>
+</div>
+<!-- Mobile Toggle -->
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative min-h-[90vh] flex flex-col items-center justify-center pt-20 overflow-hidden">
+<div class="hero-glow absolute inset-0 pointer-events-none"></div>
+<div class="max-w-container-max mx-auto px-gutter text-center relative z-10">
+<div class="relative inline-block mb-8">
+<div class="w-32 h-32 md:w-40 md:h-40 rounded-full border-2 border-primary/30 p-1 gold-glow overflow-hidden">
+<img alt="Fajar Sujito" class="w-full h-full rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLscaTznZoxWnhMz5xesHbM981FnUXFayzb93JFoVFzTMspq-ASZD41mBmAfMA6ah3puyVHDI2aHozhT-bKDCZwudI0DhGW6mTcgBw1nCJJUm1wWgucPr2lv1Z3oKWbXkDrlzPkXL1XGEAuo5-QcFtUTMisW3WdXGCXp7A9pidnppSO5gshar2dD_OZVOn0mxlvxbvFHuJDal-b82zUcq9m80gJP3q8wmxFwEIRDimFnuBYtK9BsOy5l0Ohw"/>
+</div>
+<div class="absolute -bottom-2 -right-2 gold-gradient rounded-full p-2 flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-on-primary text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<h1 class="font-display-hero text-display-hero text-text-primary mb-6">Fajar Sujito</h1>
+<p class="font-headline-lg-mobile md:text-headline-md text-text-secondary max-w-3xl mx-auto mb-10 leading-relaxed">
+            Head of IT | Engineering &amp; R&amp;D Leader | Driving Scalable Architecture, Security, and Digital Transformation in Financial Systems
+        </p>
+<div class="flex flex-wrap justify-center gap-4 mb-16">
+<a class="flex items-center gap-2 gold-gradient text-on-primary-container px-8 py-3 font-semibold rounded-lg hover:opacity-90 transition-all gold-glow" href="https://www.linkedin.com/in/fajar-sujito/">
+<span class="material-symbols-outlined">link</span> LinkedIn
+            </a>
+<a class="flex items-center gap-2 border border-outline-variant bg-surface-container-high px-8 py-3 font-semibold rounded-lg hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined">work</span> Portfolio
+            </a>
+</div>
+<!-- Stats Grid -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+<div class="flex flex-col">
+<span class="font-mono-stats text-mono-stats text-primary">10+</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant mt-1 uppercase">Years Experience</span>
+</div>
+<div class="flex flex-col">
+<span class="font-mono-stats text-mono-stats text-primary">1K+</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant mt-1 uppercase">Followers</span>
+</div>
+<div class="flex flex-col">
+<span class="font-mono-stats text-mono-stats text-primary">500+</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant mt-1 uppercase">Connections</span>
+</div>
+<div class="flex flex-col">
+<span class="font-mono-stats text-mono-stats text-primary">13+</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant mt-1 uppercase">Projects</span>
+</div>
+</div>
+</div>
 </section>
-
-<section id="experience">
-  <h2 class="section-title">Work <span>Experience</span></h2>
-  <p class="section-sub">Professional journey in technology leadership</p>
-  <div class="timeline">
-    <div class="timeline-item">
-      <h3>Head of Information Technology</h3>
-      <div class="company">PT Surya Anugrah Mulya</div>
-      <div class="period"><i class="fas fa-calendar-alt"></i> Oct 2024 – Present · Indonesia</div>
-      <div class="desc">
-        <ul style="padding-left:1rem">
-          <li>Lead end-to-end IT strategy, including cloud migration, infrastructure optimization, and compliance readiness</li>
-          <li>Architected failover gateway system to ensure business continuity for high-frequency trading operations</li>
-          <li>Directed cross-department collaboration between IT, Product, Corporate Strategy and Operations</li>
-          <li>Migrated production environment to AWS, improving uptime and observability</li>
-          <li>Built and mentored multi-disciplinary team (Backend, DevOps, QA)</li>
-          <li>Established internal BCP framework and monitoring standards across critical systems</li>
-        </ul>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <h3>Head of Back-End Engineer / Engineering Lead</h3>
-      <div class="company">MIFX (PT Monex Investindo Futures)</div>
-      <div class="period"><i class="fas fa-calendar-alt"></i> Previous Role</div>
-      <div class="desc">
-        <ul style="padding-left:1rem">
-          <li>Led the backend engineering team for forex &amp; CFD trading platform</li>
-          <li>Improved application performance and team skill development</li>
-          <li>Hired and managed Backend Developers, QA Engineers, and IT Project Managers</li>
-        </ul>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <h3>Lead Backend Developer</h3>
-      <div class="company">DXTR</div>
-      <div class="period"><i class="fas fa-calendar-alt"></i> Jul 2018 – Apr 2022</div>
-      <div class="desc">
-        <ul style="padding-left:1rem">
-          <li>Led backend development for 7 integrated applications (principals, wholesalers, retailers, customers, associations, cashiers, field forces)</li>
-          <li>Built with Laravel backend, Angular frontend, React Native mobile</li>
-          <li>Implemented AWS EC2, ECS, RDS, Redis, Docker, Jenkins with Microservices architecture</li>
-        </ul>
-      </div>
-    </div>
-  </div>
+<!-- About Section -->
+<section class="py-section-gap max-w-container-max mx-auto px-gutter" id="about">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+<div class="md:col-span-7">
+<h2 class="font-section-header text-section-header text-primary mb-4 uppercase tracking-[0.2em]">About Me</h2>
+<h3 class="font-headline-md text-headline-md text-text-primary mb-6">Technology leader bridging software engineering and IT strategy</h3>
+<div class="space-y-6 text-on-surface-variant font-body-md text-body-md leading-relaxed">
+<p>Technology leader with 10+ years of experience bridging software engineering and IT strategy. Currently serving as Head of IT at PT Surya Anugrah Mulya, leading architecture modernization, infrastructure reliability, and system automation across multiple financial platforms.</p>
+<p>I combine hands-on technical expertise with strategic leadership — overseeing software development, cloud infrastructure (AWS, Laravel, React), and cybersecurity initiatives that support high-availability trading and liquidity services.</p>
+</div>
+<div class="mt-12">
+<h4 class="font-label-caps text-label-caps text-text-primary mb-6 uppercase">Passionate About</h4>
+<ul class="space-y-4">
+<li class="flex items-start gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span>
+<span>Building high-performance engineering teams</span>
+</li>
+<li class="flex items-start gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span>
+<span>Scalable backend architectures (Laravel, Node.js, Golang, Microservices)</span>
+</li>
+<li class="flex items-start gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span>
+<span>System continuity, security &amp; compliance (BCP, failover, monitoring)</span>
+</li>
+<li class="flex items-start gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span>
+<span>Translating business goals into measurable technology outcomes</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="md:col-span-5">
+<div class="bg-surface-card border border-border-subtle p-card-padding rounded-xl sticky top-24">
+<h4 class="font-label-caps text-label-caps text-text-primary mb-6 uppercase">Tech Stack</h4>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 bg-surface-container-highest border border-outline-variant text-on-surface-variant rounded-full font-label-caps text-label-caps hover:border-primary transition-colors">AWS</span>
+<span class="px-3 py-1.5 bg-surface-container-highest border border-outline-variant text-on-surface-variant rounded-full font-label-caps text-label-caps hover:border-primary transition-colors">Laravel</span>
+<span class="px-3 py-1.5 bg-surface-container-highest border border-outline-variant text-on-surface-variant rounded-full font-label-caps text-label-caps hover:border-primary transition-colors">React</span>
+<span class="px-3 py-1.5 bg-surface-container-highest border border-outline-variant text-on-surface-variant rounded-full font-label-caps text-label-caps hover:border-primary transition-colors">Node.js</span>
+<span class="px-3 py-1.5 bg-surface-container-highest border border-outline-variant text-on-surface-variant rounded-full font-label-caps text-label-caps hover:border-primary transition-colors">PHP</span>
+<span class="px-3 py-1.5 bg-surface-container-highest border border-outline-variant text-on-surface-variant rounded-full font-label-caps text-label-caps hover:border-primary transition-colors">Docker</span>
+<span class="px-3 py-1.5 bg-surface-container-highest border border-outline-variant text-on-surface-variant rounded-full font-label-caps text-label-caps hover:border-primary transition-colors">Jenkins</span>
+<span class="px-3 py-1.5 bg-surface-container-highest border border-outline-variant text-on-surface-variant rounded-full font-label-caps text-label-caps hover:border-primary transition-colors">Redis</span>
+<span class="px-3 py-1.5 bg-surface-container-highest border border-outline-variant text-on-surface-variant rounded-full font-label-caps text-label-caps hover:border-primary transition-colors">MySQL</span>
+<span class="px-3 py-1.5 bg-surface-container-highest border border-outline-variant text-on-surface-variant rounded-full font-label-caps text-label-caps hover:border-primary transition-colors">PostgreSQL</span>
+<span class="px-3 py-1.5 bg-surface-container-highest border border-outline-variant text-on-surface-variant rounded-full font-label-caps text-label-caps hover:border-primary transition-colors">Golang</span>
+<span class="px-3 py-1.5 bg-surface-container-highest border border-outline-variant text-on-surface-variant rounded-full font-label-caps text-label-caps hover:border-primary transition-colors">Microservices</span>
+<span class="px-3 py-1.5 bg-surface-container-highest border border-outline-variant text-on-surface-variant rounded-full font-label-caps text-label-caps hover:border-primary transition-colors">React Native</span>
+<span class="px-3 py-1.5 bg-surface-container-highest border border-outline-variant text-on-surface-variant rounded-full font-label-caps text-label-caps hover:border-primary transition-colors">ECS</span>
+<span class="px-3 py-1.5 bg-surface-container-highest border border-outline-variant text-on-surface-variant rounded-full font-label-caps text-label-caps hover:border-primary transition-colors">EC2</span>
+</div>
+<div class="mt-12 pt-8 border-t border-border-subtle">
+<h4 class="font-label-caps text-label-caps text-text-primary mb-4 uppercase">Languages</h4>
+<div class="space-y-3">
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant">Indonesian</span>
+<span class="text-primary font-label-caps">Professional</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant">English</span>
+<span class="text-text-secondary font-label-caps">Limited Working</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
-
-<section id="projects">
-  <h2 class="section-title">Featured <span>Projects</span></h2>
-  <p class="section-sub">Selected projects from my portfolio</p>
-  <div class="projects-grid">
-    <div class="project-card">
-      <h3>M2 (Valutrades)</h3>
-      <div class="date">Oct 2022</div>
-      <p>Trade forex, CFDs and commodities with confidence and transparency.</p>
-      <a href="https://www.valutrades.com/" target="_blank">View Project →</a>
-    </div>
-    <div class="project-card">
-      <h3>AMB Megatrend</h3>
-      <div class="date">May 2022</div>
-      <p>Liquidity Provider platform for financial trading operations.</p>
-      <a href="https://dashboard.amb.id/ue-admin" target="_blank">View Project →</a>
-    </div>
-    <div class="project-card">
-      <h3>Sampoerna Retail Community (SRC)</h3>
-      <div class="date">Jul 2018 – Apr 2022</div>
-      <p>7 integrated apps with Laravel, Angular, React Native, and Microservices on AWS.</p>
-      <a href="http://src.id" target="_blank">View Project →</a>
-    </div>
-    <div class="project-card">
-      <h3>APTIKOM Jawa Tengah</h3>
-      <div class="date">Feb – Mar 2022</div>
-      <p>Website for Central Java Computer Science Association.</p>
-      <a href="http://aptikomjateng.or.id/" target="_blank">View Project →</a>
-    </div>
-    <div class="project-card">
-      <h3>ERP Khasanahsari</h3>
-      <div class="date">Jan – Dec 2021</div>
-      <p>Enterprise Resource Planning system.</p>
-      <a href="https://erpkhasanahsari.com/" target="_blank">View Project →</a>
-    </div>
-    <div class="project-card">
-      <h3>EMOP POGI</h3>
-      <div class="date">May – Jun 2021</div>
-      <p>Medical organization platform.</p>
-      <a href="https://emop.pogi.or.id" target="_blank">View Project →</a>
-    </div>
-    <div class="project-card">
-      <h3>Travel Pass</h3>
-      <div class="date">Feb – Mar 2021</div>
-      <p>Travel management platform.</p>
-      <a href="https://travelpass.co.id/" target="_blank">View Project →</a>
-    </div>
-    <div class="project-card">
-      <h3>QuickMath</h3>
-      <div class="date">Jan – Apr 2020</div>
-      <p>Math learning platform with management system.</p>
-      <a href="https://quickmath.id" target="_blank">View Project →</a>
-    </div>
-    <div class="project-card">
-      <h3>Lumbung Media</h3>
-      <div class="date">Jul 2016</div>
-      <p>Online media storage for Universitas Negeri Semarang. Built with Laravel &amp; MySQL.</p>
-      <a href="http://media.lp3.unnes.ac.id/" target="_blank">View Project →</a>
-    </div>
-  </div>
+<!-- Experience Section -->
+<section class="py-section-gap bg-surface-container-low" id="experience">
+<div class="max-w-container-max mx-auto px-gutter">
+<h2 class="font-section-header text-section-header text-primary mb-4 uppercase tracking-[0.2em] text-center">Work Experience</h2>
+<p class="text-on-surface-variant text-center mb-16">Professional journey in technology leadership</p>
+<div class="max-w-4xl mx-auto space-y-12 relative">
+<!-- Timeline Line -->
+<div class="absolute left-0 md:left-1/2 md:-translate-x-1/2 top-4 bottom-4 w-px bg-border-subtle hidden md:block"></div>
+<!-- Job 1 -->
+<div class="relative flex flex-col md:flex-row md:justify-between items-start md:items-center">
+<div class="md:w-[45%] bg-surface-card p-card-padding border border-border-subtle rounded-xl order-2 md:order-1 card-hover transition-all">
+<h4 class="font-headline-md text-headline-md text-text-primary">Head of Information Technology</h4>
+<p class="text-primary font-medium mb-4">PT Surya Anugrah Mulya</p>
+<ul class="space-y-2 text-on-surface-variant font-body-sm text-body-sm list-disc pl-4">
+<li>Lead end-to-end IT strategy &amp; cloud migration</li>
+<li>Architected failover gateway systems for trading</li>
+<li>Established internal BCP framework</li>
+<li>Mentored multi-disciplinary engineering teams</li>
+</ul>
+</div>
+<div class="absolute left-0 md:left-1/2 md:-translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background z-10 hidden md:block"></div>
+<div class="md:w-[45%] md:pl-8 order-1 md:order-2 mb-4 md:mb-0">
+<span class="bg-primary/10 text-primary px-4 py-1 rounded-full font-label-caps text-label-caps">Oct 2024 – Present</span>
+</div>
+</div>
+<!-- Job 2 -->
+<div class="relative flex flex-col md:flex-row md:justify-between items-start md:items-center">
+<div class="md:w-[45%] md:pr-8 order-1 text-right mb-4 md:mb-0">
+<span class="bg-surface-container-highest text-on-surface-variant px-4 py-1 rounded-full font-label-caps text-label-caps">Previous Role</span>
+</div>
+<div class="absolute left-0 md:left-1/2 md:-translate-x-1/2 w-4 h-4 bg-border-subtle rounded-full border-4 border-background z-10 hidden md:block"></div>
+<div class="md:w-[45%] bg-surface-card p-card-padding border border-border-subtle rounded-xl order-2 card-hover transition-all">
+<h4 class="font-headline-md text-headline-md text-text-primary">Head of Back-End Engineer</h4>
+<p class="text-primary font-medium mb-4">MIFX (PT Monex Investindo Futures)</p>
+<ul class="space-y-2 text-on-surface-variant font-body-sm text-body-sm list-disc pl-4">
+<li>Led backend team for forex &amp; CFD platform</li>
+<li>Improved app performance and team skill development</li>
+<li>Managed Backend, QA, and Project Managers</li>
+</ul>
+</div>
+</div>
+<!-- Job 3 -->
+<div class="relative flex flex-col md:flex-row md:justify-between items-start md:items-center">
+<div class="md:w-[45%] bg-surface-card p-card-padding border border-border-subtle rounded-xl order-2 md:order-1 card-hover transition-all">
+<h4 class="font-headline-md text-headline-md text-text-primary">Lead Backend Developer</h4>
+<p class="text-primary font-medium mb-4">DXTR</p>
+<ul class="space-y-2 text-on-surface-variant font-body-sm text-body-sm list-disc pl-4">
+<li>Led development for 7 integrated applications</li>
+<li>Laravel backend, Angular frontend, React Native mobile</li>
+<li>Implemented microservices with AWS &amp; Docker</li>
+</ul>
+</div>
+<div class="absolute left-0 md:left-1/2 md:-translate-x-1/2 w-4 h-4 bg-border-subtle rounded-full border-4 border-background z-10 hidden md:block"></div>
+<div class="md:w-[45%] md:pl-8 order-1 md:order-2 mb-4 md:mb-0">
+<span class="bg-surface-container-highest text-on-surface-variant px-4 py-1 rounded-full font-label-caps text-label-caps">Jul 2018 – Apr 2022</span>
+</div>
+</div>
+</div>
+</div>
 </section>
-
-<section id="education">
-  <h2 class="section-title"><span>Education</span></h2>
-  <p class="section-sub">Academic background &amp; continuous learning</p>
-  <div class="edu-grid">
-    <div class="edu-card">
-      <h3>Universitas Negeri Semarang</h3>
-      <div class="degree">Bachelor's Degree, Computer Science</div>
-      <div class="year">2013 – 2017 · Graduated Cumlaude</div>
-    </div>
-    <div class="edu-card">
-      <h3>Hiroshima University</h3>
-      <div class="degree">Short Course — IDEC</div>
-      <div class="year">2016</div>
-    </div>
-    <div class="edu-card">
-      <h3>Continuous Learning</h3>
-      <div class="degree">Online Courses</div>
-      <div class="year">Test Automation University · BlazeMeter · Cisco · Dicoding · Oracle · Saylor · freeCodeCamp</div>
-    </div>
-  </div>
+<!-- Projects Bento Grid -->
+<section class="py-section-gap max-w-container-max mx-auto px-gutter" id="projects">
+<h2 class="font-section-header text-section-header text-primary mb-4 uppercase tracking-[0.2em]">Featured Projects</h2>
+<p class="text-on-surface-variant mb-12">Selected projects from a portfolio of high-scale enterprise solutions</p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Project Card 1 (Large) -->
+<div class="md:col-span-2 group relative overflow-hidden bg-surface-card border border-border-subtle rounded-xl p-card-padding card-hover transition-all">
+<div class="flex flex-col h-full justify-between">
+<div>
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline-md text-headline-md text-text-primary">Sampoerna Retail Community (SRC)</h3>
+<span class="bg-primary/10 text-primary px-3 py-1 rounded font-label-caps text-label-caps">Scale: Enterprise</span>
+</div>
+<p class="text-on-surface-variant font-body-md text-body-md max-w-lg mb-6">A massive ecosystem of 7 integrated applications supporting Indonesia's retail landscape. Built with a robust microservices architecture on AWS using Laravel, Angular, and React Native.</p>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="text-xs bg-surface-container-high px-2 py-1 rounded">AWS</span>
+<span class="text-xs bg-surface-container-high px-2 py-1 rounded">Microservices</span>
+<span class="text-xs bg-surface-container-high px-2 py-1 rounded">React Native</span>
+</div>
+</div>
+<a class="text-primary flex items-center gap-2 font-bold group-hover:translate-x-1 transition-transform" href="http://src.id">View Project <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</div>
+<!-- Project Card 2 -->
+<div class="bg-surface-card border border-border-subtle rounded-xl p-card-padding card-hover transition-all flex flex-col justify-between group">
+<div>
+<h3 class="font-headline-md text-headline-md text-text-primary mb-3">M2 (Valutrades)</h3>
+<p class="text-on-surface-variant font-body-sm text-body-sm mb-4">Forex, CFDs and commodities trading platform prioritizing transparency and low-latency execution.</p>
+</div>
+<a class="text-primary flex items-center gap-2 font-bold group-hover:translate-x-1 transition-transform" href="https://www.valutrades.com/">View Project <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<!-- Project Card 3 -->
+<div class="bg-surface-card border border-border-subtle rounded-xl p-card-padding card-hover transition-all flex flex-col justify-between group">
+<div>
+<h3 class="font-headline-md text-headline-md text-text-primary mb-3">AMB Megatrend</h3>
+<p class="text-on-surface-variant font-body-sm text-body-sm mb-4">A high-performance liquidity provider platform for financial trading operations.</p>
+</div>
+<a class="text-primary flex items-center gap-2 font-bold group-hover:translate-x-1 transition-transform" href="https://dashboard.amb.id/ue-admin">View Project <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<!-- Project Card 4 -->
+<div class="bg-surface-card border border-border-subtle rounded-xl p-card-padding card-hover transition-all flex flex-col justify-between group">
+<div>
+<h3 class="font-headline-md text-headline-md text-text-primary mb-3">ERP Khasanahsari</h3>
+<p class="text-on-surface-variant font-body-sm text-body-sm mb-4">Comprehensive Enterprise Resource Planning system tailored for specialized bakery production.</p>
+</div>
+<a class="text-primary flex items-center gap-2 font-bold group-hover:translate-x-1 transition-transform" href="https://erpkhasanahsari.com/">View Project <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<!-- Project Card 5 -->
+<div class="bg-surface-card border border-border-subtle rounded-xl p-card-padding card-hover transition-all flex flex-col justify-between group">
+<div>
+<h3 class="font-headline-md text-headline-md text-text-primary mb-3">Lumbung Media</h3>
+<p class="text-on-surface-variant font-body-sm text-body-sm mb-4">Online media storage and management for Universitas Negeri Semarang.</p>
+</div>
+<a class="text-primary flex items-center gap-2 font-bold group-hover:translate-x-1 transition-transform" href="http://media.lp3.unnes.ac.id/">View Project <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</div>
 </section>
-
-<section id="certifications">
-  <h2 class="section-title"><span>Certifications</span></h2>
-  <p class="section-sub">Professional credentials &amp; courses</p>
-  <div class="cert-list">
-    <span class="cert-badge"><i class="fab fa-aws"></i> AWS Solutions Architect Associate</span>
-    <span class="cert-badge"><i class="fab fa-aws"></i> Amazon EC2 Ultimate</span>
-    <span class="cert-badge"><i class="fab fa-aws"></i> Amazon EKS Ultimate</span>
-    <span class="cert-badge"><i class="fab fa-aws"></i> Amazon Redshift Ultimate</span>
-    <span class="cert-badge"><i class="fab fa-aws"></i> Cloud Practitioner Essentials</span>
-    <span class="cert-badge"><i class="fas fa-shield-alt"></i> Cyber Security Beginner</span>
-    <span class="cert-badge"><i class="fab fa-laravel"></i> Laravel Blueprint</span>
-    <span class="cert-badge"><i class="fas fa-code"></i> SOLID Principles</span>
-    <span class="cert-badge"><i class="fab fa-java"></i> Java Programming</span>
-  </div>
+<!-- Education & Certifications -->
+<section class="py-section-gap bg-surface-container-low" id="education">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+<div>
+<h2 class="font-section-header text-section-header text-primary mb-8 uppercase tracking-[0.2em]">Education</h2>
+<div class="space-y-8">
+<div class="border-l-2 border-primary pl-6">
+<h4 class="font-headline-md text-headline-md text-text-primary">Universitas Negeri Semarang</h4>
+<p class="text-on-surface-variant">Bachelor's Degree, Computer Science</p>
+<p class="text-primary text-sm font-medium">2013 – 2017 · Graduated Cumlaude</p>
+</div>
+<div class="border-l-2 border-border-subtle pl-6">
+<h4 class="font-headline-md text-headline-md text-text-primary">Hiroshima University</h4>
+<p class="text-on-surface-variant">Short Course — IDEC</p>
+<p class="text-text-secondary text-sm font-medium">2016 · Hiroshima, Japan</p>
+</div>
+<div class="border-l-2 border-border-subtle pl-6">
+<h4 class="font-headline-md text-headline-md text-text-primary">Continuous Learning</h4>
+<p class="text-on-surface-variant font-body-sm">Test Automation University, Cisco, Dicoding, freeCodeCamp</p>
+</div>
+</div>
+</div>
+<div>
+<h2 class="font-section-header text-section-header text-primary mb-8 uppercase tracking-[0.2em]">Certifications</h2>
+<div class="grid grid-cols-1 gap-4">
+<div class="bg-surface p-4 border border-border-subtle flex items-center gap-4 rounded-lg">
+<span class="material-symbols-outlined text-primary">verified_user</span>
+<span class="text-on-surface-variant font-medium">AWS Solutions Architect Associate</span>
+</div>
+<div class="bg-surface p-4 border border-border-subtle flex items-center gap-4 rounded-lg">
+<span class="material-symbols-outlined text-primary">security</span>
+<span class="text-on-surface-variant font-medium">Cyber Security Beginner</span>
+</div>
+<div class="bg-surface p-4 border border-border-subtle flex items-center gap-4 rounded-lg">
+<span class="material-symbols-outlined text-primary">cloud</span>
+<span class="text-on-surface-variant font-medium">Cloud Practitioner Essentials</span>
+</div>
+<div class="bg-surface p-4 border border-border-subtle flex items-center gap-4 rounded-lg">
+<span class="material-symbols-outlined text-primary">terminal</span>
+<span class="text-on-surface-variant font-medium">SOLID Principles &amp; Java Programming</span>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
-
-<section id="publications">
-  <h2 class="section-title"><span>Publications</span></h2>
-  <p class="section-sub">Research contributions</p>
-  <div class="pub-card">
-    <h3>An Analysis of User Interface and User Experience Using System Usability Scale and GOMS Method</h3>
-    <div class="journal">Journal of Advances In Information Systems and Technology · Oct 2019</div>
-    <p>Study examining UI/UX of Lumbung Media using SUS questionnaire and GOMS analysis. Revealed significant improvement in searching and production processes.</p>
-    <a href="https://journal.unnes.ac.id/sju/index.php/jaist/article/view/36503" target="_blank">Read Publication →</a>
-  </div>
-  <div class="pub-card">
-    <h3>Applying an MVC Framework for The System Development Life Cycle with Waterfall Model Extended</h3>
-    <div class="journal">Journal of Physics: Conference Series (JPCS) · Jan 2017</div>
-    <p>Extension of the waterfall model using MVC architectural pattern for software development, improving performance in security, validation, database access, and routing.</p>
-    <a href="http://iopscience.iop.org/article/10.1088/1742-6596/824/1/012007/meta" target="_blank">Read Publication →</a>
-  </div>
+<!-- Publications -->
+<section class="py-section-gap max-w-container-max mx-auto px-gutter">
+<h2 class="font-section-header text-section-header text-primary mb-12 uppercase tracking-[0.2em] text-center">Research &amp; Publications</h2>
+<div class="space-y-6 max-w-4xl mx-auto">
+<div class="bg-surface-card border border-border-subtle p-card-padding rounded-xl card-hover transition-all">
+<h4 class="font-headline-md text-headline-md text-text-primary mb-2">An Analysis of User Interface and User Experience Using System Usability Scale and GOMS Method</h4>
+<p class="text-primary text-sm font-medium mb-4">Journal of Advances In Information Systems and Technology · Oct 2019</p>
+<p class="text-on-surface-variant font-body-sm text-body-sm mb-6 leading-relaxed">Study examining UI/UX of Lumbung Media using SUS questionnaire and GOMS analysis. Revealed significant improvement in searching and production processes.</p>
+<a class="text-primary font-bold inline-flex items-center gap-1 hover:underline" href="https://journal.unnes.ac.id/sju/index.php/jaist/article/view/36503">Read Publication <span class="material-symbols-outlined text-xs">open_in_new</span></a>
+</div>
+<div class="bg-surface-card border border-border-subtle p-card-padding rounded-xl card-hover transition-all">
+<h4 class="font-headline-md text-headline-md text-text-primary mb-2">Applying an MVC Framework for The System Development Life Cycle with Waterfall Model Extended</h4>
+<p class="text-primary text-sm font-medium mb-4">Journal of Physics: Conference Series (JPCS) · Jan 2017</p>
+<p class="text-on-surface-variant font-body-sm text-body-sm mb-6 leading-relaxed">Extension of the waterfall model using MVC architectural pattern for software development, improving performance in security, validation, database access, and routing.</p>
+<a class="text-primary font-bold inline-flex items-center gap-1 hover:underline" href="http://iopscience.iop.org/article/10.1088/1742-6596/824/1/012007/meta">Read Publication <span class="material-symbols-outlined text-xs">open_in_new</span></a>
+</div>
+</div>
 </section>
-
-<section id="awards">
-  <h2 class="section-title">Honors &amp; <span>Awards</span></h2>
-  <p class="section-sub">Recognition &amp; achievements</p>
-  <div class="awards-grid">
-    <div class="award-card">
-      <h3>🏆 Best Graduate</h3>
-      <div class="org">Universitas Negeri Semarang</div>
-      <div class="year">Dec 2017 · Best graduate in Computer Science</div>
-    </div>
-    <div class="award-card">
-      <h3>🎓 Graduated Cumlaude</h3>
-      <div class="org">Universitas Negeri Semarang</div>
-      <div class="year">Dec 2017</div>
-    </div>
-    <div class="award-card">
-      <h3>🎤 Keynote Speaker — Mobile Learning</h3>
-      <div class="org">Universitas Negeri Semarang</div>
-      <div class="year">Dec 2017</div>
-    </div>
-    <div class="award-card">
-      <h3>🎤 Speaker — Learning Media Development</h3>
-      <div class="org">Universitas Negeri Semarang</div>
-      <div class="year">May 2017 · Training for teachers in Semarang</div>
-    </div>
-    <div class="award-card">
-      <h3>🌏 International Symposium</h3>
-      <div class="org">Hiroshima University, Japan</div>
-      <div class="year">Jul 2016 · Diversification of Islamic Education</div>
-    </div>
-    <div class="award-card">
-      <h3>☢️ Phoenix Leader Education Program</h3>
-      <div class="org">Hiroshima University, Japan</div>
-      <div class="year">Jul 2016 · Renaissance from Radiation Disaster</div>
-    </div>
-  </div>
+<!-- Honors & Awards -->
+<section class="py-section-gap bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto px-gutter">
+<h2 class="font-section-header text-section-header text-primary mb-12 uppercase tracking-[0.2em]">Honors &amp; Awards</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-surface-container border border-outline-variant p-6 rounded-lg flex gap-4">
+<span class="text-3xl">🏆</span>
+<div>
+<h5 class="font-bold text-text-primary">Best Graduate</h5>
+<p class="text-body-sm text-on-surface-variant">Computer Science, UNNES 2017</p>
+</div>
+</div>
+<div class="bg-surface-container border border-outline-variant p-6 rounded-lg flex gap-4">
+<span class="text-3xl">🎓</span>
+<div>
+<h5 class="font-bold text-text-primary">Graduated Cumlaude</h5>
+<p class="text-body-sm text-on-surface-variant">UNNES, Dec 2017</p>
+</div>
+</div>
+<div class="bg-surface-container border border-outline-variant p-6 rounded-lg flex gap-4">
+<span class="text-3xl">🎤</span>
+<div>
+<h5 class="font-bold text-text-primary">Keynote Speaker</h5>
+<p class="text-body-sm text-on-surface-variant">Mobile Learning Symposium 2017</p>
+</div>
+</div>
+<div class="bg-surface-container border border-outline-variant p-6 rounded-lg flex gap-4">
+<span class="text-3xl">🌏</span>
+<div>
+<h5 class="font-bold text-text-primary">International Symposium</h5>
+<p class="text-body-sm text-on-surface-variant">Hiroshima University, Japan 2016</p>
+</div>
+</div>
+<div class="bg-surface-container border border-outline-variant p-6 rounded-lg flex gap-4">
+<span class="text-3xl">☢️</span>
+<div>
+<h5 class="font-bold text-text-primary">Phoenix Leader</h5>
+<p class="text-body-sm text-on-surface-variant">Renaissance from Radiation Disaster, JP</p>
+</div>
+</div>
+<div class="bg-surface-container border border-outline-variant p-6 rounded-lg flex gap-4">
+<span class="text-3xl">👨‍🏫</span>
+<div>
+<h5 class="font-bold text-text-primary">Training Speaker</h5>
+<p class="text-body-sm text-on-surface-variant">Learning Media for Teachers 2017</p>
+</div>
+</div>
+</div>
+</div>
 </section>
-
-<section id="languages">
-  <h2 class="section-title"><span>Languages</span></h2>
-  <p class="section-sub">Communication capabilities</p>
-  <div class="lang-grid">
-    <div class="lang-card"><h3>🇮🇩 Indonesian</h3><p>Full Professional</p></div>
-    <div class="lang-card"><h3>🇬🇧 English</h3><p>Limited Working</p></div>
-    <div class="lang-card"><h3>☕ Javanese</h3><p>Native / Bilingual</p></div>
-    <div class="lang-card"><h3>🌿 Sundanese</h3><p>Native / Bilingual</p></div>
-  </div>
+<!-- Contact CTA -->
+<section class="py-section-gap max-w-container-max mx-auto px-gutter text-center" id="contact">
+<div class="bg-primary/5 border border-primary/20 rounded-3xl p-12 md:p-24 overflow-hidden relative">
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/10 blur-[100px] rounded-full"></div>
+<div class="absolute -bottom-24 -left-24 w-64 h-64 bg-primary/10 blur-[100px] rounded-full"></div>
+<h2 class="font-display-hero text-headline-md md:text-display-hero text-text-primary mb-6">Let's build the future of finance together.</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto mb-10 font-body-md text-body-md">Currently open to consulting, leadership opportunities, and high-impact architectural collaborations.</p>
+<div class="flex flex-col md:flex-row justify-center gap-4">
+<a class="gold-gradient text-on-primary-container px-10 py-4 font-bold rounded-lg hover:scale-105 transition-transform gold-glow" href="mailto:contact@fajarsujito.my.id">Get in Touch</a>
+<a class="bg-surface-card border border-border-subtle text-text-primary px-10 py-4 font-bold rounded-lg hover:bg-surface-container transition-all" href="https://www.linkedin.com/in/fajar-sujito/">Connect on LinkedIn</a>
+</div>
+</div>
 </section>
-
-<footer>
-  <div class="social">
-    <a href="https://www.linkedin.com/in/fajar-sujito/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-    <a href="https://fajarsujito.my.id" target="_blank" aria-label="Portfolio"><i class="fas fa-globe"></i></a>
-  </div>
-  <p>&copy; 2026 Fajar Sujito. All rights reserved.</p>
+<!-- Footer -->
+<footer class="bg-surface dark:bg-surface border-t border-border-subtle dark:border-border-subtle">
+<div class="max-w-container-max mx-auto px-gutter py-section-gap flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex flex-col items-center md:items-start gap-4">
+<div class="font-label-caps text-label-caps text-on-surface font-bold tracking-tighter">Fajar Sujito</div>
+<p class="font-body-sm text-body-sm text-text-secondary max-w-xs text-center md:text-left">
+                Architectural Precision &amp; Technical Authority in Software Engineering.
+            </p>
+</div>
+<div class="flex flex-col items-center md:items-end gap-6">
+<div class="flex gap-6">
+<a class="font-body-sm text-body-sm text-text-secondary hover:text-primary transition-colors" href="https://www.linkedin.com/in/fajar-sujito/">LinkedIn</a>
+<a class="font-body-sm text-body-sm text-text-secondary hover:text-primary transition-colors" href="#">GitHub</a>
+<a class="font-body-sm text-body-sm text-text-secondary hover:text-primary transition-colors" href="mailto:contact@fajarsujito.my.id">Email</a>
+</div>
+<div class="text-on-surface-variant font-body-sm text-body-sm">
+                © 2024 Fajar Sujito. All rights reserved.
+            </div>
+</div>
+</div>
 </footer>
-
 <script>
-document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>document.querySelector('nav ul').classList.remove('open')));
+    // Micro-interaction for cards
+    document.querySelectorAll('.card-hover').forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.transform = 'translateY(-4px)';
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translateY(0)';
+        });
+    });
+
+    // Sticky nav shadow on scroll
+    window.addEventListener('scroll', () => {
+        const nav = document.querySelector('nav');
+        if (window.scrollY > 20) {
+            nav.classList.add('shadow-xl');
+        } else {
+            nav.classList.remove('shadow-xl');
+        }
+    });
 </script>
-</body>
-</html>
+</body></html>
