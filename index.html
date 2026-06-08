@@ -254,9 +254,50 @@
           >
         </div>
         <!-- Mobile Toggle -->
-        <button class="md:hidden text-on-surface">
-          <span class="material-symbols-outlined">menu</span>
+        <button
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+          aria-label="Open navigation menu"
+          class="md:hidden text-on-surface flex items-center justify-center"
+          id="mobile-menu-toggle"
+          type="button"
+        >
+          <span class="material-symbols-outlined" id="mobile-menu-icon"
+            >menu</span
+          >
         </button>
+      </div>
+      <div
+        class="hidden md:hidden border-t border-border-subtle bg-surface/95 px-gutter py-4"
+        id="mobile-menu"
+      >
+        <div class="max-w-container-max mx-auto flex flex-col gap-1">
+          <a
+            class="mobile-menu-link text-on-surface-variant font-medium px-3 py-3 rounded-lg hover:bg-surface-container hover:text-primary transition-colors"
+            href="#about"
+            >Expertise</a
+          >
+          <a
+            class="mobile-menu-link text-on-surface-variant font-medium px-3 py-3 rounded-lg hover:bg-surface-container hover:text-primary transition-colors"
+            href="#experience"
+            >Experience</a
+          >
+          <a
+            class="mobile-menu-link text-on-surface-variant font-medium px-3 py-3 rounded-lg hover:bg-surface-container hover:text-primary transition-colors"
+            href="#projects"
+            >Projects</a
+          >
+          <a
+            class="mobile-menu-link text-on-surface-variant font-medium px-3 py-3 rounded-lg hover:bg-surface-container hover:text-primary transition-colors"
+            href="#education"
+            >Education</a
+          >
+          <a
+            class="mobile-menu-link text-on-surface-variant font-medium px-3 py-3 rounded-lg hover:bg-surface-container hover:text-primary transition-colors"
+            href="#contact"
+            >Contact</a
+          >
+        </div>
       </div>
     </nav>
     <!-- Hero Section -->
@@ -556,104 +597,175 @@
           Work Experience
         </h2>
         <p class="text-on-surface-variant text-center mb-16">
-          Professional journey in technology leadership
+          Hands-on full-stack development and engineering leadership experience
         </p>
-        <div class="max-w-4xl mx-auto space-y-12 relative">
-          <!-- Timeline Line -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div
-            class="absolute left-0 md:left-1/2 md:-translate-x-1/2 top-4 bottom-4 w-px bg-border-subtle hidden md:block"
-          ></div>
-          <!-- Job 1 -->
-          <div
-            class="relative flex flex-col md:flex-row md:justify-between items-start md:items-center"
+            class="bg-surface-card p-card-padding border border-border-subtle rounded-xl card-hover transition-all"
           >
-            <div
-              class="md:w-[45%] bg-surface-card p-card-padding border border-border-subtle rounded-xl order-2 md:order-1 card-hover transition-all"
-            >
-              <h4 class="font-headline-md text-headline-md text-text-primary">
-                Engineering &amp; IT Leader
-              </h4>
-              <p class="text-primary font-medium mb-4">
-                PT Surya Anugrah Mulya
-              </p>
-              <ul
-                class="space-y-2 text-on-surface-variant font-body-sm text-body-sm list-disc pl-4"
-              >
-                <li>Lead end-to-end IT strategy &amp; cloud migration</li>
-                <li>Architected failover gateway systems for trading</li>
-                <li>Established internal BCP framework</li>
-                <li>Mentored multi-disciplinary engineering teams</li>
-              </ul>
-            </div>
-            <div
-              class="absolute left-0 md:left-1/2 md:-translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background z-10 hidden md:block"
-            ></div>
-            <div class="md:w-[45%] md:pl-8 order-1 md:order-2 mb-4 md:mb-0">
+            <div class="flex flex-wrap justify-between gap-3 mb-4">
+              <div>
+                <h4 class="font-headline-md text-headline-md text-text-primary">
+                  Engineering Lead
+                </h4>
+                <p class="text-primary font-medium">PT Surya Anugrah Mulya</p>
+              </div>
               <span
-                class="bg-primary/10 text-primary px-4 py-1 rounded-full font-label-caps text-label-caps"
+                class="bg-primary/10 text-primary px-3 py-1 h-fit rounded-full font-label-caps text-label-caps"
                 >Oct 2024 – Present</span
               >
             </div>
-          </div>
-          <!-- Job 2 -->
-          <div
-            class="relative flex flex-col md:flex-row md:justify-between items-start md:items-center"
-          >
-            <div class="md:w-[45%] md:pr-8 order-1 text-right mb-4 md:mb-0">
-              <span
-                class="bg-surface-container-highest text-on-surface-variant px-4 py-1 rounded-full font-label-caps text-label-caps"
-                >Previous Role</span
-              >
-            </div>
-            <div
-              class="absolute left-0 md:left-1/2 md:-translate-x-1/2 w-4 h-4 bg-border-subtle rounded-full border-4 border-background z-10 hidden md:block"
-            ></div>
-            <div
-              class="md:w-[45%] bg-surface-card p-card-padding border border-border-subtle rounded-xl order-2 card-hover transition-all"
+            <ul
+              class="space-y-2 text-on-surface-variant font-body-sm text-body-sm list-disc pl-4"
             >
-              <h4 class="font-headline-md text-headline-md text-text-primary">
-                Backend Engineering Leader
-              </h4>
-              <p class="text-primary font-medium mb-4">
-                MIFX (PT Monex Investindo Futures)
-              </p>
-              <ul
-                class="space-y-2 text-on-surface-variant font-body-sm text-body-sm list-disc pl-4"
-              >
-                <li>Led backend team for forex &amp; CFD platform</li>
-                <li>Improved app performance and team skill development</li>
-                <li>Managed Backend, QA, and Project Managers</li>
-              </ul>
-            </div>
+              <li>Led engineering roadmap and technical product direction</li>
+              <li>Mentored engineers and improved development standards</li>
+              <li>Designed scalable infrastructure, monitoring, and failover</li>
+              <li>Improved delivery planning and system maintainability</li>
+            </ul>
+            <p class="text-text-secondary text-xs mt-5">
+              AWS · Cloudflare · Laravel · Node.js · Go · RabbitMQ · ELK · FIX
+              API
+            </p>
           </div>
-          <!-- Job 3 -->
           <div
-            class="relative flex flex-col md:flex-row md:justify-between items-start md:items-center"
+            class="bg-surface-card p-card-padding border border-border-subtle rounded-xl card-hover transition-all"
           >
-            <div
-              class="md:w-[45%] bg-surface-card p-card-padding border border-border-subtle rounded-xl order-2 md:order-1 card-hover transition-all"
-            >
-              <h4 class="font-headline-md text-headline-md text-text-primary">
-                Lead Backend Developer
-              </h4>
-              <p class="text-primary font-medium mb-4">DXTR</p>
-              <ul
-                class="space-y-2 text-on-surface-variant font-body-sm text-body-sm list-disc pl-4"
-              >
-                <li>Led development for 7 integrated applications</li>
-                <li>Laravel backend, Angular frontend, React Native mobile</li>
-                <li>Implemented microservices with AWS &amp; Docker</li>
-              </ul>
-            </div>
-            <div
-              class="absolute left-0 md:left-1/2 md:-translate-x-1/2 w-4 h-4 bg-border-subtle rounded-full border-4 border-background z-10 hidden md:block"
-            ></div>
-            <div class="md:w-[45%] md:pl-8 order-1 md:order-2 mb-4 md:mb-0">
+            <div class="flex flex-wrap justify-between gap-3 mb-4">
+              <div>
+                <h4 class="font-headline-md text-headline-md text-text-primary">
+                  Full Stack Developer
+                </h4>
+                <p class="text-primary font-medium">
+                  Independent Product Builder
+                </p>
+              </div>
               <span
-                class="bg-surface-container-highest text-on-surface-variant px-4 py-1 rounded-full font-label-caps text-label-caps"
+                class="bg-surface-container-highest text-on-surface-variant px-3 py-1 h-fit rounded-full font-label-caps text-label-caps"
+                >Jan 2023 – Jan 2026</span
+              >
+            </div>
+            <ul
+              class="space-y-2 text-on-surface-variant font-body-sm text-body-sm list-disc pl-4"
+            >
+              <li>Owned frontend architecture and product implementation</li>
+              <li>Designed reusable UI patterns and component structures</li>
+              <li>Improved responsiveness, SEO, accessibility, and UX</li>
+              <li>Integrated authentication, analytics, and payment APIs</li>
+            </ul>
+            <p class="text-text-secondary text-xs mt-5">
+              React · Next.js · TypeScript · Tailwind CSS · REST API · AWS
+            </p>
+          </div>
+          <div
+            class="bg-surface-card p-card-padding border border-border-subtle rounded-xl card-hover transition-all"
+          >
+            <div class="flex flex-wrap justify-between gap-3 mb-4">
+              <div>
+                <h4 class="font-headline-md text-headline-md text-text-primary">
+                  Engineering Lead
+                </h4>
+                <p class="text-primary font-medium">MIFX</p>
+              </div>
+              <span
+                class="bg-surface-container-highest text-on-surface-variant px-3 py-1 h-fit rounded-full font-label-caps text-label-caps"
+                >May 2022 – Dec 2023</span
+              >
+            </div>
+            <ul
+              class="space-y-2 text-on-surface-variant font-body-sm text-body-sm list-disc pl-4"
+            >
+              <li>Developed web features for a financial trading platform</li>
+              <li>Improved user experience and application performance</li>
+              <li>Implemented scalable APIs and frontend integrations</li>
+              <li>Initiated event-driven microservices, Saga, and CQRS</li>
+            </ul>
+            <p class="text-text-secondary text-xs mt-5">
+              AWS · Laravel · REST API · RabbitMQ · API Gateway · Socket.IO
+            </p>
+          </div>
+          <div
+            class="bg-surface-card p-card-padding border border-border-subtle rounded-xl card-hover transition-all"
+          >
+            <div class="flex flex-wrap justify-between gap-3 mb-4">
+              <div>
+                <h4 class="font-headline-md text-headline-md text-text-primary">
+                  Engineering Lead
+                </h4>
+                <p class="text-primary font-medium">DXTR</p>
+              </div>
+              <span
+                class="bg-surface-container-highest text-on-surface-variant px-3 py-1 h-fit rounded-full font-label-caps text-label-caps"
                 >Jul 2018 – Apr 2022</span
               >
             </div>
+            <ul
+              class="space-y-2 text-on-surface-variant font-body-sm text-body-sm list-disc pl-4"
+            >
+              <li>Led a cross-functional engineering team of 15</li>
+              <li>Coordinated vendors and Agile delivery for SRC</li>
+              <li>Reviewed code quality across internal and vendor teams</li>
+              <li>Scaled microservices and event-driven systems on AWS</li>
+            </ul>
+            <p class="text-text-secondary text-xs mt-5">
+              Angular · React · Laravel · Node.js · AWS · Docker · CI/CD
+            </p>
+          </div>
+          <div
+            class="bg-surface-card p-card-padding border border-border-subtle rounded-xl card-hover transition-all"
+          >
+            <div class="flex flex-wrap justify-between gap-3 mb-4">
+              <div>
+                <h4 class="font-headline-md text-headline-md text-text-primary">
+                  Full Stack Developer
+                </h4>
+                <p class="text-primary font-medium">Looq Creative</p>
+              </div>
+              <span
+                class="bg-surface-container-highest text-on-surface-variant px-3 py-1 h-fit rounded-full font-label-caps text-label-caps"
+                >Apr 2022 – Mar 2023</span
+              >
+            </div>
+            <ul
+              class="space-y-2 text-on-surface-variant font-body-sm text-body-sm list-disc pl-4"
+            >
+              <li>Owned frontend delivery for client and product websites</li>
+              <li>Built end-to-end features and backend API integrations</li>
+              <li>Improved architecture, reliability, and delivery speed</li>
+              <li>Coordinated delivery across multiple client priorities</li>
+            </ul>
+            <p class="text-text-secondary text-xs mt-5">
+              Laravel · JavaScript · React · MySQL
+            </p>
+          </div>
+          <div
+            class="bg-surface-card p-card-padding border border-border-subtle rounded-xl card-hover transition-all"
+          >
+            <div class="flex flex-wrap justify-between gap-3 mb-4">
+              <div>
+                <h4 class="font-headline-md text-headline-md text-text-primary">
+                  Full Stack Developer
+                </h4>
+                <p class="text-primary font-medium">
+                  PT Satuu Teknologi Utama
+                </p>
+              </div>
+              <span
+                class="bg-surface-container-highest text-on-surface-variant px-3 py-1 h-fit rounded-full font-label-caps text-label-caps"
+                >Apr 2022 – Mar 2023</span
+              >
+            </div>
+            <ul
+              class="space-y-2 text-on-surface-variant font-body-sm text-body-sm list-disc pl-4"
+            >
+              <li>Owned frontend-heavy application delivery and user flows</li>
+              <li>Built APIs, authentication, and operational dashboards</li>
+              <li>Collaborated across product and engineering functions</li>
+              <li>Improved implementation patterns and maintainability</li>
+            </ul>
+            <p class="text-text-secondary text-xs mt-5">
+              Laravel · React · MySQL · Redis · AWS
+            </p>
           </div>
         </div>
       </div>
@@ -737,6 +849,31 @@
           <a
             class="text-primary flex items-center gap-2 font-bold group-hover:translate-x-1 transition-transform"
             href="https://www.valutrades.com/"
+            >View Project
+            <span class="material-symbols-outlined text-sm"
+              >arrow_forward</span
+            ></a
+          >
+        </div>
+        <!-- MIFX Project Card -->
+        <div
+          class="bg-surface-card border border-border-subtle rounded-xl p-card-padding card-hover transition-all flex flex-col justify-between group"
+        >
+          <div>
+            <h3
+              class="font-headline-md text-headline-md text-text-primary mb-3"
+            >
+              MIFX
+            </h3>
+            <p class="text-on-surface-variant font-body-sm text-body-sm mb-4">
+              Financial trading platform with scalable APIs, real-time
+              notifications, and integrated web experiences for forex and
+              commodity products.
+            </p>
+          </div>
+          <a
+            class="text-primary flex items-center gap-2 font-bold group-hover:translate-x-1 transition-transform"
+            href="https://mifx.com/"
             >View Project
             <span class="material-symbols-outlined text-sm"
               >arrow_forward</span
@@ -1549,6 +1686,39 @@
         } else {
           nav.classList.remove("shadow-xl");
         }
+      });
+
+      // Mobile navigation
+      const mobileMenuToggle = document.querySelector("#mobile-menu-toggle");
+      const mobileMenu = document.querySelector("#mobile-menu");
+      const mobileMenuIcon = document.querySelector("#mobile-menu-icon");
+
+      const setMobileMenuOpen = (isOpen) => {
+        mobileMenu.classList.toggle("hidden", !isOpen);
+        mobileMenuToggle.setAttribute("aria-expanded", String(isOpen));
+        mobileMenuToggle.setAttribute(
+          "aria-label",
+          isOpen ? "Close navigation menu" : "Open navigation menu",
+        );
+        mobileMenuIcon.textContent = isOpen ? "close" : "menu";
+      };
+
+      mobileMenuToggle.addEventListener("click", () => {
+        const isOpen =
+          mobileMenuToggle.getAttribute("aria-expanded") === "true";
+        setMobileMenuOpen(!isOpen);
+      });
+
+      document.querySelectorAll(".mobile-menu-link").forEach((link) => {
+        link.addEventListener("click", () => setMobileMenuOpen(false));
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") setMobileMenuOpen(false);
+      });
+
+      window.addEventListener("resize", () => {
+        if (window.innerWidth >= 768) setMobileMenuOpen(false);
       });
     </script>
   </body>
