@@ -1,1725 +1,1577 @@
 <!doctype html>
-
-<html class="dark" lang="en">
+<html class="dark scroll-smooth" lang="en">
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>
-      Fajar Sujito | AI-Assisted Full-Stack Developer &amp; Engineering Leader
-    </title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <title>Fajar Sujito — Engineering Leader &amp; Full-Stack Architect</title>
+    <meta
+      name="description"
+      content="Portfolio of Fajar Sujito, an Engineering Leader and Senior Full-Stack Architect with 10+ years of experience building scalable enterprise, fintech, and cloud systems."
+    />
+    
+    <!-- Modern Typography: Plus Jakarta Sans for Editorial Sans, JetBrains Mono for Code/Metrics -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Geist:wght@400;600;700;800&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-      rel="stylesheet"
-    />
-    <script id="tailwind-config">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
       tailwind.config = {
-        darkMode: "class",
+        darkMode: 'class',
         theme: {
           extend: {
-            colors: {
-              "surface-tint": "#e9c349",
-              "on-secondary-container": "#352800",
-              "tertiary-container": "#d2b100",
-              "surface-container-lowest": "#0e0e0e",
-              "secondary-fixed": "#ffe08b",
-              "on-error": "#690005",
-              "surface-container-highest": "#353534",
-              "tertiary-fixed-dim": "#e9c400",
-              "error-container": "#93000a",
-              "on-primary-fixed-variant": "#574500",
-              secondary: "#eac249",
-              primary: "#f2ca50",
-              "primary-fixed": "#ffe088",
-              error: "#ffb4ab",
-              "on-primary": "#3c2f00",
-              "surface-container-high": "#2a2a2a",
-              "on-secondary-fixed": "#241a00",
-              "surface-bright": "#3a3939",
-              "surface-variant": "#353534",
-              "secondary-fixed-dim": "#eac249",
-              "on-primary-fixed": "#241a00",
-              "on-tertiary-fixed-variant": "#544600",
-              "on-background": "#e5e2e1",
-              "tertiary-fixed": "#ffe16d",
-              "inverse-primary": "#735c00",
-              "outline-variant": "#4d4635",
-              "surface-container-low": "#1c1b1b",
-              "on-tertiary-fixed": "#221b00",
-              "surface-dim": "#131313",
-              "on-error-container": "#ffdad6",
-              "on-tertiary": "#3a3000",
-              background: "#131313",
-              "secondary-container": "#b08c10",
-              surface: "#131313",
-              "inverse-surface": "#e5e2e1",
-              "primary-fixed-dim": "#e9c349",
-              "on-secondary-fixed-variant": "#584400",
-              "on-secondary": "#3d2f00",
-              "on-primary-container": "#554300",
-              "surface-container": "#201f1f",
-              "primary-container": "#d4af37",
-              "inverse-on-surface": "#313030",
-              "on-surface-variant": "#d0c5af",
-              tertiary: "#f2cc00",
-              "on-surface": "#e5e2e1",
-              outline: "#99907c",
-              "on-tertiary-container": "#534400",
-              "border-subtle": "#353534",
-              "surface-card": "#1c1b1b",
-              "text-primary": "#e5e2e1",
-              "text-secondary": "#d0c5af",
-            },
-            borderRadius: {
-              DEFAULT: "0.125rem",
-              lg: "0.25rem",
-              xl: "0.5rem",
-              full: "0.75rem",
-            },
-            spacing: {
-              "margin-desktop": "64px",
-              gutter: "24px",
-              "container-max": "1120px",
-              "margin-mobile": "16px",
-              unit: "4px",
-              "element-gap": "1.5rem",
-              "card-padding": "2rem",
-              "section-gap": "8rem",
-            },
             fontFamily: {
-              "mono-data": ["Geist Mono"],
-              "body-md": ["Geist"],
-              "headline-lg-mobile": ["Geist"],
-              "body-lg": ["Geist"],
-              "headline-lg": ["Geist"],
-              "label-sm": ["Geist"],
-              "headline-md": ["Geist"],
-              "display-hero": ["Geist"],
-              "section-header": ["Geist"],
-              "label-caps": ["Geist"],
-              "mono-stats": ["Geist"],
-              "body-sm": ["Geist"],
+              sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+              mono: ['"JetBrains Mono"', 'monospace'],
             },
-            fontSize: {
-              "display-hero": [
-                "48px",
-                {
-                  lineHeight: "1.1",
-                  letterSpacing: "-0.04em",
-                  fontWeight: "800",
-                },
-              ],
-              "mono-data": [
-                "14px",
-                { lineHeight: "1.4", letterSpacing: "0em", fontWeight: "400" },
-              ],
-              "body-md": [
-                "16px",
-                { lineHeight: "1.5", letterSpacing: "0em", fontWeight: "400" },
-              ],
-              "headline-lg-mobile": [
-                "32px",
-                {
-                  lineHeight: "1.2",
-                  letterSpacing: "-0.02em",
-                  fontWeight: "600",
-                },
-              ],
-              "body-lg": [
-                "18px",
-                { lineHeight: "1.6", letterSpacing: "0em", fontWeight: "400" },
-              ],
-              "headline-lg": [
-                "48px",
-                {
-                  lineHeight: "1.1",
-                  letterSpacing: "-0.04em",
-                  fontWeight: "600",
-                },
-              ],
-              "label-sm": [
-                "12px",
-                {
-                  lineHeight: "1.2",
-                  letterSpacing: "0.1em",
-                  fontWeight: "600",
-                },
-              ],
-              "headline-md": [
-                "24px",
-                {
-                  lineHeight: "1.3",
-                  letterSpacing: "-0.01em",
-                  fontWeight: "500",
-                },
-              ],
-              "section-header": [
-                "14px",
-                {
-                  lineHeight: "1.5",
-                  letterSpacing: "0.1em",
-                  fontWeight: "600",
-                },
-              ],
-              "label-caps": [
-                "12px",
-                { lineHeight: "1", letterSpacing: "0.05em", fontWeight: "600" },
-              ],
-              "mono-stats": [
-                "20px",
-                {
-                  lineHeight: "1",
-                  letterSpacing: "-0.02em",
-                  fontWeight: "700",
-                },
-              ],
-              "body-sm": ["14px", { lineHeight: "1.5", fontWeight: "400" }],
+            colors: {
+              canvas: '#090a0d',
+              surface: {
+                DEFAULT: '#101217',
+                subtle: '#14171e',
+                hover: '#181c25',
+                border: '#1f2430',
+                borderSubtle: 'rgba(255, 255, 255, 0.07)',
+                borderHover: 'rgba(255, 255, 255, 0.16)',
+              },
+              ink: {
+                primary: '#f0f2f5',
+                secondary: '#9ba3b4',
+                muted: '#61697c',
+                faint: '#414756',
+              },
+              accent: {
+                DEFAULT: '#3b82f6',
+                hover: '#60a5fa',
+                subtle: 'rgba(59, 130, 246, 0.1)',
+                border: 'rgba(59, 130, 246, 0.25)',
+              }
             },
-          },
-        },
-      };
+            letterSpacing: {
+              tighter: '-0.04em',
+              tight: '-0.02em',
+              mono: '0.04em',
+            }
+          }
+        }
+      }
     </script>
+
     <style>
+      :root {
+        color-scheme: dark;
+      }
+      
       body {
-        background-color: #131313;
-        color: #e5e2e1;
-        scroll-behavior: smooth;
+        background-color: #090a0d;
+        color: #f0f2f5;
+        font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        selection-background-color: #272d3b;
       }
-      .glass-nav {
-        background: rgba(19, 19, 19, 0.8);
-        backdrop-filter: blur(12px);
+
+      ::selection {
+        background: #272d3b;
+        color: #f0f2f5;
       }
-      .hero-glow {
-        background: radial-gradient(
-          circle at center,
-          rgba(233, 195, 73, 0.1) 0%,
-          transparent 70%
-        );
+
+      /* Subtle grid background for architectural feel */
+      .bg-grid {
+        background-size: 40px 40px;
+        background-image: 
+          linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
       }
-      .card-hover:hover {
-        border-color: #f2ca50;
-        background: #201f1f;
+
+      /* Bespoke hairline borders */
+      .hairline-border {
+        border: 1px solid rgba(255, 255, 255, 0.07);
       }
-      .gold-glow {
-        box-shadow: 0 0 15px rgba(242, 202, 80, 0.2);
+
+      .hairline-border-top {
+        border-top: 1px solid rgba(255, 255, 255, 0.07);
       }
-      .gold-gradient {
-        background: linear-gradient(135deg, #f2ca50 0%, #b08c10 100%);
+
+      .hairline-border-bottom {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      }
+
+      /* Smooth glass nav */
+      .nav-blur {
+        background: rgba(9, 10, 13, 0.82);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+      }
+
+      /* Minimal interactive card hover */
+      .editorial-card {
+        transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+      }
+      .editorial-card:hover {
+        border-color: rgba(255, 255, 255, 0.16);
+        background-color: #14171e;
+      }
+
+      /* Tab active styling */
+      .filter-btn.active {
+        background-color: #1f2430;
+        color: #f0f2f5;
+        border-color: rgba(255, 255, 255, 0.18);
+      }
+
+      /* Toast Notification */
+      #toast {
+        transition: opacity 0.25s ease, transform 0.25s ease;
       }
     </style>
   </head>
-  <body class="font-body-md text-body-md overflow-x-hidden">
-    <!-- TopNavBar -->
-    <nav
-      class="docked full-width top-0 sticky z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-md border-b border-border-subtle dark:border-border-subtle"
-    >
-      <div
-        class="flex justify-between items-center px-gutter py-4 w-full max-w-container-max mx-auto z-50"
-      >
-        <div
-          class="font-headline-md text-headline-md font-bold text-on-surface dark:text-on-surface tracking-tighter"
-        >
-          Fajar Sujito
-        </div>
-        <!-- Desktop Links -->
-        <div class="hidden md:flex items-center gap-8">
-          <a
-            class="text-on-surface-variant font-medium font-body-sm text-body-sm hover:text-primary transition-colors duration-200"
-            href="#about"
-            >Expertise</a
-          >
-          <a
-            class="text-on-surface-variant font-medium font-body-sm text-body-sm hover:text-primary transition-colors duration-200"
-            href="#experience"
-            >Experience</a
-          >
-          <a
-            class="text-on-surface-variant font-medium font-body-sm text-body-sm hover:text-primary transition-colors duration-200"
-            href="#projects"
-            >Projects</a
-          >
-          <a
-            class="text-on-surface-variant font-medium font-body-sm text-body-sm hover:text-primary transition-colors duration-200"
-            href="#education"
-            >Education</a
-          >
-          <a
-            class="text-on-surface-variant font-medium font-body-sm text-body-sm hover:text-primary transition-colors duration-200"
-            href="#contact"
-            >Contact</a
-          >
-        </div>
-        <!-- Mobile Toggle -->
-        <button
-          aria-controls="mobile-menu"
-          aria-expanded="false"
-          aria-label="Open navigation menu"
-          class="md:hidden text-on-surface flex items-center justify-center"
-          id="mobile-menu-toggle"
-          type="button"
-        >
-          <span class="material-symbols-outlined" id="mobile-menu-icon"
-            >menu</span
-          >
-        </button>
-      </div>
-      <div
-        class="hidden md:hidden border-t border-border-subtle bg-surface/95 px-gutter py-4"
-        id="mobile-menu"
-      >
-        <div class="max-w-container-max mx-auto flex flex-col gap-1">
-          <a
-            class="mobile-menu-link text-on-surface-variant font-medium px-3 py-3 rounded-lg hover:bg-surface-container hover:text-primary transition-colors"
-            href="#about"
-            >Expertise</a
-          >
-          <a
-            class="mobile-menu-link text-on-surface-variant font-medium px-3 py-3 rounded-lg hover:bg-surface-container hover:text-primary transition-colors"
-            href="#experience"
-            >Experience</a
-          >
-          <a
-            class="mobile-menu-link text-on-surface-variant font-medium px-3 py-3 rounded-lg hover:bg-surface-container hover:text-primary transition-colors"
-            href="#projects"
-            >Projects</a
-          >
-          <a
-            class="mobile-menu-link text-on-surface-variant font-medium px-3 py-3 rounded-lg hover:bg-surface-container hover:text-primary transition-colors"
-            href="#education"
-            >Education</a
-          >
-          <a
-            class="mobile-menu-link text-on-surface-variant font-medium px-3 py-3 rounded-lg hover:bg-surface-container hover:text-primary transition-colors"
-            href="#contact"
-            >Contact</a
-          >
-        </div>
-      </div>
-    </nav>
-    <!-- Hero Section -->
-    <section
-      class="relative min-h-[90vh] flex flex-col items-center justify-center pt-20 overflow-hidden"
-    >
-      <div class="hero-glow absolute inset-0 pointer-events-none"></div>
-      <div
-        class="max-w-container-max mx-auto px-gutter text-center relative z-10"
-      >
-        <div class="relative inline-block mb-8">
-          <div
-            class="w-32 h-32 md:w-40 md:h-40 rounded-full border-2 border-primary/30 p-1 gold-glow overflow-hidden"
-          >
-            <img
-              alt="Fajar Sujito"
-              class="w-full h-full rounded-full object-cover"
-              src="assets/img/fajar.jpeg"
-            />
+  <body class="bg-canvas text-ink-primary font-sans antialiased min-h-screen relative selection:bg-surface-border">
+    
+    <!-- Subtle Grid Overlay -->
+    <div class="fixed inset-0 bg-grid pointer-events-none z-0"></div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 nav-blur hairline-border-bottom">
+      <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+        
+        <!-- Brand / Identity -->
+        <a href="#" class="group flex items-center gap-3">
+          <div class="w-8 h-8 rounded-full overflow-hidden hairline-border bg-surface-subtle flex-shrink-0">
+            <img src="assets/img/fajar.jpeg" alt="Fajar Sujito" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300" />
           </div>
-          <div
-            class="absolute -bottom-2 -right-2 gold-gradient rounded-full p-2 flex items-center justify-center shadow-lg"
-          >
-            <span
-              class="material-symbols-outlined text-on-primary text-sm"
-              style="font-variation-settings: &quot;FILL&quot; 1"
-              >verified</span
-            >
+          <div class="flex flex-col">
+            <span class="font-bold text-sm tracking-tight text-ink-primary group-hover:text-white transition-colors">Fajar Sujito</span>
+            <span class="text-[11px] font-mono text-ink-muted leading-none">Engineering Leader</span>
           </div>
-        </div>
-        <h1 class="font-display-hero text-display-hero text-text-primary mb-6">
-          Fajar Sujito
-        </h1>
-        <p
-          class="font-headline-lg-mobile md:text-headline-md text-text-secondary max-w-3xl mx-auto mb-10 leading-relaxed"
-        >
-          Fullstack Developer &amp; Engineering Leader | Building
-          Web, Mobile, and Cloud Products with React, Next.js, React Native, and
-          AWS
-        </p>
-        <div class="flex flex-wrap justify-center gap-4 mb-16">
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center gap-1 text-sm font-medium">
+          <a href="#about" class="px-3.5 py-1.5 rounded-md text-ink-secondary hover:text-ink-primary hover:bg-white/[0.04] transition-all">About</a>
+          <a href="#experience" class="px-3.5 py-1.5 rounded-md text-ink-secondary hover:text-ink-primary hover:bg-white/[0.04] transition-all">Experience</a>
+          <a href="#projects" class="px-3.5 py-1.5 rounded-md text-ink-secondary hover:text-ink-primary hover:bg-white/[0.04] transition-all">Projects</a>
+          <a href="#stack" class="px-3.5 py-1.5 rounded-md text-ink-secondary hover:text-ink-primary hover:bg-white/[0.04] transition-all">Stack</a>
+          <a href="#credentials" class="px-3.5 py-1.5 rounded-md text-ink-secondary hover:text-ink-primary hover:bg-white/[0.04] transition-all">Credentials</a>
+          <a href="#contact" class="px-3.5 py-1.5 rounded-md text-ink-secondary hover:text-ink-primary hover:bg-white/[0.04] transition-all">Contact</a>
+        </nav>
+
+        <!-- Right Action Button: Copy Email & Social Links -->
+        <div class="flex items-center gap-3">
+          <button
+            id="copy-email-nav"
+            onclick="copyEmailToClipboard()"
+            class="hidden sm:inline-flex items-center gap-2 text-xs font-mono px-3 py-1.5 rounded-md bg-surface hairline-border hover:border-surface-borderHover text-ink-secondary hover:text-ink-primary transition-all cursor-pointer"
+            title="Click to copy email address"
+          >
+            <svg class="w-3.5 h-3.5 text-ink-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+            </svg>
+            <span>fjarfs@gmail.com</span>
+          </button>
+
           <a
-            class="flex items-center gap-2 gold-gradient text-on-primary-container px-8 py-3 font-semibold rounded-lg hover:opacity-90 transition-all gold-glow"
             href="https://www.linkedin.com/in/fajar-sujito/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="p-2 rounded-md hairline-border bg-surface text-ink-secondary hover:text-ink-primary hover:border-surface-borderHover transition-all"
+            aria-label="LinkedIn Profile"
           >
-            <span class="material-symbols-outlined">link</span> LinkedIn
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </svg>
           </a>
-        </div>
-        <!-- Stats Grid -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-          <div class="flex flex-col">
-            <span class="font-mono-stats text-mono-stats text-primary"
-              >10+</span
-            >
-            <span
-              class="font-label-caps text-label-caps text-on-surface-variant mt-1 uppercase"
-              >Years Experience</span
-            >
-          </div>
-          <div class="flex flex-col">
-            <span class="font-mono-stats text-mono-stats text-primary"
-              >1K+</span
-            >
-            <span
-              class="font-label-caps text-label-caps text-on-surface-variant mt-1 uppercase"
-              >Followers</span
-            >
-          </div>
-          <div class="flex flex-col">
-            <span class="font-mono-stats text-mono-stats text-primary"
-              >500+</span
-            >
-            <span
-              class="font-label-caps text-label-caps text-on-surface-variant mt-1 uppercase"
-              >Connections</span
-            >
-          </div>
-          <div class="flex flex-col">
-            <span class="font-mono-stats text-mono-stats text-primary"
-              >13+</span
-            >
-            <span
-              class="font-label-caps text-label-caps text-on-surface-variant mt-1 uppercase"
-              >Projects</span
-            >
-          </div>
+
+          <!-- Mobile Menu Trigger -->
+          <button
+            id="mobile-menu-btn"
+            class="md:hidden p-2 rounded-md hairline-border bg-surface text-ink-secondary hover:text-ink-primary"
+            aria-label="Toggle navigation"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
         </div>
       </div>
-    </section>
-    <!-- About Section -->
-    <section
-      class="py-section-gap max-w-container-max mx-auto px-gutter"
-      id="about"
-    >
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
-        <div class="md:col-span-7">
-          <h2
-            class="font-section-header text-section-header text-primary mb-4 uppercase tracking-[0.2em]"
-          >
-            About Me
-          </h2>
-          <h3 class="font-headline-md text-headline-md text-text-primary mb-6">
-            Fullstack developer combining hands-on delivery with
-            engineering leadership
-          </h3>
-          <div
-            class="space-y-6 text-on-surface-variant font-body-md text-body-md leading-relaxed"
-          >
-            <p>
-              Full-stack developer with 10+ years of experience building and
-              scaling web, mobile, backend, and cloud systems. I have delivered
-              products across financial and enterprise platforms using React,
-              Next.js, React Native, Laravel, Node.js, Golang, and AWS.
-            </p>
-            <p>
-              I use AI-assisted development workflows to accelerate discovery,
-              implementation, debugging, testing, documentation, and code
-              review while maintaining strong engineering judgment and quality
-              control. I also bring proven engineering leadership, guiding
-              multidisciplinary teams and shaping reliable architecture.
-            </p>
-          </div>
-          <div class="mt-12">
-            <h4
-              class="font-label-caps text-label-caps text-text-primary mb-6 uppercase"
-            >
-              Passionate About
-            </h4>
-            <ul class="space-y-4">
-              <li class="flex items-start gap-3 text-on-surface-variant">
-                <span
-                  class="material-symbols-outlined text-primary text-sm mt-1"
-                  >check_circle</span
-                >
-                <span>Building high-performance engineering teams</span>
-              </li>
-              <li class="flex items-start gap-3 text-on-surface-variant">
-                <span
-                  class="material-symbols-outlined text-primary text-sm mt-1"
-                  >check_circle</span
-                >
-                <span
-                  >End-to-end product development across React, Next.js, React
-                  Native, and backend services using PHP/Laravel, Node.js,
-                  Golang, and Python</span
-                >
-              </li>
-              <li class="flex items-start gap-3 text-on-surface-variant">
-                <span
-                  class="material-symbols-outlined text-primary text-sm mt-1"
-                  >check_circle</span
-                >
-                <span
-                  >AI-assisted engineering workflows for faster, higher-quality
-                  software delivery</span
-                >
-              </li>
-              <li class="flex items-start gap-3 text-on-surface-variant">
-                <span
-                  class="material-symbols-outlined text-primary text-sm mt-1"
-                  >check_circle</span
-                >
-                <span
-                  >System continuity, security &amp; compliance (BCP, failover,
-                  monitoring)</span
-                >
-              </li>
-              <li class="flex items-start gap-3 text-on-surface-variant">
-                <span
-                  class="material-symbols-outlined text-primary text-sm mt-1"
-                  >check_circle</span
-                >
-                <span
-                  >Translating business goals into measurable technology
-                  outcomes</span
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="md:col-span-5">
-          <div
-            class="bg-surface-card border border-border-subtle p-card-padding rounded-xl sticky top-24"
-          >
-            <h4
-              class="font-label-caps text-label-caps text-text-primary mb-6 uppercase"
-            >
-              Tech Stack
-            </h4>
-            <div class="flex flex-wrap gap-2">
-              <span
-                class="px-3 py-1.5 bg-surface-container-highest border border-outline-variant text-on-surface-variant rounded-full font-label-caps text-label-caps hover:border-primary transition-colors"
-                >AWS</span
-              >
-              <span
-                class="px-3 py-1.5 bg-surface-container-highest border border-outline-variant text-on-surface-variant rounded-full font-label-caps text-label-caps hover:border-primary transition-colors"
-                >AI-Assisted Development</span
-              >
-              <span
-                class="px-3 py-1.5 bg-surface-container-highest border border-outline-variant text-on-surface-variant rounded-full font-label-caps text-label-caps hover:border-primary transition-colors"
-                >LLM Workflows</span
-              >
-              <span
-                class="px-3 py-1.5 bg-surface-container-highest border border-outline-variant text-on-surface-variant rounded-full font-label-caps text-label-caps hover:border-primary transition-colors"
-                >Laravel</span
-              >
-              <span
-                class="px-3 py-1.5 bg-surface-container-highest border border-outline-variant text-on-surface-variant rounded-full font-label-caps text-label-caps hover:border-primary transition-colors"
-                >React</span
-              >
-              <span
-                class="px-3 py-1.5 bg-surface-container-highest border border-outline-variant text-on-surface-variant rounded-full font-label-caps text-label-caps hover:border-primary transition-colors"
-                >Next.js</span
-              >
-              <span
-                class="px-3 py-1.5 bg-surface-container-highest border border-outline-variant text-on-surface-variant rounded-full font-label-caps text-label-caps hover:border-primary transition-colors"
-                >Node.js</span
-              >
-              <span
-                class="px-3 py-1.5 bg-surface-container-highest border border-outline-variant text-on-surface-variant rounded-full font-label-caps text-label-caps hover:border-primary transition-colors"
-                >PHP</span
-              >
-              <span
-                class="px-3 py-1.5 bg-surface-container-highest border border-outline-variant text-on-surface-variant rounded-full font-label-caps text-label-caps hover:border-primary transition-colors"
-                >Python</span
-              >
-              <span
-                class="px-3 py-1.5 bg-surface-container-highest border border-outline-variant text-on-surface-variant rounded-full font-label-caps text-label-caps hover:border-primary transition-colors"
-                >Docker</span
-              >
-              <span
-                class="px-3 py-1.5 bg-surface-container-highest border border-outline-variant text-on-surface-variant rounded-full font-label-caps text-label-caps hover:border-primary transition-colors"
-                >Jenkins</span
-              >
-              <span
-                class="px-3 py-1.5 bg-surface-container-highest border border-outline-variant text-on-surface-variant rounded-full font-label-caps text-label-caps hover:border-primary transition-colors"
-                >Redis</span
-              >
-              <span
-                class="px-3 py-1.5 bg-surface-container-highest border border-outline-variant text-on-surface-variant rounded-full font-label-caps text-label-caps hover:border-primary transition-colors"
-                >MySQL</span
-              >
-              <span
-                class="px-3 py-1.5 bg-surface-container-highest border border-outline-variant text-on-surface-variant rounded-full font-label-caps text-label-caps hover:border-primary transition-colors"
-                >PostgreSQL</span
-              >
-              <span
-                class="px-3 py-1.5 bg-surface-container-highest border border-outline-variant text-on-surface-variant rounded-full font-label-caps text-label-caps hover:border-primary transition-colors"
-                >Golang</span
-              >
-              <span
-                class="px-3 py-1.5 bg-surface-container-highest border border-outline-variant text-on-surface-variant rounded-full font-label-caps text-label-caps hover:border-primary transition-colors"
-                >Microservices</span
-              >
-              <span
-                class="px-3 py-1.5 bg-surface-container-highest border border-outline-variant text-on-surface-variant rounded-full font-label-caps text-label-caps hover:border-primary transition-colors"
-                >React Native</span
-              >
-              <span
-                class="px-3 py-1.5 bg-surface-container-highest border border-outline-variant text-on-surface-variant rounded-full font-label-caps text-label-caps hover:border-primary transition-colors"
-                >ECS</span
-              >
-              <span
-                class="px-3 py-1.5 bg-surface-container-highest border border-outline-variant text-on-surface-variant rounded-full font-label-caps text-label-caps hover:border-primary transition-colors"
-                >EC2</span
-              >
+
+      <!-- Mobile Dropdown Menu -->
+      <div id="mobile-menu" class="hidden md:hidden hairline-border-top bg-surface px-6 py-4 flex flex-col gap-2">
+        <a href="#about" class="mobile-nav-link py-2 text-sm text-ink-secondary hover:text-white">About</a>
+        <a href="#experience" class="mobile-nav-link py-2 text-sm text-ink-secondary hover:text-white">Experience</a>
+        <a href="#projects" class="mobile-nav-link py-2 text-sm text-ink-secondary hover:text-white">Projects</a>
+        <a href="#stack" class="mobile-nav-link py-2 text-sm text-ink-secondary hover:text-white">Tech Stack</a>
+        <a href="#credentials" class="mobile-nav-link py-2 text-sm text-ink-secondary hover:text-white">Credentials &amp; Research</a>
+        <a href="#contact" class="mobile-nav-link py-2 text-sm text-ink-secondary hover:text-white">Contact</a>
+      </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="relative z-10 max-w-6xl mx-auto px-6 pt-12 pb-24 space-y-28">
+
+      <!-- ================= HERO SECTION ================= -->
+      <section class="pt-6 md:pt-16 pb-6">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          
+          <!-- Left: Hero Text & Pitch -->
+          <div class="lg:col-span-8 space-y-6">
+            
+            <!-- Availability Pill Badge -->
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full hairline-border bg-surface text-xs font-mono text-ink-secondary">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span>Available for leadership roles &amp; architecture consulting</span>
             </div>
-            <div class="mt-12 pt-8 border-t border-border-subtle">
-              <h4
-                class="font-label-caps text-label-caps text-text-primary mb-4 uppercase"
+
+            <!-- Main Headline -->
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tighter text-ink-primary leading-[1.08]">
+              Engineering leader &amp; full-stack architect building mission-critical systems.
+            </h1>
+
+            <!-- Editorial Summary -->
+            <p class="text-base sm:text-lg text-ink-secondary font-normal leading-relaxed max-w-2xl">
+              10+ years architecting web, mobile, and cloud platforms across financial trading and retail ecosystems. Specializing in high-throughput microservices, event-driven backends, and modern frontend delivery with React, Next.js, Go, Laravel, and AWS.
+            </p>
+
+            <!-- Call to Actions -->
+            <div class="pt-2 flex flex-wrap items-center gap-4">
+              <a
+                href="#contact"
+                class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-ink-primary text-canvas font-semibold text-sm hover:bg-white transition-all shadow-sm"
               >
-                Languages
-              </h4>
-              <div class="space-y-3">
-                <div class="flex justify-between items-center">
-                  <span class="text-on-surface-variant">Indonesian</span>
-                  <span class="text-primary font-label-caps">Professional</span>
+                <span>Initiate Contact</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/fajar-sujito/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg hairline-border bg-surface text-ink-primary font-medium text-sm hover:bg-surface-hover hover:border-surface-borderHover transition-all"
+              >
+                <span>View LinkedIn</span>
+                <svg class="w-3.5 h-3.5 text-ink-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                </svg>
+              </a>
+
+              <a
+                href="https://github.com/fjarfs"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg hairline-border bg-surface text-ink-primary font-medium text-sm hover:bg-surface-hover hover:border-surface-borderHover transition-all"
+              >
+                <span>GitHub</span>
+                <svg class="w-3.5 h-3.5 text-ink-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right: Profile Card & Key Proof Points -->
+          <div class="lg:col-span-4 flex flex-col gap-6">
+            <!-- Profile portrait card -->
+            <div class="p-6 rounded-xl hairline-border bg-surface flex flex-col items-start gap-4">
+              <div class="w-20 h-20 rounded-xl overflow-hidden hairline-border bg-surface-subtle flex-shrink-0">
+                <img
+                  src="assets/img/fajar.jpeg"
+                  alt="Fajar Sujito"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div>
+                <h3 class="font-bold text-base text-ink-primary">Fajar Sujito, S.Kom.</h3>
+                <p class="text-xs text-ink-muted font-mono mt-0.5">Semarang &amp; Jakarta, Indonesia</p>
+                <p class="text-xs text-ink-secondary mt-2 leading-relaxed">
+                  Head of Engineering / Technical Lead delivering resilient distributed platforms and high-velocity engineering cultures.
+                </p>
+              </div>
+
+              <!-- Compact Metadata Ledger -->
+              <div class="w-full pt-4 hairline-border-top grid grid-cols-2 gap-3 text-left">
+                <div>
+                  <div class="text-[11px] font-mono text-ink-muted uppercase tracking-wider">Experience</div>
+                  <div class="text-sm font-semibold font-mono text-ink-primary">10+ Years</div>
                 </div>
-                <div class="flex justify-between items-center">
-                  <span class="text-on-surface-variant">English</span>
-                  <span class="text-text-secondary font-label-caps"
-                    >Limited Working</span
-                  >
+                <div>
+                  <div class="text-[11px] font-mono text-ink-muted uppercase tracking-wider">Degree</div>
+                  <div class="text-sm font-semibold font-mono text-ink-primary">B.CS, Cum Laude</div>
+                </div>
+                <div>
+                  <div class="text-[11px] font-mono text-ink-muted uppercase tracking-wider">Scale</div>
+                  <div class="text-sm font-semibold font-mono text-ink-primary">National Tier</div>
+                </div>
+                <div>
+                  <div class="text-[11px] font-mono text-ink-muted uppercase tracking-wider">Focus</div>
+                  <div class="text-sm font-semibold font-mono text-ink-primary">Architecture / Lead</div>
                 </div>
               </div>
             </div>
+
+            <!-- Engineering Philosophy Card -->
+            <div class="p-5 rounded-xl hairline-border bg-surface/60 space-y-2">
+              <div class="text-[11px] font-mono uppercase tracking-wider text-ink-muted">Core Philosophy</div>
+              <p class="text-xs text-ink-secondary leading-relaxed">
+                Pragmatic systems over over-engineering. Automating workflows with rigorous CI/CD, modern tooling, and event-driven backends that scale reliably under production load.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Metric Proof Ribbon (Replacing AI Follower Count with Real Senior Metrics) -->
+        <div class="mt-16 pt-8 hairline-border-top grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div class="space-y-1">
+            <div class="text-2xl sm:text-3xl font-bold font-mono text-ink-primary tracking-tight">10+</div>
+            <div class="text-xs font-mono uppercase tracking-wider text-ink-muted">Years Engineering</div>
+            <p class="text-xs text-ink-secondary">From web agency delivery to enterprise lead</p>
+          </div>
+          <div class="space-y-1">
+            <div class="text-2xl sm:text-3xl font-bold font-mono text-ink-primary tracking-tight">7+</div>
+            <div class="text-xs font-mono uppercase tracking-wider text-ink-muted">SRC Ecosystem Apps</div>
+            <p class="text-xs text-ink-secondary">Integrated nationwide retail platform</p>
+          </div>
+          <div class="space-y-1">
+            <div class="text-2xl sm:text-3xl font-bold font-mono text-ink-primary tracking-tight">15+</div>
+            <div class="text-xs font-mono uppercase tracking-wider text-ink-muted">Engineers Led</div>
+            <p class="text-xs text-ink-secondary">Cross-functional squad guidance &amp; mentoring</p>
+          </div>
+          <div class="space-y-1">
+            <div class="text-2xl sm:text-3xl font-bold font-mono text-ink-primary tracking-tight">2</div>
+            <div class="text-xs font-mono uppercase tracking-wider text-ink-muted">Research Papers</div>
+            <p class="text-xs text-ink-secondary">Peer-reviewed publications in UI/UX &amp; SDLC</p>
           </div>
         </div>
-      </div>
-    </section>
-    <!-- Experience Section -->
-    <section class="py-section-gap bg-surface-container-low" id="experience">
-      <div class="max-w-container-max mx-auto px-gutter">
-        <h2
-          class="font-section-header text-section-header text-primary mb-4 uppercase tracking-[0.2em] text-center"
-        >
-          Work Experience
-        </h2>
-        <p class="text-on-surface-variant text-center mb-16">
-          Hands-on full-stack development and engineering leadership experience
-        </p>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div
-            class="bg-surface-card p-card-padding border border-border-subtle rounded-xl card-hover transition-all"
-          >
-            <div class="flex flex-wrap justify-between gap-3 mb-4">
-              <div>
-                <h4 class="font-headline-md text-headline-md text-text-primary">
-                  Engineering Lead
-                </h4>
-                <p class="text-primary font-medium">PT Surya Anugrah Mulya</p>
-              </div>
-              <span
-                class="bg-primary/10 text-primary px-3 py-1 h-fit rounded-full font-label-caps text-label-caps"
-                >Oct 2024 – Present</span
-              >
-            </div>
-            <ul
-              class="space-y-2 text-on-surface-variant font-body-sm text-body-sm list-disc pl-4"
-            >
-              <li>Led engineering roadmap and technical product direction</li>
-              <li>Mentored engineers and improved development standards</li>
-              <li>Designed scalable infrastructure, monitoring, and failover</li>
-              <li>Improved delivery planning and system maintainability</li>
-            </ul>
-            <p class="text-text-secondary text-xs mt-5">
-              AWS · Cloudflare · Laravel · Node.js · Go · RabbitMQ · ELK · FIX
-              API
+      </section>
+
+      <!-- ================= ABOUT & LEADERSHIP ================= -->
+      <section id="about" class="space-y-8 scroll-mt-24">
+        <div class="flex items-center gap-3">
+          <span class="text-xs font-mono uppercase tracking-wider text-ink-muted">01 // Background</span>
+          <div class="h-px flex-1 hairline-border-top"></div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+          <div class="lg:col-span-5 space-y-4">
+            <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-ink-primary">
+              Full-stack delivery grounded in rigorous systems thinking.
+            </h2>
+            <p class="text-sm font-mono text-ink-muted leading-relaxed">
+              Bridging strategic business goals with high-fidelity technical execution.
             </p>
           </div>
-          <div
-            class="bg-surface-card p-card-padding border border-border-subtle rounded-xl card-hover transition-all"
-          >
-            <div class="flex flex-wrap justify-between gap-3 mb-4">
-              <div>
-                <h4 class="font-headline-md text-headline-md text-text-primary">
-                  Full Stack Developer
-                </h4>
-                <p class="text-primary font-medium">
-                  Independent Product Builder
-                </p>
-              </div>
-              <span
-                class="bg-surface-container-highest text-on-surface-variant px-3 py-1 h-fit rounded-full font-label-caps text-label-caps"
-                >Jan 2023 – Jan 2026</span
-              >
-            </div>
-            <ul
-              class="space-y-2 text-on-surface-variant font-body-sm text-body-sm list-disc pl-4"
-            >
-              <li>Owned frontend architecture and product implementation</li>
-              <li>Designed reusable UI patterns and component structures</li>
-              <li>Improved responsiveness, SEO, accessibility, and UX</li>
-              <li>Integrated authentication, analytics, and payment APIs</li>
-            </ul>
-            <p class="text-text-secondary text-xs mt-5">
-              React · Next.js · TypeScript · Tailwind CSS · REST API · AWS
+
+          <div class="lg:col-span-7 space-y-5 text-ink-secondary text-sm sm:text-base leading-relaxed">
+            <p>
+              I am a seasoned software engineer and engineering leader with over a decade of hands-on experience designing, shipping, and maintaining web, mobile, and distributed backend architectures.
             </p>
-          </div>
-          <div
-            class="bg-surface-card p-card-padding border border-border-subtle rounded-xl card-hover transition-all"
-          >
-            <div class="flex flex-wrap justify-between gap-3 mb-4">
-              <div>
-                <h4 class="font-headline-md text-headline-md text-text-primary">
-                  Engineering Lead
-                </h4>
-                <p class="text-primary font-medium">MIFX</p>
-              </div>
-              <span
-                class="bg-surface-container-highest text-on-surface-variant px-3 py-1 h-fit rounded-full font-label-caps text-label-caps"
-                >May 2022 – Dec 2023</span
-              >
-            </div>
-            <ul
-              class="space-y-2 text-on-surface-variant font-body-sm text-body-sm list-disc pl-4"
-            >
-              <li>Developed web features for a financial trading platform</li>
-              <li>Improved user experience and application performance</li>
-              <li>Implemented scalable APIs and frontend integrations</li>
-              <li>Initiated event-driven microservices, Saga, and CQRS</li>
-            </ul>
-            <p class="text-text-secondary text-xs mt-5">
-              AWS · Laravel · REST API · RabbitMQ · API Gateway · Socket.IO
+            <p>
+              Throughout my career at companies like <strong class="text-ink-primary font-medium">PT Surya Anugrah Mulya</strong>, <strong class="text-ink-primary font-medium">MIFX</strong>, and <strong class="text-ink-primary font-medium">DXTR</strong>, I have spearheaded the transition from monolithic codebases to scalable microservices, integrated low-latency FIX protocol trading bridges, and engineered nationwide retail platforms like <strong class="text-ink-primary font-medium">Sampoerna Retail Community (SRC)</strong>.
             </p>
-          </div>
-          <div
-            class="bg-surface-card p-card-padding border border-border-subtle rounded-xl card-hover transition-all"
-          >
-            <div class="flex flex-wrap justify-between gap-3 mb-4">
-              <div>
-                <h4 class="font-headline-md text-headline-md text-text-primary">
-                  Engineering Lead
-                </h4>
-                <p class="text-primary font-medium">DXTR</p>
-              </div>
-              <span
-                class="bg-surface-container-highest text-on-surface-variant px-3 py-1 h-fit rounded-full font-label-caps text-label-caps"
-                >Jul 2018 – Apr 2022</span
-              >
-            </div>
-            <ul
-              class="space-y-2 text-on-surface-variant font-body-sm text-body-sm list-disc pl-4"
-            >
-              <li>Led a cross-functional engineering team of 15</li>
-              <li>Coordinated vendors and Agile delivery for SRC</li>
-              <li>Reviewed code quality across internal and vendor teams</li>
-              <li>Scaled microservices and event-driven systems on AWS</li>
-            </ul>
-            <p class="text-text-secondary text-xs mt-5">
-              Angular · React · Laravel · Node.js · AWS · Docker · CI/CD
-            </p>
-          </div>
-          <div
-            class="bg-surface-card p-card-padding border border-border-subtle rounded-xl card-hover transition-all"
-          >
-            <div class="flex flex-wrap justify-between gap-3 mb-4">
-              <div>
-                <h4 class="font-headline-md text-headline-md text-text-primary">
-                  Full Stack Developer
-                </h4>
-                <p class="text-primary font-medium">Looq Creative</p>
-              </div>
-              <span
-                class="bg-surface-container-highest text-on-surface-variant px-3 py-1 h-fit rounded-full font-label-caps text-label-caps"
-                >Apr 2022 – Mar 2023</span
-              >
-            </div>
-            <ul
-              class="space-y-2 text-on-surface-variant font-body-sm text-body-sm list-disc pl-4"
-            >
-              <li>Owned frontend delivery for client and product websites</li>
-              <li>Built end-to-end features and backend API integrations</li>
-              <li>Improved architecture, reliability, and delivery speed</li>
-              <li>Coordinated delivery across multiple client priorities</li>
-            </ul>
-            <p class="text-text-secondary text-xs mt-5">
-              Laravel · JavaScript · React · MySQL
-            </p>
-          </div>
-          <div
-            class="bg-surface-card p-card-padding border border-border-subtle rounded-xl card-hover transition-all"
-          >
-            <div class="flex flex-wrap justify-between gap-3 mb-4">
-              <div>
-                <h4 class="font-headline-md text-headline-md text-text-primary">
-                  Full Stack Developer
-                </h4>
-                <p class="text-primary font-medium">
-                  PT Satuu Teknologi Utama
-                </p>
-              </div>
-              <span
-                class="bg-surface-container-highest text-on-surface-variant px-3 py-1 h-fit rounded-full font-label-caps text-label-caps"
-                >Apr 2022 – Mar 2023</span
-              >
-            </div>
-            <ul
-              class="space-y-2 text-on-surface-variant font-body-sm text-body-sm list-disc pl-4"
-            >
-              <li>Owned frontend-heavy application delivery and user flows</li>
-              <li>Built APIs, authentication, and operational dashboards</li>
-              <li>Collaborated across product and engineering functions</li>
-              <li>Improved implementation patterns and maintainability</li>
-            </ul>
-            <p class="text-text-secondary text-xs mt-5">
-              Laravel · React · MySQL · Redis · AWS
+            <p>
+              I combine rigorous engineering fundamentals with modern accelerated workflows: utilizing profiling, AI-augmented debugging, test automation, and strict peer code reviews to maintain uncompromised reliability and high team velocity.
             </p>
           </div>
         </div>
-      </div>
-    </section>
-    <!-- Projects Bento Grid -->
-    <section
-      class="py-section-gap max-w-container-max mx-auto px-gutter"
-      id="projects"
-    >
-      <h2
-        class="font-section-header text-section-header text-primary mb-4 uppercase tracking-[0.2em]"
-      >
-        Featured Projects
-      </h2>
-      <p class="text-on-surface-variant mb-12">
-        Selected projects from a portfolio of high-scale enterprise solutions
-      </p>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <!-- Project Card 1 (Large) -->
-        <div
-          class="md:col-span-2 group relative overflow-hidden bg-surface-card border border-border-subtle rounded-xl p-card-padding card-hover transition-all"
-        >
-          <div class="flex flex-col h-full justify-between">
-            <div>
-              <div class="flex justify-between items-start mb-4">
-                <h3 class="font-headline-md text-headline-md text-text-primary">
-                  Sampoerna Retail Community (SRC)
+
+        <!-- Core Competencies Bento Matrix -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 pt-4">
+          <div class="p-6 rounded-xl hairline-border bg-surface space-y-3">
+            <div class="w-8 h-8 rounded-lg hairline-border bg-surface-subtle flex items-center justify-center text-ink-primary font-mono text-sm">
+              01
+            </div>
+            <h3 class="font-bold text-base text-ink-primary">Distributed Architecture</h3>
+            <p class="text-xs text-ink-secondary leading-relaxed">
+              Designing decoupled event-driven systems (RabbitMQ, CQRS, Saga patterns), microservices, API Gateways, and high-availability cloud topologies on AWS.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-xl hairline-border bg-surface space-y-3">
+            <div class="w-8 h-8 rounded-lg hairline-border bg-surface-subtle flex items-center justify-center text-ink-primary font-mono text-sm">
+              02
+            </div>
+            <h3 class="font-bold text-base text-ink-primary">Full-Stack &amp; Mobile Mastery</h3>
+            <p class="text-xs text-ink-secondary leading-relaxed">
+              Crafting responsive web applications with React &amp; Next.js, cross-platform mobile apps with React Native, and resilient APIs with Go, Node.js, and Laravel.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-xl hairline-border bg-surface space-y-3">
+            <div class="w-8 h-8 rounded-lg hairline-border bg-surface-subtle flex items-center justify-center text-ink-primary font-mono text-sm">
+              03
+            </div>
+            <h3 class="font-bold text-base text-ink-primary">Engineering Leadership</h3>
+            <p class="text-xs text-ink-secondary leading-relaxed">
+              Guiding multi-disciplinary engineering squads (up to 15 engineers), vendor management, hiring, technical mentorship, and business continuity planning (BCP).
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= WORK EXPERIENCE ================= -->
+      <section id="experience" class="space-y-8 scroll-mt-24">
+        <div class="flex items-center gap-3">
+          <span class="text-xs font-mono uppercase tracking-wider text-ink-muted">02 // Experience</span>
+          <div class="h-px flex-1 hairline-border-top"></div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-ink-primary">Career History</h2>
+            <p class="text-xs font-mono text-ink-muted mt-1">10+ years across high-concurrency fintech, enterprise retail, and product studios.</p>
+          </div>
+        </div>
+
+        <!-- Experience Ledger List -->
+        <div class="space-y-4">
+          
+          <!-- Role 1 -->
+          <article class="p-6 sm:p-7 rounded-xl hairline-border bg-surface editorial-card space-y-4">
+            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2">
+              <div>
+                <h3 class="text-lg font-bold text-ink-primary flex items-center gap-2">
+                  <span>Engineering Lead</span>
+                  <span class="text-xs font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Current</span>
                 </h3>
-                <span
-                  class="bg-primary/10 text-primary px-3 py-1 rounded font-label-caps text-label-caps"
-                  >Scale: Enterprise</span
-                >
+                <div class="text-sm font-medium text-ink-secondary mt-0.5">PT Surya Anugrah Mulya</div>
               </div>
-              <p
-                class="text-on-surface-variant font-body-md text-body-md max-w-lg mb-6"
-              >
-                A massive ecosystem of 7 integrated applications supporting
-                Indonesia's retail landscape. Built with a robust microservices
-                architecture on AWS using Laravel, Angular, and React Native.
-              </p>
-              <div class="flex flex-wrap gap-2 mb-8">
-                <span
-                  class="text-xs bg-surface-container-high px-2 py-1 rounded"
-                  >AWS</span
-                >
-                <span
-                  class="text-xs bg-surface-container-high px-2 py-1 rounded"
-                  >Microservices</span
-                >
-                <span
-                  class="text-xs bg-surface-container-high px-2 py-1 rounded"
-                  >React Native</span
-                >
+              <div class="text-xs font-mono text-ink-muted">
+                Oct 2024 — Present · Full-time
               </div>
             </div>
+
+            <p class="text-xs sm:text-sm text-ink-secondary leading-relaxed">
+              Spearheading engineering strategy, platform architecture, and developer standards for high-stakes operational systems. Guiding team execution across distributed backends, failover mechanisms, and production reliability.
+            </p>
+
+            <ul class="text-xs sm:text-sm text-ink-secondary space-y-2 list-disc list-inside marker:text-ink-muted">
+              <li>Architecting multi-tier cloud infrastructure, active-passive failover strategies, and automated monitoring (ELK, Cloudflare, AWS).</li>
+              <li>Mentoring software engineers, instilling code quality benchmarks, CI/CD automation, and robust testing procedures.</li>
+              <li>Orchestrating microservices integrating Go, Laravel, Node.js, RabbitMQ, and financial market data feeds (FIX API).</li>
+            </ul>
+
+            <div class="pt-2 flex flex-wrap gap-1.5 font-mono text-[11px]">
+              <span class="px-2 py-1 rounded bg-surface-subtle hairline-border text-ink-secondary">AWS</span>
+              <span class="px-2 py-1 rounded bg-surface-subtle hairline-border text-ink-secondary">Cloudflare</span>
+              <span class="px-2 py-1 rounded bg-surface-subtle hairline-border text-ink-secondary">Go</span>
+              <span class="px-2 py-1 rounded bg-surface-subtle hairline-border text-ink-secondary">Laravel</span>
+              <span class="px-2 py-1 rounded bg-surface-subtle hairline-border text-ink-secondary">RabbitMQ</span>
+              <span class="px-2 py-1 rounded bg-surface-subtle hairline-border text-ink-secondary">ELK Stack</span>
+              <span class="px-2 py-1 rounded bg-surface-subtle hairline-border text-ink-secondary">FIX API</span>
+            </div>
+          </article>
+
+          <!-- Role 2 -->
+          <article class="p-6 sm:p-7 rounded-xl hairline-border bg-surface editorial-card space-y-4">
+            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2">
+              <div>
+                <h3 class="text-lg font-bold text-ink-primary">Full Stack Developer &amp; Product Architect</h3>
+                <div class="text-sm font-medium text-ink-secondary mt-0.5">Independent Product Builder</div>
+              </div>
+              <div class="text-xs font-mono text-ink-muted">
+                Jan 2023 — Jan 2026 · Contract
+              </div>
+            </div>
+
+            <p class="text-xs sm:text-sm text-ink-secondary leading-relaxed">
+              Designed, built, and shipped production-grade web applications and specialized tools from inception to deployment. Owned UX, full frontend architecture, API design, and cloud setups.
+            </p>
+
+            <ul class="text-xs sm:text-sm text-ink-secondary space-y-2 list-disc list-inside marker:text-ink-muted">
+              <li>Developed modern responsive web applications using React, Next.js, TypeScript, and modern styling patterns.</li>
+              <li>Integrated secure authentication, webhook processing, analytics, and third-party payment gateways.</li>
+              <li>Optimized web core vitals, server-side rendering (SSR), and database indexing for high performance.</li>
+            </ul>
+
+            <div class="pt-2 flex flex-wrap gap-1.5 font-mono text-[11px]">
+              <span class="px-2 py-1 rounded bg-surface-subtle hairline-border text-ink-secondary">React</span>
+              <span class="px-2 py-1 rounded bg-surface-subtle hairline-border text-ink-secondary">Next.js</span>
+              <span class="px-2 py-1 rounded bg-surface-subtle hairline-border text-ink-secondary">TypeScript</span>
+              <span class="px-2 py-1 rounded bg-surface-subtle hairline-border text-ink-secondary">REST APIs</span>
+              <span class="px-2 py-1 rounded bg-surface-subtle hairline-border text-ink-secondary">AWS</span>
+            </div>
+          </article>
+
+          <!-- Role 3 -->
+          <article class="p-6 sm:p-7 rounded-xl hairline-border bg-surface editorial-card space-y-4">
+            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2">
+              <div>
+                <h3 class="text-lg font-bold text-ink-primary">Engineering Lead</h3>
+                <div class="text-sm font-medium text-ink-secondary mt-0.5">MIFX (Monex Investindo Futures)</div>
+              </div>
+              <div class="text-xs font-mono text-ink-muted">
+                May 2022 — Dec 2023 · Full-time
+              </div>
+            </div>
+
+            <p class="text-xs sm:text-sm text-ink-secondary leading-relaxed">
+              Led engineering teams building web platforms for Indonesia's premier forex and commodity trading brokerage. Focused on real-time market data delivery, transactional reliability, and modernizing legacy monoliths into event-driven services.
+            </p>
+
+            <ul class="text-xs sm:text-sm text-ink-secondary space-y-2 list-disc list-inside marker:text-ink-muted">
+              <li>Initiated and designed event-driven microservices utilizing RabbitMQ, Saga orchestrations, and CQRS patterns for transaction safety.</li>
+              <li>Engineered real-time socket services (Socket.IO, API Gateway) for live price feeds and customer order execution.</li>
+              <li>Partnered with compliance and risk management to adhere to financial regulatory standards.</li>
+            </ul>
+
+            <div class="pt-2 flex flex-wrap gap-1.5 font-mono text-[11px]">
+              <span class="px-2 py-1 rounded bg-surface-subtle hairline-border text-ink-secondary">AWS</span>
+              <span class="px-2 py-1 rounded bg-surface-subtle hairline-border text-ink-secondary">Laravel</span>
+              <span class="px-2 py-1 rounded bg-surface-subtle hairline-border text-ink-secondary">RabbitMQ</span>
+              <span class="px-2 py-1 rounded bg-surface-subtle hairline-border text-ink-secondary">Socket.IO</span>
+              <span class="px-2 py-1 rounded bg-surface-subtle hairline-border text-ink-secondary">API Gateway</span>
+              <span class="px-2 py-1 rounded bg-surface-subtle hairline-border text-ink-secondary">CQRS / Saga</span>
+            </div>
+          </article>
+
+          <!-- Role 4 -->
+          <article class="p-6 sm:p-7 rounded-xl hairline-border bg-surface editorial-card space-y-4">
+            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2">
+              <div>
+                <h3 class="text-lg font-bold text-ink-primary">Engineering Lead</h3>
+                <div class="text-sm font-medium text-ink-secondary mt-0.5">DXTR</div>
+              </div>
+              <div class="text-xs font-mono text-ink-muted">
+                Jul 2018 — Apr 2022 · Full-time (3 yrs 10 mos)
+              </div>
+            </div>
+
+            <p class="text-xs sm:text-sm text-ink-secondary leading-relaxed">
+              Managed and scaled a cross-functional engineering team of 15 members (frontend, backend, mobile, QA). Headed the architecture and technical delivery for major enterprise accounts, notably the nationwide Sampoerna Retail Community (SRC) ecosystem.
+            </p>
+
+            <ul class="text-xs sm:text-sm text-ink-secondary space-y-2 list-disc list-inside marker:text-ink-muted">
+              <li>Architected the 7-application integrated SRC ecosystem supporting hundreds of thousands of retail stores across Indonesia.</li>
+              <li>Oversaw vendor delivery, agile sprint planning, code review governance, and CI/CD pipelines on AWS.</li>
+              <li>Delivered cross-platform mobile apps in React Native and web portals in Angular and React with high uptime.</li>
+            </ul>
+
+            <div class="pt-2 flex flex-wrap gap-1.5 font-mono text-[11px]">
+              <span class="px-2 py-1 rounded bg-surface-subtle hairline-border text-ink-secondary">Angular</span>
+              <span class="px-2 py-1 rounded bg-surface-subtle hairline-border text-ink-secondary">React</span>
+              <span class="px-2 py-1 rounded bg-surface-subtle hairline-border text-ink-secondary">React Native</span>
+              <span class="px-2 py-1 rounded bg-surface-subtle hairline-border text-ink-secondary">Laravel</span>
+              <span class="px-2 py-1 rounded bg-surface-subtle hairline-border text-ink-secondary">Node.js</span>
+              <span class="px-2 py-1 rounded bg-surface-subtle hairline-border text-ink-secondary">AWS Microservices</span>
+            </div>
+          </article>
+
+          <!-- Role 5 & 6 (Combined Early Career) -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <article class="p-6 rounded-xl hairline-border bg-surface editorial-card space-y-3">
+              <div class="flex items-start justify-between gap-2">
+                <div>
+                  <h4 class="font-bold text-ink-primary text-sm sm:text-base">Full Stack Developer</h4>
+                  <div class="text-xs font-medium text-ink-secondary">Looq Creative</div>
+                </div>
+                <div class="text-[11px] font-mono text-ink-muted">2022 — 2023</div>
+              </div>
+              <p class="text-xs text-ink-secondary leading-relaxed">
+                Handled frontend-heavy web applications and REST API integrations for various international and domestic client products.
+              </p>
+              <div class="font-mono text-[11px] text-ink-muted">Laravel · React · MySQL · JavaScript</div>
+            </article>
+
+            <article class="p-6 rounded-xl hairline-border bg-surface editorial-card space-y-3">
+              <div class="flex items-start justify-between gap-2">
+                <div>
+                  <h4 class="font-bold text-ink-primary text-sm sm:text-base">Full Stack Developer</h4>
+                  <div class="text-xs font-medium text-ink-secondary">PT Satuu Teknologi Utama</div>
+                </div>
+                <div class="text-[11px] font-mono text-ink-muted">2022 — 2023</div>
+              </div>
+              <p class="text-xs text-ink-secondary leading-relaxed">
+                Constructed back-office management dashboards, role-based access control, caching layers with Redis, and core product APIs.
+              </p>
+              <div class="font-mono text-[11px] text-ink-muted">Laravel · React · Redis · AWS</div>
+            </article>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ================= FEATURED PROJECTS ================= -->
+      <section id="projects" class="space-y-8 scroll-mt-24">
+        <div class="flex items-center gap-3">
+          <span class="text-xs font-mono uppercase tracking-wider text-ink-muted">03 // Selected Works</span>
+          <div class="h-px flex-1 hairline-border-top"></div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-ink-primary">Featured Engineering Projects</h2>
+            <p class="text-xs font-mono text-ink-muted mt-1">Production deployments across fintech, enterprise retail, cloud ERP, and SaaS.</p>
+          </div>
+
+          <!-- Category Filter Tabs -->
+          <div class="flex items-center gap-1.5 p-1 rounded-lg hairline-border bg-surface text-xs font-mono">
+            <button onclick="filterProjects('all')" class="filter-btn active px-2.5 py-1 rounded transition-colors" data-filter="all">All</button>
+            <button onclick="filterProjects('enterprise')" class="filter-btn px-2.5 py-1 rounded text-ink-muted hover:text-ink-primary transition-colors" data-filter="enterprise">Enterprise</button>
+            <button onclick="filterProjects('fintech')" class="filter-btn px-2.5 py-1 rounded text-ink-muted hover:text-ink-primary transition-colors" data-filter="fintech">Fintech</button>
+            <button onclick="filterProjects('platform')" class="filter-btn px-2.5 py-1 rounded text-ink-muted hover:text-ink-primary transition-colors" data-filter="platform">Platform</button>
+          </div>
+        </div>
+
+        <!-- Flagship Case Study: SRC -->
+        <div class="project-item p-7 sm:p-9 rounded-xl hairline-border bg-surface editorial-card space-y-6" data-category="enterprise">
+          <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+            <div class="space-y-1">
+              <div class="flex items-center gap-2">
+                <span class="text-[11px] font-mono uppercase tracking-wider text-emerald-400">Enterprise Case Study</span>
+                <span class="text-ink-muted">·</span>
+                <span class="text-[11px] font-mono text-ink-muted">Nationwide Retail</span>
+              </div>
+              <h3 class="text-xl sm:text-2xl font-bold text-ink-primary tracking-tight">
+                Sampoerna Retail Community (SRC)
+              </h3>
+            </div>
+            
             <a
-              class="text-primary flex items-center gap-2 font-bold group-hover:translate-x-1 transition-transform"
               href="http://src.id"
-              >View Project
-              <span class="material-symbols-outlined text-sm"
-                >arrow_forward</span
-              ></a
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md hairline-border bg-surface-subtle text-xs font-mono text-ink-primary hover:bg-surface-hover hover:border-surface-borderHover transition-all flex-shrink-0"
             >
+              <span>Visit Ecosystem</span>
+              <svg class="w-3.5 h-3.5 text-ink-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+              </svg>
+            </a>
+          </div>
+
+          <p class="text-sm sm:text-base text-ink-secondary leading-relaxed max-w-3xl">
+            A comprehensive ecosystem of 7 interconnected web and mobile platforms modernizing Indonesia's traditional grocery and retail community. Engineered with a scalable microservices backbone on AWS, enabling high-volume transactions, inventory coordination, order fulfilment, and store analytics.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2 hairline-border-top">
+            <div>
+              <div class="text-[11px] font-mono text-ink-muted uppercase">Architecture</div>
+              <div class="text-xs sm:text-sm font-medium text-ink-primary mt-0.5">Distributed Microservices on AWS</div>
+            </div>
+            <div>
+              <div class="text-[11px] font-mono text-ink-muted uppercase">Scope</div>
+              <div class="text-xs sm:text-sm font-medium text-ink-primary mt-0.5">7 Interconnected Web &amp; Mobile Apps</div>
+            </div>
+            <div>
+              <div class="text-[11px] font-mono text-ink-muted uppercase">Technologies</div>
+              <div class="text-xs sm:text-sm font-mono text-ink-secondary mt-0.5">Laravel · Angular · React Native · AWS</div>
+            </div>
           </div>
         </div>
-        <!-- Project Card 2 -->
-        <div
-          class="bg-surface-card border border-border-subtle rounded-xl p-card-padding card-hover transition-all flex flex-col justify-between group"
-        >
-          <div>
-            <h3
-              class="font-headline-md text-headline-md text-text-primary mb-3"
-            >
-              M2 (Valutrades)
-            </h3>
-            <p class="text-on-surface-variant font-body-sm text-body-sm mb-4">
-              Forex, CFDs and commodities trading platform prioritizing
-              transparency and low-latency execution.
+
+        <!-- Project Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5" id="projects-grid">
+          
+          <!-- Project 2: MIFX -->
+          <article class="project-item p-6 rounded-xl hairline-border bg-surface editorial-card flex flex-col justify-between space-y-4" data-category="fintech">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-[11px] font-mono uppercase text-ink-muted">Fintech Trading Platform</span>
+                <span class="text-xs font-mono text-ink-muted">Indonesia</span>
+              </div>
+              <h3 class="text-lg font-bold text-ink-primary">MIFX</h3>
+              <p class="text-xs sm:text-sm text-ink-secondary leading-relaxed">
+                Forex and commodity trading web applications featuring low-latency market order execution, real-time WebSocket notifications, and event-driven architecture with RabbitMQ.
+              </p>
+            </div>
+            <div class="pt-3 hairline-border-top flex items-center justify-between">
+              <div class="flex flex-wrap gap-1 font-mono text-[10px] text-ink-muted">
+                <span>Laravel</span> · <span>Socket.IO</span> · <span>RabbitMQ</span> · <span>AWS</span>
+              </div>
+              <a href="https://mifx.com/" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-ink-primary hover:underline flex items-center gap-1">
+                <span>mifx.com</span>
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 3: M2 (Valutrades) -->
+          <article class="project-item p-6 rounded-xl hairline-border bg-surface editorial-card flex flex-col justify-between space-y-4" data-category="fintech">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-[11px] font-mono uppercase text-ink-muted">Global Brokerage</span>
+                <span class="text-xs font-mono text-ink-muted">Forex &amp; CFDs</span>
+              </div>
+              <h3 class="text-lg font-bold text-ink-primary">M2 (Valutrades)</h3>
+              <p class="text-xs sm:text-sm text-ink-secondary leading-relaxed">
+                High-performance portal and trading interface for global forex, indices, and commodities trading prioritizing strict execution speed, data transparency, and security.
+              </p>
+            </div>
+            <div class="pt-3 hairline-border-top flex items-center justify-between">
+              <div class="flex flex-wrap gap-1 font-mono text-[10px] text-ink-muted">
+                <span>Fintech</span> · <span>React</span> · <span>APIs</span> · <span>Security</span>
+              </div>
+              <a href="https://www.valutrades.com/" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-ink-primary hover:underline flex items-center gap-1">
+                <span>valutrades.com</span>
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 4: AMB Megatrend -->
+          <article class="project-item p-6 rounded-xl hairline-border bg-surface editorial-card flex flex-col justify-between space-y-4" data-category="fintech">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-[11px] font-mono uppercase text-ink-muted">Liquidity Provider</span>
+                <span class="text-xs font-mono text-ink-muted">Institutional</span>
+              </div>
+              <h3 class="text-lg font-bold text-ink-primary">AMB Megatrend</h3>
+              <p class="text-xs sm:text-sm text-ink-secondary leading-relaxed">
+                Liquidity provider and institutional administration dashboard built for precision financial operations, position risk assessment, and high-frequency reporting.
+              </p>
+            </div>
+            <div class="pt-3 hairline-border-top flex items-center justify-between">
+              <div class="flex flex-wrap gap-1 font-mono text-[10px] text-ink-muted">
+                <span>Dashboard</span> · <span>Laravel</span> · <span>Financial Ops</span>
+              </div>
+              <a href="https://dashboard.amb.id/ue-admin" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-ink-primary hover:underline flex items-center gap-1">
+                <span>amb.id</span>
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 5: ERP Khasanahsari -->
+          <article class="project-item p-6 rounded-xl hairline-border bg-surface editorial-card flex flex-col justify-between space-y-4" data-category="enterprise">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-[11px] font-mono uppercase text-ink-muted">Industrial ERP</span>
+                <span class="text-xs font-mono text-ink-muted">Manufacturing</span>
+              </div>
+              <h3 class="text-lg font-bold text-ink-primary">ERP Khasanahsari</h3>
+              <p class="text-xs sm:text-sm text-ink-secondary leading-relaxed">
+                End-to-end Enterprise Resource Planning platform tailored for bakery production, raw material forecasting, batch tracking, outlet logistics, and automated ledger balancing.
+              </p>
+            </div>
+            <div class="pt-3 hairline-border-top flex items-center justify-between">
+              <div class="flex flex-wrap gap-1 font-mono text-[10px] text-ink-muted">
+                <span>ERP</span> · <span>PostgreSQL</span> · <span>Supply Chain</span>
+              </div>
+              <a href="https://erpkhasanahsari.com/" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-ink-primary hover:underline flex items-center gap-1">
+                <span>erpkhasanahsari.com</span>
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 6: Sobat Saham -->
+          <article class="project-item p-6 rounded-xl hairline-border bg-surface editorial-card flex flex-col justify-between space-y-4" data-category="fintech">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-[11px] font-mono uppercase text-ink-muted">Market Analytics</span>
+                <span class="text-xs font-mono text-ink-muted">IDX Equities</span>
+              </div>
+              <h3 class="text-lg font-bold text-ink-primary">Sobat Saham</h3>
+              <p class="text-xs sm:text-sm text-ink-secondary leading-relaxed">
+                Quantitative analytics platform for the Indonesia Stock Exchange (IDX), providing retail investors with disciplined valuation screeners, technical signals, and portfolio tracking.
+              </p>
+            </div>
+            <div class="pt-3 hairline-border-top flex items-center justify-between">
+              <div class="flex flex-wrap gap-1 font-mono text-[10px] text-ink-muted">
+                <span>React</span> · <span>Python</span> · <span>Data Pipelines</span>
+              </div>
+              <a href="https://sobatsaham.com/" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-ink-primary hover:underline flex items-center gap-1">
+                <span>sobatsaham.com</span>
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 7: QuickMath -->
+          <article class="project-item p-6 rounded-xl hairline-border bg-surface editorial-card flex flex-col justify-between space-y-4" data-category="platform">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-[11px] font-mono uppercase text-ink-muted">EdTech SaaS</span>
+                <span class="text-xs font-mono text-ink-muted">Interactive</span>
+              </div>
+              <h3 class="text-lg font-bold text-ink-primary">QuickMath</h3>
+              <p class="text-xs sm:text-sm text-ink-secondary leading-relaxed">
+                Online learning and automated tutoring platform featuring step-by-step mathematical reasoning, tutor booking consultation flows, and interactive problem solving.
+              </p>
+            </div>
+            <div class="pt-3 hairline-border-top flex items-center justify-between">
+              <div class="flex flex-wrap gap-1 font-mono text-[10px] text-ink-muted">
+                <span>Next.js</span> · <span>Node.js</span> · <span>WebRTC</span>
+              </div>
+              <a href="https://quickmath.id/" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-ink-primary hover:underline flex items-center gap-1">
+                <span>quickmath.id</span>
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 8: ONEPOGI & EMOP -->
+          <article class="project-item p-6 rounded-xl hairline-border bg-surface editorial-card flex flex-col justify-between space-y-4" data-category="platform">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-[11px] font-mono uppercase text-ink-muted">Medical Association</span>
+                <span class="text-xs font-mono text-ink-muted">National Portal</span>
+              </div>
+              <h3 class="text-lg font-bold text-ink-primary">ONEPOGI &amp; EMOP</h3>
+              <p class="text-xs sm:text-sm text-ink-secondary leading-relaxed">
+                Integrated medical membership portals for the Indonesian Society of Obstetrics and Gynecology, managing professional accreditation, clinical education records, and digital congress events.
+              </p>
+            </div>
+            <div class="pt-3 hairline-border-top flex items-center justify-between">
+              <div class="flex flex-wrap gap-1 font-mono text-[10px] text-ink-muted">
+                <span>Membership Portal</span> · <span>Security</span> · <span>Laravel</span>
+              </div>
+              <a href="https://one.pogi.or.id/" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-ink-primary hover:underline flex items-center gap-1">
+                <span>one.pogi.or.id</span>
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 9: Alzubara -->
+          <article class="project-item p-6 rounded-xl hairline-border bg-surface editorial-card flex flex-col justify-between space-y-4" data-category="platform">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-[11px] font-mono uppercase text-ink-muted">Global Recruitment</span>
+                <span class="text-xs font-mono text-ink-muted">Compliance</span>
+              </div>
+              <h3 class="text-lg font-bold text-ink-primary">Alzubara</h3>
+              <p class="text-xs sm:text-sm text-ink-secondary leading-relaxed">
+                Verified international career placement platform connecting Indonesian skilled professionals with certified, legal employment opportunities across the Middle East and globally.
+              </p>
+            </div>
+            <div class="pt-3 hairline-border-top flex items-center justify-between">
+              <div class="flex flex-wrap gap-1 font-mono text-[10px] text-ink-muted">
+                <span>Portal</span> · <span>Document Verification</span>
+              </div>
+              <a href="https://alzubara.co.id/" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-ink-primary hover:underline flex items-center gap-1">
+                <span>alzubara.co.id</span>
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ================= TECHNICAL STACK & ARCHITECTURE ================= -->
+      <section id="stack" class="space-y-8 scroll-mt-24">
+        <div class="flex items-center gap-3">
+          <span class="text-xs font-mono uppercase tracking-wider text-ink-muted">04 // Capabilities</span>
+          <div class="h-px flex-1 hairline-border-top"></div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          <div class="lg:col-span-4 space-y-3">
+            <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-ink-primary">Engineering Stack</h2>
+            <p class="text-xs sm:text-sm text-ink-secondary leading-relaxed">
+              Curated tools and runtime ecosystems honed over 10+ years of building resilient production software.
             </p>
           </div>
-          <a
-            class="text-primary flex items-center gap-2 font-bold group-hover:translate-x-1 transition-transform"
-            href="https://www.valutrades.com/"
-            >View Project
-            <span class="material-symbols-outlined text-sm"
-              >arrow_forward</span
-            ></a
-          >
-        </div>
-        <!-- MIFX Project Card -->
-        <div
-          class="bg-surface-card border border-border-subtle rounded-xl p-card-padding card-hover transition-all flex flex-col justify-between group"
-        >
-          <div>
-            <h3
-              class="font-headline-md text-headline-md text-text-primary mb-3"
-            >
-              MIFX
-            </h3>
-            <p class="text-on-surface-variant font-body-sm text-body-sm mb-4">
-              Financial trading platform with scalable APIs, real-time
-              notifications, and integrated web experiences for forex and
-              commodity products.
-            </p>
+
+          <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            
+            <!-- Category 1: Systems & Backend -->
+            <div class="p-6 rounded-xl hairline-border bg-surface space-y-3">
+              <div class="text-[11px] font-mono uppercase tracking-wider text-ink-muted">Backend &amp; Distributed Systems</div>
+              <div class="flex flex-wrap gap-1.5 font-mono text-xs">
+                <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary">Go</span>
+                <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary">Node.js</span>
+                <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary">Laravel (PHP)</span>
+                <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary">Python</span>
+                <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary">RabbitMQ</span>
+                <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary">Socket.IO</span>
+                <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary">Microservices</span>
+                <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary">Event-Driven (Saga / CQRS)</span>
+              </div>
+            </div>
+
+            <!-- Category 2: Frontend & Mobile -->
+            <div class="p-6 rounded-xl hairline-border bg-surface space-y-3">
+              <div class="text-[11px] font-mono uppercase tracking-wider text-ink-muted">Frontend &amp; Mobile</div>
+              <div class="flex flex-wrap gap-1.5 font-mono text-xs">
+                <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary">React</span>
+                <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary">Next.js</span>
+                <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary">React Native</span>
+                <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary">TypeScript</span>
+                <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary">Tailwind CSS</span>
+                <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary">State Machines</span>
+                <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary">Angular</span>
+              </div>
+            </div>
+
+            <!-- Category 3: Cloud & DevOps -->
+            <div class="p-6 rounded-xl hairline-border bg-surface space-y-3">
+              <div class="text-[11px] font-mono uppercase tracking-wider text-ink-muted">Cloud &amp; Infrastructure</div>
+              <div class="flex flex-wrap gap-1.5 font-mono text-xs">
+                <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary">AWS (EC2, ECS, EKS, Redshift)</span>
+                <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary">Docker</span>
+                <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary">Cloudflare</span>
+                <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary">Jenkins &amp; CI/CD</span>
+                <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary">ELK Logging</span>
+                <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary">BCP &amp; Failover</span>
+              </div>
+            </div>
+
+            <!-- Category 4: Data & Storage -->
+            <div class="p-6 rounded-xl hairline-border bg-surface space-y-3">
+              <div class="text-[11px] font-mono uppercase tracking-wider text-ink-muted">Databases &amp; Caching</div>
+              <div class="flex flex-wrap gap-1.5 font-mono text-xs">
+                <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary">PostgreSQL</span>
+                <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary">MySQL</span>
+                <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary">Redis</span>
+                <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary">Amazon Redshift</span>
+                <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary">Query Optimization</span>
+              </div>
+            </div>
+
           </div>
-          <a
-            class="text-primary flex items-center gap-2 font-bold group-hover:translate-x-1 transition-transform"
-            href="https://mifx.com/"
-            >View Project
-            <span class="material-symbols-outlined text-sm"
-              >arrow_forward</span
-            ></a
-          >
         </div>
-        <!-- Project Card 3 -->
-        <div
-          class="bg-surface-card border border-border-subtle rounded-xl p-card-padding card-hover transition-all flex flex-col justify-between group"
-        >
-          <div>
-            <h3
-              class="font-headline-md text-headline-md text-text-primary mb-3"
-            >
-              AMB Megatrend
+      </section>
+
+      <!-- ================= RESEARCH & PUBLICATIONS ================= -->
+      <section class="space-y-8">
+        <div class="flex items-center gap-3">
+          <span class="text-xs font-mono uppercase tracking-wider text-ink-muted">05 // Research &amp; Publications</span>
+          <div class="h-px flex-1 hairline-border-top"></div>
+        </div>
+
+        <div class="space-y-4">
+          
+          <!-- Paper 1 -->
+          <article class="p-6 sm:p-7 rounded-xl hairline-border bg-surface editorial-card space-y-3">
+            <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+              <div class="text-xs font-mono text-ink-muted">Journal of Advances In Information Systems and Technology · Oct 2019</div>
+              <span class="text-[11px] font-mono text-ink-faint">Peer-Reviewed Journal</span>
+            </div>
+
+            <h3 class="text-base sm:text-lg font-bold text-ink-primary">
+              An Analysis of User Interface and User Experience Using System Usability Scale and GOMS Method
             </h3>
-            <p class="text-on-surface-variant font-body-sm text-body-sm mb-4">
-              A high-performance liquidity provider platform for financial
-              trading operations.
+
+            <p class="text-xs sm:text-sm text-ink-secondary leading-relaxed max-w-3xl">
+              An empirical quantitative evaluation examining usability metrics of institutional media asset management platforms. Employed System Usability Scale (SUS) benchmarks and Goals, Operators, Methods, and Selection rules (GOMS) human-computer interaction modeling to isolate workflow bottlenecks and quantify operational throughput improvements.
             </p>
-          </div>
-          <a
-            class="text-primary flex items-center gap-2 font-bold group-hover:translate-x-1 transition-transform"
-            href="https://dashboard.amb.id/ue-admin"
-            >View Project
-            <span class="material-symbols-outlined text-sm"
-              >arrow_forward</span
-            ></a
-          >
-        </div>
-        <!-- Project Card 4 -->
-        <div
-          class="bg-surface-card border border-border-subtle rounded-xl p-card-padding card-hover transition-all flex flex-col justify-between group"
-        >
-          <div>
-            <h3
-              class="font-headline-md text-headline-md text-text-primary mb-3"
-            >
-              ERP Khasanahsari
+
+            <div class="pt-2 flex items-center justify-between">
+              <div class="text-xs font-mono text-ink-muted">Authors: Fajar Sujito, et al.</div>
+              <a
+                href="https://journal.unnes.ac.id/sju/index.php/jaist/article/view/36503"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-xs font-mono text-ink-primary hover:underline inline-flex items-center gap-1.5"
+              >
+                <span>Read Publication</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Paper 2 -->
+          <article class="p-6 sm:p-7 rounded-xl hairline-border bg-surface editorial-card space-y-3">
+            <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+              <div class="text-xs font-mono text-ink-muted">Journal of Physics: Conference Series (JPCS) · Jan 2017</div>
+              <span class="text-[11px] font-mono text-ink-faint">IOP Publishing · Indexed</span>
+            </div>
+
+            <h3 class="text-base sm:text-lg font-bold text-ink-primary">
+              Applying an MVC Framework for The System Development Life Cycle with Waterfall Model Extended
             </h3>
-            <p class="text-on-surface-variant font-body-sm text-body-sm mb-4">
-              Comprehensive Enterprise Resource Planning system tailored for
-              specialized bakery production.
+
+            <p class="text-xs sm:text-sm text-ink-secondary leading-relaxed max-w-3xl">
+              Extending traditional linear software development methodologies by embedding rigorous Model-View-Controller (MVC) architectural abstractions. Demonstrated significant improvements in database access decoupling, input validation resilience, routing security, and maintainability across distributed enterprise software lifecycles.
             </p>
-          </div>
-          <a
-            class="text-primary flex items-center gap-2 font-bold group-hover:translate-x-1 transition-transform"
-            href="https://erpkhasanahsari.com/"
-            >View Project
-            <span class="material-symbols-outlined text-sm"
-              >arrow_forward</span
-            ></a
-          >
+
+            <div class="pt-2 flex items-center justify-between">
+              <div class="text-xs font-mono text-ink-muted">Authors: Fajar Sujito, et al.</div>
+              <a
+                href="http://iopscience.iop.org/article/10.1088/1742-6596/824/1/012007/meta"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-xs font-mono text-ink-primary hover:underline inline-flex items-center gap-1.5"
+              >
+                <span>Read Publication</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              </a>
+            </div>
+          </article>
+
         </div>
-        <!-- Project Card 5 -->
-        <div
-          class="bg-surface-card border border-border-subtle rounded-xl p-card-padding card-hover transition-all flex flex-col justify-between group"
-        >
-          <div>
-            <h3
-              class="font-headline-md text-headline-md text-text-primary mb-3"
-            >
-              Lumbung Media
-            </h3>
-            <p class="text-on-surface-variant font-body-sm text-body-sm mb-4">
-              Online media storage and management for Universitas Negeri
-              Semarang.
-            </p>
-          </div>
-          <a
-            class="text-primary flex items-center gap-2 font-bold group-hover:translate-x-1 transition-transform"
-            href="http://media.lp3.unnes.ac.id/"
-            >View Project
-            <span class="material-symbols-outlined text-sm"
-              >arrow_forward</span
-            ></a
-          >
+      </section>
+
+      <!-- ================= EDUCATION & HONORS ================= -->
+      <section id="credentials" class="space-y-8 scroll-mt-24">
+        <div class="flex items-center gap-3">
+          <span class="text-xs font-mono uppercase tracking-wider text-ink-muted">06 // Education &amp; Honors</span>
+          <div class="h-px flex-1 hairline-border-top"></div>
         </div>
-        <!-- Project Card 6 -->
-        <div
-          class="bg-surface-card border border-border-subtle rounded-xl p-card-padding card-hover transition-all flex flex-col justify-between group"
-        >
-          <div>
-            <h3
-              class="font-headline-md text-headline-md text-text-primary mb-3"
-            >
-              QuickMath
-            </h3>
-            <p class="text-on-surface-variant font-body-sm text-body-sm mb-4">
-              Online learning platform featuring tutor consultations, private
-              lessons, a math solver, and an AI learning assistant.
-            </p>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          
+          <!-- Education Column -->
+          <div class="lg:col-span-6 space-y-4">
+            <h3 class="text-lg font-bold text-ink-primary tracking-tight">Academic Foundations</h3>
+            
+            <div class="p-6 rounded-xl hairline-border bg-surface editorial-card space-y-2">
+              <div class="flex items-start justify-between">
+                <div>
+                  <h4 class="font-bold text-ink-primary">Universitas Negeri Semarang</h4>
+                  <div class="text-xs text-ink-secondary">Bachelor of Computer Science (S.Kom.)</div>
+                </div>
+                <span class="text-xs font-mono text-ink-muted">2013 — 2017</span>
+              </div>
+              <p class="text-xs text-ink-muted font-mono pt-1">
+                Graduated Cum Laude · Valedictorian / Best Graduate of Computer Science Department
+              </p>
+            </div>
+
+            <div class="p-6 rounded-xl hairline-border bg-surface editorial-card space-y-2">
+              <div class="flex items-start justify-between">
+                <div>
+                  <h4 class="font-bold text-ink-primary">Hiroshima University, Japan</h4>
+                  <div class="text-xs text-ink-secondary">Graduate School for International Development and Cooperation (IDEC)</div>
+                </div>
+                <span class="text-xs font-mono text-ink-muted">2016</span>
+              </div>
+              <p class="text-xs text-ink-muted font-mono pt-1">
+                Short Academic Course &amp; International Research Symposium · Hiroshima, Japan
+              </p>
+            </div>
           </div>
-          <a
-            class="text-primary flex items-center gap-2 font-bold group-hover:translate-x-1 transition-transform"
-            href="https://quickmath.id/"
-            >View Project
-            <span class="material-symbols-outlined text-sm"
-              >arrow_forward</span
-            ></a
-          >
-        </div>
-        <!-- Project Card 7 -->
-        <div
-          class="bg-surface-card border border-border-subtle rounded-xl p-card-padding card-hover transition-all flex flex-col justify-between group"
-        >
-          <div>
-            <h3
-              class="font-headline-md text-headline-md text-text-primary mb-3"
-            >
-              Sobat Saham
-            </h3>
-            <p class="text-on-surface-variant font-body-sm text-body-sm mb-4">
-              AI-assisted IDX stock analysis platform helping retail investors
-              make disciplined and measurable investment decisions.
-            </p>
+
+          <!-- Honors & Keynotes Column -->
+          <div class="lg:col-span-6 space-y-4">
+            <h3 class="text-lg font-bold text-ink-primary tracking-tight">Honors &amp; Speaking</h3>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+              <div class="p-4 rounded-lg hairline-border bg-surface space-y-1">
+                <div class="font-bold text-ink-primary">Best Graduate Award</div>
+                <div class="text-ink-secondary">Faculty of Math &amp; Natural Sciences, UNNES</div>
+                <div class="text-[11px] font-mono text-ink-muted">2017</div>
+              </div>
+
+              <div class="p-4 rounded-lg hairline-border bg-surface space-y-1">
+                <div class="font-bold text-ink-primary">Keynote Speaker</div>
+                <div class="text-ink-secondary">Mobile Learning Symposium</div>
+                <div class="text-[11px] font-mono text-ink-muted">2017</div>
+              </div>
+
+              <div class="p-4 rounded-lg hairline-border bg-surface space-y-1">
+                <div class="font-bold text-ink-primary">Symposium Delegate</div>
+                <div class="text-ink-secondary">Hiroshima University, Japan</div>
+                <div class="text-[11px] font-mono text-ink-muted">2016</div>
+              </div>
+
+              <div class="p-4 rounded-lg hairline-border bg-surface space-y-1">
+                <div class="font-bold text-ink-primary">Phoenix Leader Awardee</div>
+                <div class="text-ink-secondary">Radiation Disaster Renaissance, Japan</div>
+                <div class="text-[11px] font-mono text-ink-muted">2016</div>
+              </div>
+            </div>
           </div>
-          <a
-            class="text-primary flex items-center gap-2 font-bold group-hover:translate-x-1 transition-transform"
-            href="https://sobatsaham.com/"
-            >View Project
-            <span class="material-symbols-outlined text-sm"
-              >arrow_forward</span
-            ></a
-          >
+
         </div>
-        <!-- Project Card 8 -->
-        <div
-          class="bg-surface-card border border-border-subtle rounded-xl p-card-padding card-hover transition-all flex flex-col justify-between group"
-        >
-          <div>
-            <h3
-              class="font-headline-md text-headline-md text-text-primary mb-3"
-            >
-              Alzubara
-            </h3>
-            <p class="text-on-surface-variant font-body-sm text-body-sm mb-4">
-              Recruitment and career platform connecting Indonesian workers
-              with safe, legal, and professional overseas opportunities.
-            </p>
+
+        <!-- Verified Professional Certifications Ledger -->
+        <div class="space-y-4 pt-4">
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg font-bold text-ink-primary tracking-tight">Verified Certifications</h3>
+            <span class="text-xs font-mono text-ink-muted">18 Verified Credentials</span>
           </div>
-          <a
-            class="text-primary flex items-center gap-2 font-bold group-hover:translate-x-1 transition-transform"
-            href="https://alzubara.co.id/"
-            >View Project
-            <span class="material-symbols-outlined text-sm"
-              >arrow_forward</span
-            ></a
-          >
-        </div>
-        <!-- Project Card 9 -->
-        <div
-          class="bg-surface-card border border-border-subtle rounded-xl p-card-padding card-hover transition-all flex flex-col justify-between group"
-        >
-          <div>
-            <h3
-              class="font-headline-md text-headline-md text-text-primary mb-3"
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+            
+            <!-- Cert 1 -->
+            <a
+              href="https://www.udemy.com/certificate/UC-9063dd58-446a-445d-a929-640b878d57e8/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="p-4 rounded-lg hairline-border bg-surface editorial-card flex flex-col justify-between group"
             >
-              ONEPOGI
-            </h3>
-            <p class="text-on-surface-variant font-body-sm text-body-sm mb-4">
-              Integrated membership portal providing clinical, educational,
-              professional protection, and event access for POGI members.
-            </p>
+              <div class="space-y-1">
+                <div class="text-[10px] font-mono text-ink-muted uppercase">AWS Solutions Architect</div>
+                <div class="text-xs font-semibold text-ink-primary group-hover:text-white transition-colors">
+                  AWS Certified Solutions Architect Associate: Complete Course
+                </div>
+              </div>
+              <div class="text-[11px] font-mono text-ink-muted mt-3 pt-2 hairline-border-top flex items-center justify-between">
+                <span>Udemy</span>
+                <span class="group-hover:text-ink-primary">Verify &rarr;</span>
+              </div>
+            </a>
+
+            <!-- Cert 2 -->
+            <a
+              href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=74FC7A2D6EB468B96E1C4D411B3E2D3C01DD76BDADACF099B80DA912370B9440"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="p-4 rounded-lg hairline-border bg-surface editorial-card flex flex-col justify-between group"
+            >
+              <div class="space-y-1">
+                <div class="text-[10px] font-mono text-ink-muted uppercase">Cloud Architecture</div>
+                <div class="text-xs font-semibold text-ink-primary group-hover:text-white transition-colors">
+                  Oracle Cloud Infrastructure Foundations 2021 Associate
+                </div>
+              </div>
+              <div class="text-[11px] font-mono text-ink-muted mt-3 pt-2 hairline-border-top flex items-center justify-between">
+                <span>Oracle</span>
+                <span class="group-hover:text-ink-primary">Verify &rarr;</span>
+              </div>
+            </a>
+
+            <!-- Cert 3 -->
+            <a
+              href="https://www.credly.com/badges/b3d117c9-e592-48a0-ac8c-49a4a5e02816"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="p-4 rounded-lg hairline-border bg-surface editorial-card flex flex-col justify-between group"
+            >
+              <div class="space-y-1">
+                <div class="text-[10px] font-mono text-ink-muted uppercase">Microservices &amp; Mesh</div>
+                <div class="text-xs font-semibold text-ink-primary group-hover:text-white transition-colors">
+                  Microservices with Istio &amp; IBM Cloud Kubernetes
+                </div>
+              </div>
+              <div class="text-[11px] font-mono text-ink-muted mt-3 pt-2 hairline-border-top flex items-center justify-between">
+                <span>IBM / Credly</span>
+                <span class="group-hover:text-ink-primary">Verify &rarr;</span>
+              </div>
+            </a>
+
+            <!-- Cert 4 -->
+            <a
+              href="https://www.udemy.com/certificate/UC-0bd9a2c6-6c1d-40e6-a859-59651769cfd0/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="p-4 rounded-lg hairline-border bg-surface editorial-card flex flex-col justify-between group"
+            >
+              <div class="space-y-1">
+                <div class="text-[10px] font-mono text-ink-muted uppercase">Kubernetes &amp; Containers</div>
+                <div class="text-xs font-semibold text-ink-primary group-hover:text-white transition-colors">
+                  Amazon EKS Ultimate Course
+                </div>
+              </div>
+              <div class="text-[11px] font-mono text-ink-muted mt-3 pt-2 hairline-border-top flex items-center justify-between">
+                <span>Udemy</span>
+                <span class="group-hover:text-ink-primary">Verify &rarr;</span>
+              </div>
+            </a>
+
+            <!-- Cert 5 -->
+            <a
+              href="https://www.udemy.com/certificate/UC-2b9ceda9-035f-41ea-9515-d493fe5e0da8/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="p-4 rounded-lg hairline-border bg-surface editorial-card flex flex-col justify-between group"
+            >
+              <div class="space-y-1">
+                <div class="text-[10px] font-mono text-ink-muted uppercase">Cloud Compute</div>
+                <div class="text-xs font-semibold text-ink-primary group-hover:text-white transition-colors">
+                  Amazon EC2 Ultimate Course
+                </div>
+              </div>
+              <div class="text-[11px] font-mono text-ink-muted mt-3 pt-2 hairline-border-top flex items-center justify-between">
+                <span>Udemy</span>
+                <span class="group-hover:text-ink-primary">Verify &rarr;</span>
+              </div>
+            </a>
+
+            <!-- Cert 6 -->
+            <a
+              href="https://www.udemy.com/certificate/UC-03bed249-df1f-4089-bf18-ea8325a85f9a/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="p-4 rounded-lg hairline-border bg-surface editorial-card flex flex-col justify-between group"
+            >
+              <div class="space-y-1">
+                <div class="text-[10px] font-mono text-ink-muted uppercase">Data Warehouse</div>
+                <div class="text-xs font-semibold text-ink-primary group-hover:text-white transition-colors">
+                  Amazon Redshift Ultimate Course
+                </div>
+              </div>
+              <div class="text-[11px] font-mono text-ink-muted mt-3 pt-2 hairline-border-top flex items-center justify-between">
+                <span>Udemy</span>
+                <span class="group-hover:text-ink-primary">Verify &rarr;</span>
+              </div>
+            </a>
+
+            <!-- Cert 7 -->
+            <a
+              href="https://www.udemy.com/certificate/UC-d6bd0959-450d-4370-b721-28be2e3cc795/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="p-4 rounded-lg hairline-border bg-surface editorial-card flex flex-col justify-between group"
+            >
+              <div class="space-y-1">
+                <div class="text-[10px] font-mono text-ink-muted uppercase">Cloud Architecture</div>
+                <div class="text-xs font-semibold text-ink-primary group-hover:text-white transition-colors">
+                  AWS Services for Solutions Architect Associate
+                </div>
+              </div>
+              <div class="text-[11px] font-mono text-ink-muted mt-3 pt-2 hairline-border-top flex items-center justify-between">
+                <span>Udemy</span>
+                <span class="group-hover:text-ink-primary">Verify &rarr;</span>
+              </div>
+            </a>
+
+            <!-- Cert 8 -->
+            <a
+              href="https://www.credly.com/badges/f42a2aed-c7c2-4b9e-83bc-93be5c3f9fd9"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="p-4 rounded-lg hairline-border bg-surface editorial-card flex flex-col justify-between group"
+            >
+              <div class="space-y-1">
+                <div class="text-[10px] font-mono text-ink-muted uppercase">Infrastructure Security</div>
+                <div class="text-xs font-semibold text-ink-primary group-hover:text-white transition-colors">
+                  Cybersecurity Essentials
+                </div>
+              </div>
+              <div class="text-[11px] font-mono text-ink-muted mt-3 pt-2 hairline-border-top flex items-center justify-between">
+                <span>Cisco / Credly</span>
+                <span class="group-hover:text-ink-primary">Verify &rarr;</span>
+              </div>
+            </a>
+
+            <!-- Cert 9 -->
+            <a
+              href="https://www.credly.com/badges/3e493bfc-f8e5-4767-ba03-9ad6dd578506"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="p-4 rounded-lg hairline-border bg-surface editorial-card flex flex-col justify-between group"
+            >
+              <div class="space-y-1">
+                <div class="text-[10px] font-mono text-ink-muted uppercase">Security Fundamentals</div>
+                <div class="text-xs font-semibold text-ink-primary group-hover:text-white transition-colors">
+                  Introduction to Cybersecurity
+                </div>
+              </div>
+              <div class="text-[11px] font-mono text-ink-muted mt-3 pt-2 hairline-border-top flex items-center justify-between">
+                <span>Cisco / Credly</span>
+                <span class="group-hover:text-ink-primary">Verify &rarr;</span>
+              </div>
+            </a>
+
+            <!-- Cert 10 -->
+            <a
+              href="https://www.cyberacademy.id/certificate/PKMI1111210633"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="p-4 rounded-lg hairline-border bg-surface editorial-card flex flex-col justify-between group"
+            >
+              <div class="space-y-1">
+                <div class="text-[10px] font-mono text-ink-muted uppercase">Information Security</div>
+                <div class="text-xs font-semibold text-ink-primary group-hover:text-white transition-colors">
+                  Introduction to Information Security
+                </div>
+              </div>
+              <div class="text-[11px] font-mono text-ink-muted mt-3 pt-2 hairline-border-top flex items-center justify-between">
+                <span>Cyber Academy</span>
+                <span class="group-hover:text-ink-primary">Verify &rarr;</span>
+              </div>
+            </a>
+
+            <!-- Cert 11 -->
+            <a
+              href="https://www.udemy.com/certificate/UC-185040b9-07c9-4526-9895-3474bbae3099/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="p-4 rounded-lg hairline-border bg-surface editorial-card flex flex-col justify-between group"
+            >
+              <div class="space-y-1">
+                <div class="text-[10px] font-mono text-ink-muted uppercase">Application Security</div>
+                <div class="text-xs font-semibold text-ink-primary group-hover:text-white transition-colors">
+                  Pentesting and Securing Web Applications (Ethical Hacking)
+                </div>
+              </div>
+              <div class="text-[11px] font-mono text-ink-muted mt-3 pt-2 hairline-border-top flex items-center justify-between">
+                <span>Udemy</span>
+                <span class="group-hover:text-ink-primary">Verify &rarr;</span>
+              </div>
+            </a>
+
+            <!-- Cert 12 -->
+            <a
+              href="https://www.udemy.com/certificate/UC-07886a5c-6404-4d33-b3a8-149fb3b69b26/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="p-4 rounded-lg hairline-border bg-surface editorial-card flex flex-col justify-between group"
+            >
+              <div class="space-y-1">
+                <div class="text-[10px] font-mono text-ink-muted uppercase">Defensive Security</div>
+                <div class="text-xs font-semibold text-ink-primary group-hover:text-white transition-colors">
+                  Beginner's Guide to Cyber Security
+                </div>
+              </div>
+              <div class="text-[11px] font-mono text-ink-muted mt-3 pt-2 hairline-border-top flex items-center justify-between">
+                <span>Udemy</span>
+                <span class="group-hover:text-ink-primary">Verify &rarr;</span>
+              </div>
+            </a>
+
+            <!-- Cert 13 -->
+            <a
+              href="https://testautomationu.applitools.com/certificate/?id=242e848a"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="p-4 rounded-lg hairline-border bg-surface editorial-card flex flex-col justify-between group"
+            >
+              <div class="space-y-1">
+                <div class="text-[10px] font-mono text-ink-muted uppercase">Automated Testing</div>
+                <div class="text-xs font-semibold text-ink-primary group-hover:text-white transition-colors">
+                  API Testing in JavaScript
+                </div>
+              </div>
+              <div class="text-[11px] font-mono text-ink-muted mt-3 pt-2 hairline-border-top flex items-center justify-between">
+                <span>Test Automation U</span>
+                <span class="group-hover:text-ink-primary">Verify &rarr;</span>
+              </div>
+            </a>
+
+            <!-- Cert 14 -->
+            <a
+              href="https://www.udemy.com/certificate/UC-05db6418-d664-4c6e-b127-8424283c553c/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="p-4 rounded-lg hairline-border bg-surface editorial-card flex flex-col justify-between group"
+            >
+              <div class="space-y-1">
+                <div class="text-[10px] font-mono text-ink-muted uppercase">Software Design</div>
+                <div class="text-xs font-semibold text-ink-primary group-hover:text-white transition-colors">
+                  Software Architecture &amp; Clean Code Design in OOP
+                </div>
+              </div>
+              <div class="text-[11px] font-mono text-ink-muted mt-3 pt-2 hairline-border-top flex items-center justify-between">
+                <span>Udemy</span>
+                <span class="group-hover:text-ink-primary">Verify &rarr;</span>
+              </div>
+            </a>
+
+            <!-- Cert 15 -->
+            <a
+              href="https://www.freecodecamp.org/certification/fcc52f59178-46f6-4ce4-b2c0-7953d242f204/back-end-development-and-apis"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="p-4 rounded-lg hairline-border bg-surface editorial-card flex flex-col justify-between group"
+            >
+              <div class="space-y-1">
+                <div class="text-[10px] font-mono text-ink-muted uppercase">Backend Engineering</div>
+                <div class="text-xs font-semibold text-ink-primary group-hover:text-white transition-colors">
+                  Back End Development and APIs
+                </div>
+              </div>
+              <div class="text-[11px] font-mono text-ink-muted mt-3 pt-2 hairline-border-top flex items-center justify-between">
+                <span>freeCodeCamp</span>
+                <span class="group-hover:text-ink-primary">Verify &rarr;</span>
+              </div>
+            </a>
+
+            <!-- Cert 16 -->
+            <a
+              href="https://www.udemy.com/certificate/UC-e80fca89-1fca-4e1b-a239-08f9c4eb6138/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="p-4 rounded-lg hairline-border bg-surface editorial-card flex flex-col justify-between group"
+            >
+              <div class="space-y-1">
+                <div class="text-[10px] font-mono text-ink-muted uppercase">Rapid Delivery</div>
+                <div class="text-xs font-semibold text-ink-primary group-hover:text-white transition-colors">
+                  Build Laravel Applications Fast Using Blueprint
+                </div>
+              </div>
+              <div class="text-[11px] font-mono text-ink-muted mt-3 pt-2 hairline-border-top flex items-center justify-between">
+                <span>Udemy</span>
+                <span class="group-hover:text-ink-primary">Verify &rarr;</span>
+              </div>
+            </a>
+
+            <!-- Cert 17 -->
+            <a
+              href="https://www.udemy.com/certificate/UC-6f176c46-e685-4e53-b1d4-0723c7461483/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="p-4 rounded-lg hairline-border bg-surface editorial-card flex flex-col justify-between group"
+            >
+              <div class="space-y-1">
+                <div class="text-[10px] font-mono text-ink-muted uppercase">Backend APIs</div>
+                <div class="text-xs font-semibold text-ink-primary group-hover:text-white transition-colors">
+                  NodeJs: Build The Complete E-Commerce Web API
+                </div>
+              </div>
+              <div class="text-[11px] font-mono text-ink-muted mt-3 pt-2 hairline-border-top flex items-center justify-between">
+                <span>Udemy</span>
+                <span class="group-hover:text-ink-primary">Verify &rarr;</span>
+              </div>
+            </a>
+
+            <!-- Cert 18 -->
+            <a
+              href="https://www.udemy.com/certificate/UC-132bc6fb-39f8-4426-92b0-613225a6dd58/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="p-4 rounded-lg hairline-border bg-surface editorial-card flex flex-col justify-between group"
+            >
+              <div class="space-y-1">
+                <div class="text-[10px] font-mono text-ink-muted uppercase">Frontend Engineering</div>
+                <div class="text-xs font-semibold text-ink-primary group-hover:text-white transition-colors">
+                  React JS - Complete Guide for Frontend Web Development
+                </div>
+              </div>
+              <div class="text-[11px] font-mono text-ink-muted mt-3 pt-2 hairline-border-top flex items-center justify-between">
+                <span>Udemy</span>
+                <span class="group-hover:text-ink-primary">Verify &rarr;</span>
+              </div>
+            </a>
+
           </div>
-          <a
-            class="text-primary flex items-center gap-2 font-bold group-hover:translate-x-1 transition-transform"
-            href="https://one.pogi.or.id/"
-            >View Project
-            <span class="material-symbols-outlined text-sm"
-              >arrow_forward</span
-            ></a
-          >
         </div>
-        <!-- Project Card 10 -->
-        <div
-          class="bg-surface-card border border-border-subtle rounded-xl p-card-padding card-hover transition-all flex flex-col justify-between group"
-        >
-          <div>
-            <h3
-              class="font-headline-md text-headline-md text-text-primary mb-3"
-            >
-              EMOP POGI
-            </h3>
-            <p class="text-on-surface-variant font-body-sm text-body-sm mb-4">
-              Digital platform supporting POGI's professional organization and
-              member services.
-            </p>
-          </div>
-          <a
-            class="text-primary flex items-center gap-2 font-bold group-hover:translate-x-1 transition-transform"
-            href="https://emop.pogi.or.id/"
-            >View Project
-            <span class="material-symbols-outlined text-sm"
-              >arrow_forward</span
-            ></a
-          >
+      </section>
+
+      <!-- ================= CONTACT & COLLABORATION ================= -->
+      <section id="contact" class="space-y-8 scroll-mt-24">
+        <div class="flex items-center gap-3">
+          <span class="text-xs font-mono uppercase tracking-wider text-ink-muted">07 // Contact</span>
+          <div class="h-px flex-1 hairline-border-top"></div>
         </div>
-      </div>
-    </section>
-    <!-- Education & Certifications -->
-    <section class="py-section-gap bg-surface-container-low" id="education">
-      <div class="max-w-container-max mx-auto px-gutter">
-        <div class="space-y-16">
-          <div class="max-w-3xl">
-            <h2
-              class="font-section-header text-section-header text-primary mb-8 uppercase tracking-[0.2em]"
-            >
-              Education
+
+        <div class="p-8 sm:p-12 rounded-2xl hairline-border bg-surface relative overflow-hidden">
+          <div class="max-w-2xl space-y-6">
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-ink-primary">
+              Let's architect and scale your next software milestone.
             </h2>
-            <div class="space-y-8">
-              <div class="border-l-2 border-primary pl-6">
-                <h4 class="font-headline-md text-headline-md text-text-primary">
-                  Universitas Negeri Semarang
-                </h4>
-                <p class="text-on-surface-variant">
-                  Bachelor's Degree, Computer Science
-                </p>
-                <p class="text-primary text-sm font-medium">
-                  2013 – 2017 · Graduated Cumlaude
-                </p>
-              </div>
-              <div class="border-l-2 border-border-subtle pl-6">
-                <h4 class="font-headline-md text-headline-md text-text-primary">
-                  Hiroshima University
-                </h4>
-                <p class="text-on-surface-variant">Short Course — IDEC</p>
-                <p class="text-text-secondary text-sm font-medium">
-                  2016 · Hiroshima, Japan
-                </p>
-              </div>
-              <div class="border-l-2 border-border-subtle pl-6">
-                <h4 class="font-headline-md text-headline-md text-text-primary">
-                  Continuous Learning
-                </h4>
-                <p class="text-on-surface-variant font-body-sm">
-                  Test Automation University, Cisco, Dicoding, freeCodeCamp
-                </p>
-              </div>
+            <p class="text-sm sm:text-base text-ink-secondary leading-relaxed">
+              Whether you need strategic engineering leadership, distributed backend architecture consulting, or end-to-end full-stack execution, I am open to discussing high-impact opportunities.
+            </p>
+
+            <div class="pt-2 flex flex-col sm:flex-row sm:items-center gap-4">
+              <!-- Primary Email Link -->
+              <a
+                href="mailto:fjarfs@gmail.com"
+                class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-ink-primary text-canvas font-semibold text-sm hover:bg-white transition-all shadow-sm"
+              >
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+                <span>Write to fjarfs@gmail.com</span>
+              </a>
+
+              <!-- Copy Email Button -->
+              <button
+                onclick="copyEmailToClipboard()"
+                class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg hairline-border bg-surface-subtle text-ink-secondary hover:text-ink-primary hover:border-surface-borderHover font-mono text-xs transition-all cursor-pointer"
+              >
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+                <span>Copy Email</span>
+              </button>
             </div>
-          </div>
-          <div>
-            <h2
-              class="font-section-header text-section-header text-primary mb-8 uppercase tracking-[0.2em]"
-            >
-              Certifications
-            </h2>
-            <div
-              class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 [&>div>div]:min-w-0 [&_p]:break-words [&_a]:break-all"
-            >
-              <div
-                class="bg-surface p-4 border border-border-subtle flex items-start gap-4 rounded-lg"
-              >
-                <span class="material-symbols-outlined text-primary"
-                  >database</span
-                >
-                <div>
-                  <p class="text-on-surface-variant font-medium">
-                    Amazon Redshift Ultimate Course
-                  </p>
-                  <a
-                    class="text-primary text-sm hover:underline"
-                    href="https://www.udemy.com/certificate/UC-03bed249-df1f-4089-bf18-ea8325a85f9a/"
-                    >View Credential · UC-03bed249-df1f-4089-bf18-ea8325a85f9a</a
-                  >
-                </div>
-              </div>
-              <div
-                class="bg-surface p-4 border border-border-subtle flex items-start gap-4 rounded-lg"
-              >
-                <span class="material-symbols-outlined text-primary"
-                  >security</span
-                >
-                <div>
-                  <p class="text-on-surface-variant font-medium">
-                    2021 Beginner's Guide to Cyber Security
-                  </p>
-                  <a
-                    class="text-primary text-sm hover:underline"
-                    href="https://www.udemy.com/certificate/UC-07886a5c-6404-4d33-b3a8-149fb3b69b26/"
-                    >View Credential · UC-07886a5c-6404-4d33-b3a8-149fb3b69b26</a
-                  >
-                </div>
-              </div>
-              <div
-                class="bg-surface p-4 border border-border-subtle flex items-start gap-4 rounded-lg"
-              >
-                <span class="material-symbols-outlined text-primary"
-                  >cloud</span
-                >
-                <div>
-                  <p class="text-on-surface-variant font-medium">
-                    Amazon EC2 Ultimate Course
-                  </p>
-                  <a
-                    class="text-primary text-sm hover:underline"
-                    href="https://www.udemy.com/certificate/UC-2b9ceda9-035f-41ea-9515-d493fe5e0da8/"
-                    >View Credential · UC-2b9ceda9-035f-41ea-9515-d493fe5e0da8</a
-                  >
-                </div>
-              </div>
-              <div
-                class="bg-surface p-4 border border-border-subtle flex items-start gap-4 rounded-lg"
-              >
-                <span class="material-symbols-outlined text-primary"
-                  >deployed_code</span
-                >
-                <div>
-                  <p class="text-on-surface-variant font-medium">
-                    Amazon EKS Ultimate Course
-                  </p>
-                  <a
-                    class="text-primary text-sm hover:underline"
-                    href="https://www.udemy.com/certificate/UC-0bd9a2c6-6c1d-40e6-a859-59651769cfd0/"
-                    >View Credential · UC-0bd9a2c6-6c1d-40e6-a859-59651769cfd0</a
-                  >
-                </div>
-              </div>
-              <div
-                class="bg-surface p-4 border border-border-subtle flex items-start gap-4 rounded-lg"
-              >
-                <span class="material-symbols-outlined text-primary"
-                  >architecture</span
-                >
-                <div>
-                  <p class="text-on-surface-variant font-medium">
-                    AWS Certified Solutions Architect Associate: Complete Course
-                  </p>
-                  <a
-                    class="text-primary text-sm hover:underline"
-                    href="https://www.udemy.com/certificate/UC-9063dd58-446a-445d-a929-640b878d57e8/"
-                    >View Credential · UC-9063dd58-446a-445d-a929-640b878d57e8</a
-                  >
-                </div>
-              </div>
-              <div
-                class="bg-surface p-4 border border-border-subtle flex items-start gap-4 rounded-lg"
-              >
-                <span class="material-symbols-outlined text-primary"
-                  >terminal</span
-                >
-                <div>
-                  <p class="text-on-surface-variant font-medium">
-                    Build Laravel Applications Fast Using Blueprint
-                  </p>
-                  <a
-                    class="text-primary text-sm hover:underline"
-                    href="https://www.udemy.com/certificate/UC-e80fca89-1fca-4e1b-a239-08f9c4eb6138/"
-                    >View Credential · UC-e80fca89-1fca-4e1b-a239-08f9c4eb6138</a
-                  >
-                </div>
-              </div>
-              <div
-                class="bg-surface p-4 border border-border-subtle flex items-start gap-4 rounded-lg"
-              >
-                <span class="material-symbols-outlined text-primary"
-                  >architecture</span
-                >
-                <div>
-                  <p class="text-on-surface-variant font-medium">
-                    AWS Services for Solutions Architect Associate [2021]
-                  </p>
-                  <a
-                    class="text-primary text-sm hover:underline"
-                    href="https://www.udemy.com/certificate/UC-d6bd0959-450d-4370-b721-28be2e3cc795/"
-                    >View Credential · UC-d6bd0959-450d-4370-b721-28be2e3cc795</a
-                  >
-                </div>
-              </div>
-              <div
-                class="bg-surface p-4 border border-border-subtle flex items-start gap-4 rounded-lg"
-              >
-                <span class="material-symbols-outlined text-primary"
-                  >security</span
-                >
-                <div>
-                  <p class="text-on-surface-variant font-medium">
-                    Introduction to Information Security
-                  </p>
-                  <a
-                    class="text-primary text-sm hover:underline"
-                    href="https://www.cyberacademy.id/certificate/PKMI1111210633"
-                    >View Credential · PKMI1111210633</a
-                  >
-                </div>
-              </div>
-              <div
-                class="bg-surface p-4 border border-border-subtle flex items-start gap-4 rounded-lg"
-              >
-                <span class="material-symbols-outlined text-primary"
-                  >deployed_code</span
-                >
-                <div>
-                  <p class="text-on-surface-variant font-medium">
-                    Getting Started with Microservices with Istio and IBM Cloud
-                    Kubernetes Service
-                  </p>
-                  <div class="flex flex-wrap gap-x-3">
-                    <a
-                      class="text-primary text-sm hover:underline"
-                      href="https://www.credly.com/badges/b3d117c9-e592-48a0-ac8c-49a4a5e02816"
-                      >Credly · b3d117c9-e592-48a0-ac8c-49a4a5e02816</a
-                    >
-                    <a
-                      class="text-primary text-sm hover:underline"
-                      href="https://courses.cognitiveclass.ai/certificates/f6ee51078ec5461e97b712457d4a9ae4"
-                      >Cognitive Class · f6ee51078ec5461e97b712457d4a9ae4</a
-                    >
-                  </div>
-                </div>
-              </div>
-              <div
-                class="bg-surface p-4 border border-border-subtle flex items-start gap-4 rounded-lg"
-              >
-                <span class="material-symbols-outlined text-primary">api</span>
-                <div>
-                  <p class="text-on-surface-variant font-medium">
-                    API Testing in JavaScript
-                  </p>
-                  <a
-                    class="text-primary text-sm hover:underline"
-                    href="https://testautomationu.applitools.com/certificate/?id=242e848a"
-                    >View Credential · 242e848a</a
-                  >
-                </div>
-              </div>
-              <div
-                class="bg-surface p-4 border border-border-subtle flex items-start gap-4 rounded-lg"
-              >
-                <span class="material-symbols-outlined text-primary"
-                  >cloud</span
-                >
-                <div>
-                  <p class="text-on-surface-variant font-medium">
-                    Oracle Cloud Infrastructure Foundations 2021 Associate
-                  </p>
-                  <a
-                    class="text-primary text-sm hover:underline"
-                    href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=74FC7A2D6EB468B96E1C4D411B3E2D3C01DD76BDADACF099B80DA912370B9440"
-                    >View Credential ·
-                    74FC7A2D6EB468B96E1C4D411B3E2D3C01DD76BDADACF099B80DA912370B9440</a
-                  >
-                </div>
-              </div>
-              <div
-                class="bg-surface p-4 border border-border-subtle flex items-start gap-4 rounded-lg"
-              >
-                <span class="material-symbols-outlined text-primary"
-                  >shopping_cart</span
-                >
-                <div>
-                  <p class="text-on-surface-variant font-medium">
-                    NodeJs: Build The Complete E-Commerce Web API [2021]
-                  </p>
-                  <a
-                    class="text-primary text-sm hover:underline"
-                    href="https://www.udemy.com/certificate/UC-6f176c46-e685-4e53-b1d4-0723c7461483/"
-                    >View Credential · UC-6f176c46-e685-4e53-b1d4-0723c7461483</a
-                  >
-                </div>
-              </div>
-              <div
-                class="bg-surface p-4 border border-border-subtle flex items-start gap-4 rounded-lg"
-              >
-                <span class="material-symbols-outlined text-primary"
-                  >web</span
-                >
-                <div>
-                  <p class="text-on-surface-variant font-medium">
-                    React JS - Complete Guide for Frontend Web Development [2021]
-                  </p>
-                  <a
-                    class="text-primary text-sm hover:underline"
-                    href="https://www.udemy.com/certificate/UC-132bc6fb-39f8-4426-92b0-613225a6dd58/"
-                    >View Credential · UC-132bc6fb-39f8-4426-92b0-613225a6dd58</a
-                  >
-                </div>
-              </div>
-              <div
-                class="bg-surface p-4 border border-border-subtle flex items-start gap-4 rounded-lg"
-              >
-                <span class="material-symbols-outlined text-primary"
-                  >account_tree</span
-                >
-                <div>
-                  <p class="text-on-surface-variant font-medium">
-                    Software Architecture and Clean Code Design in OOP
-                  </p>
-                  <a
-                    class="text-primary text-sm hover:underline"
-                    href="https://www.udemy.com/certificate/UC-05db6418-d664-4c6e-b127-8424283c553c/"
-                    >View Credential · UC-05db6418-d664-4c6e-b127-8424283c553c</a
-                  >
-                </div>
-              </div>
-              <div
-                class="bg-surface p-4 border border-border-subtle flex items-start gap-4 rounded-lg"
-              >
-                <span class="material-symbols-outlined text-primary"
-                  >shield</span
-                >
-                <div>
-                  <p class="text-on-surface-variant font-medium">
-                    Pentesting and Securing Web Applications (Ethical Hacking)
-                  </p>
-                  <a
-                    class="text-primary text-sm hover:underline"
-                    href="https://www.udemy.com/certificate/UC-185040b9-07c9-4526-9895-3474bbae3099/"
-                    >View Credential · UC-185040b9-07c9-4526-9895-3474bbae3099</a
-                  >
-                </div>
-              </div>
-              <div
-                class="bg-surface p-4 border border-border-subtle flex items-start gap-4 rounded-lg"
-              >
-                <span class="material-symbols-outlined text-primary"
-                  >verified_user</span
-                >
-                <div>
-                  <p class="text-on-surface-variant font-medium">
-                    Cybersecurity Essentials
-                  </p>
-                  <a
-                    class="text-primary text-sm hover:underline"
-                    href="https://www.credly.com/badges/f42a2aed-c7c2-4b9e-83bc-93be5c3f9fd9"
-                    >View Credential · f42a2aed-c7c2-4b9e-83bc-93be5c3f9fd9</a
-                  >
-                </div>
-              </div>
-              <div
-                class="bg-surface p-4 border border-border-subtle flex items-start gap-4 rounded-lg"
-              >
-                <span class="material-symbols-outlined text-primary"
-                  >security</span
-                >
-                <div>
-                  <p class="text-on-surface-variant font-medium">
-                    Introduction to Cybersecurity
-                  </p>
-                  <a
-                    class="text-primary text-sm hover:underline"
-                    href="https://www.credly.com/badges/3e493bfc-f8e5-4767-ba03-9ad6dd578506"
-                    >View Credential · 3e493bfc-f8e5-4767-ba03-9ad6dd578506</a
-                  >
-                </div>
-              </div>
-              <div
-                class="bg-surface p-4 border border-border-subtle flex items-start gap-4 rounded-lg"
-              >
-                <span class="material-symbols-outlined text-primary"
-                  >dns</span
-                >
-                <div>
-                  <p class="text-on-surface-variant font-medium">
-                    Back End Development and APIs
-                  </p>
-                  <a
-                    class="text-primary text-sm hover:underline"
-                    href="https://www.freecodecamp.org/certification/fcc52f59178-46f6-4ce4-b2c0-7953d242f204/back-end-development-and-apis"
-                    >View Credential · fcc52f59178-46f6-4ce4-b2c0-7953d242f204</a
-                  >
-                </div>
-              </div>
+
+            <!-- Direct Social & Professional Links -->
+            <div class="pt-6 hairline-border-top flex flex-wrap items-center gap-6 text-xs font-mono text-ink-muted">
+              <a href="https://www.linkedin.com/in/fajar-sujito/" target="_blank" rel="noopener noreferrer" class="hover:text-ink-primary transition-colors flex items-center gap-1.5">
+                <span>LinkedIn</span>
+                <span class="text-ink-faint">&nearr;</span>
+              </a>
+              <a href="https://github.com/fjarfs" target="_blank" rel="noopener noreferrer" class="hover:text-ink-primary transition-colors flex items-center gap-1.5">
+                <span>GitHub</span>
+                <span class="text-ink-faint">&nearr;</span>
+              </a>
+              <span>Based in Semarang &amp; Jakarta, Indonesia (UTC+7)</span>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <!-- Publications -->
-    <section class="py-section-gap max-w-container-max mx-auto px-gutter">
-      <h2
-        class="font-section-header text-section-header text-primary mb-12 uppercase tracking-[0.2em] text-center"
-      >
-        Research &amp; Publications
-      </h2>
-      <div class="space-y-6 max-w-4xl mx-auto">
-        <div
-          class="bg-surface-card border border-border-subtle p-card-padding rounded-xl card-hover transition-all"
-        >
-          <h4 class="font-headline-md text-headline-md text-text-primary mb-2">
-            An Analysis of User Interface and User Experience Using System
-            Usability Scale and GOMS Method
-          </h4>
-          <p class="text-primary text-sm font-medium mb-4">
-            Journal of Advances In Information Systems and Technology · Oct 2019
-          </p>
-          <p
-            class="text-on-surface-variant font-body-sm text-body-sm mb-6 leading-relaxed"
-          >
-            Study examining UI/UX of Lumbung Media using SUS questionnaire and
-            GOMS analysis. Revealed significant improvement in searching and
-            production processes.
-          </p>
-          <a
-            class="text-primary font-bold inline-flex items-center gap-1 hover:underline"
-            href="https://journal.unnes.ac.id/sju/index.php/jaist/article/view/36503"
-            >Read Publication
-            <span class="material-symbols-outlined text-xs"
-              >open_in_new</span
-            ></a
-          >
-        </div>
-        <div
-          class="bg-surface-card border border-border-subtle p-card-padding rounded-xl card-hover transition-all"
-        >
-          <h4 class="font-headline-md text-headline-md text-text-primary mb-2">
-            Applying an MVC Framework for The System Development Life Cycle with
-            Waterfall Model Extended
-          </h4>
-          <p class="text-primary text-sm font-medium mb-4">
-            Journal of Physics: Conference Series (JPCS) · Jan 2017
-          </p>
-          <p
-            class="text-on-surface-variant font-body-sm text-body-sm mb-6 leading-relaxed"
-          >
-            Extension of the waterfall model using MVC architectural pattern for
-            software development, improving performance in security, validation,
-            database access, and routing.
-          </p>
-          <a
-            class="text-primary font-bold inline-flex items-center gap-1 hover:underline"
-            href="http://iopscience.iop.org/article/10.1088/1742-6596/824/1/012007/meta"
-            >Read Publication
-            <span class="material-symbols-outlined text-xs"
-              >open_in_new</span
-            ></a
-          >
-        </div>
-      </div>
-    </section>
-    <!-- Honors & Awards -->
-    <section class="py-section-gap bg-surface-container-lowest">
-      <div class="max-w-container-max mx-auto px-gutter">
-        <h2
-          class="font-section-header text-section-header text-primary mb-12 uppercase tracking-[0.2em]"
-        >
-          Honors &amp; Awards
-        </h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div
-            class="bg-surface-container border border-outline-variant p-6 rounded-lg flex gap-4"
-          >
-            <span class="text-3xl">🏆</span>
-            <div>
-              <h5 class="font-bold text-text-primary">Best Graduate</h5>
-              <p class="text-body-sm text-on-surface-variant">
-                Computer Science, UNNES 2017
-              </p>
-            </div>
-          </div>
-          <div
-            class="bg-surface-container border border-outline-variant p-6 rounded-lg flex gap-4"
-          >
-            <span class="text-3xl">🎓</span>
-            <div>
-              <h5 class="font-bold text-text-primary">Graduated Cumlaude</h5>
-              <p class="text-body-sm text-on-surface-variant">
-                UNNES, Dec 2017
-              </p>
-            </div>
-          </div>
-          <div
-            class="bg-surface-container border border-outline-variant p-6 rounded-lg flex gap-4"
-          >
-            <span class="text-3xl">🎤</span>
-            <div>
-              <h5 class="font-bold text-text-primary">Keynote Speaker</h5>
-              <p class="text-body-sm text-on-surface-variant">
-                Mobile Learning Symposium 2017
-              </p>
-            </div>
-          </div>
-          <div
-            class="bg-surface-container border border-outline-variant p-6 rounded-lg flex gap-4"
-          >
-            <span class="text-3xl">🌏</span>
-            <div>
-              <h5 class="font-bold text-text-primary">
-                International Symposium
-              </h5>
-              <p class="text-body-sm text-on-surface-variant">
-                Hiroshima University, Japan 2016
-              </p>
-            </div>
-          </div>
-          <div
-            class="bg-surface-container border border-outline-variant p-6 rounded-lg flex gap-4"
-          >
-            <span class="text-3xl">☢️</span>
-            <div>
-              <h5 class="font-bold text-text-primary">Phoenix Leader</h5>
-              <p class="text-body-sm text-on-surface-variant">
-                Renaissance from Radiation Disaster, JP
-              </p>
-            </div>
-          </div>
-          <div
-            class="bg-surface-container border border-outline-variant p-6 rounded-lg flex gap-4"
-          >
-            <span class="text-3xl">👨‍🏫</span>
-            <div>
-              <h5 class="font-bold text-text-primary">Training Speaker</h5>
-              <p class="text-body-sm text-on-surface-variant">
-                Learning Media for Teachers 2017
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Contact CTA -->
-    <section
-      class="py-section-gap max-w-container-max mx-auto px-gutter text-center"
-      id="contact"
-    >
-      <div
-        class="bg-primary/5 border border-primary/20 rounded-3xl p-12 md:p-24 overflow-hidden relative"
-      >
-        <div
-          class="absolute -top-24 -right-24 w-64 h-64 bg-primary/10 blur-[100px] rounded-full"
-        ></div>
-        <div
-          class="absolute -bottom-24 -left-24 w-64 h-64 bg-primary/10 blur-[100px] rounded-full"
-        ></div>
-        <h2
-          class="font-display-hero text-headline-md md:text-display-hero text-text-primary mb-6"
-        >
-          Let's build scalable products together.
-        </h2>
-        <p
-          class="text-on-surface-variant max-w-2xl mx-auto mb-10 font-body-md text-body-md"
-        >
-          Open to AI-assisted full-stack development, engineering leadership,
-          consulting, and high-impact product collaborations.
-        </p>
-        <div class="flex flex-col md:flex-row justify-center gap-4">
-          <a
-            class="gold-gradient text-on-primary-container px-10 py-4 font-bold rounded-lg hover:scale-105 transition-transform gold-glow"
-            href="mailto:fjarfs@gmail.com"
-            >Get in Touch</a
-          >
-          <a
-            class="bg-surface-card border border-border-subtle text-text-primary px-10 py-4 font-bold rounded-lg hover:bg-surface-container transition-all"
-            href="https://www.linkedin.com/in/fajar-sujito/"
-            >Connect on LinkedIn</a
-          >
-        </div>
-      </div>
-    </section>
+      </section>
+
+    </main>
+
     <!-- Footer -->
-    <footer
-      class="bg-surface dark:bg-surface border-t border-border-subtle dark:border-border-subtle"
-    >
-      <div
-        class="max-w-container-max mx-auto px-gutter py-section-gap flex flex-col md:flex-row justify-between items-center gap-8"
-      >
-        <div class="flex flex-col items-center md:items-start gap-4">
-          <div
-            class="font-label-caps text-label-caps text-on-surface font-bold tracking-tighter"
-          >
-            Fajar Sujito
-          </div>
-          <p
-            class="font-body-sm text-body-sm text-text-secondary max-w-xs text-center md:text-left"
-          >
-            AI-assisted full-stack product development with hands-on
-            engineering leadership.
-          </p>
+    <footer class="hairline-border-top bg-canvas/80 text-xs font-mono text-ink-muted">
+      <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div>
+          <span>Fajar Sujito</span> · <span>Engineering Leader &amp; Full-Stack Architect</span>
         </div>
-        <div class="flex flex-col items-center md:items-end gap-6">
-          <div class="flex gap-6">
-            <a
-              class="font-body-sm text-body-sm text-text-secondary hover:text-primary transition-colors"
-              href="https://www.linkedin.com/in/fajar-sujito/"
-              >LinkedIn</a
-            >
-            <a
-              class="font-body-sm text-body-sm text-text-secondary hover:text-primary transition-colors"
-              href="https://github.com/fjarfs"
-              >GitHub</a
-            >
-            <a
-              class="font-body-sm text-body-sm text-text-secondary hover:text-primary transition-colors"
-              href="mailto:fjarfs@gmail.com"
-              >Email</a
-            >
-          </div>
-          <div class="text-on-surface-variant font-body-sm text-body-sm">
-            © 2024 Fajar Sujito. All rights reserved.
-          </div>
+        <div>
+          <span>Crafted with precision. No templates.</span>
         </div>
       </div>
     </footer>
+
+    <!-- Interactive Copy Toast Feedback -->
+    <div
+      id="toast"
+      class="fixed bottom-6 right-6 z-50 px-4 py-2.5 rounded-lg bg-surface hairline-border shadow-xl text-xs font-mono text-ink-primary flex items-center gap-2 opacity-0 pointer-events-none translate-y-2"
+    >
+      <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+      <span id="toast-message">Email address copied to clipboard!</span>
+    </div>
+
+    <!-- Client Script: Copy to Clipboard, Mobile Navigation, Project Filter -->
     <script>
-      // Micro-interaction for cards
-      document.querySelectorAll(".card-hover").forEach((card) => {
-        card.addEventListener("mouseenter", () => {
-          card.style.transform = "translateY(-4px)";
+      // Clipboard Copy Helper with Visual Toast
+      function copyEmailToClipboard() {
+        const email = "fjarfs@gmail.com";
+        navigator.clipboard.writeText(email).then(() => {
+          showToast("Email address copied: " + email);
+        }).catch(() => {
+          showToast("Press Ctrl+C to copy: " + email);
         });
-        card.addEventListener("mouseleave", () => {
-          card.style.transform = "translateY(0)";
+      }
+
+      function showToast(message) {
+        const toast = document.getElementById("toast");
+        const msgEl = document.getElementById("toast-message");
+        if (!toast || !msgEl) return;
+        
+        msgEl.textContent = message;
+        toast.classList.remove("opacity-0", "pointer-events-none", "translate-y-2");
+        toast.classList.add("opacity-100", "translate-y-0");
+
+        setTimeout(() => {
+          toast.classList.remove("opacity-100", "translate-y-0");
+          toast.classList.add("opacity-0", "pointer-events-none", "translate-y-2");
+        }, 2800);
+      }
+
+      // Mobile Menu Toggle
+      const mobileBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      if (mobileBtn && mobileMenu) {
+        mobileBtn.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
         });
-      });
 
-      // Sticky nav shadow on scroll
-      window.addEventListener("scroll", () => {
-        const nav = document.querySelector("nav");
-        if (window.scrollY > 20) {
-          nav.classList.add("shadow-xl");
-        } else {
-          nav.classList.remove("shadow-xl");
-        }
-      });
+        document.querySelectorAll(".mobile-nav-link").forEach(link => {
+          link.addEventListener("click", () => {
+            mobileMenu.classList.add("hidden");
+          });
+        });
+      }
 
-      // Mobile navigation
-      const mobileMenuToggle = document.querySelector("#mobile-menu-toggle");
-      const mobileMenu = document.querySelector("#mobile-menu");
-      const mobileMenuIcon = document.querySelector("#mobile-menu-icon");
+      // Project Filter Tabs
+      function filterProjects(category) {
+        const items = document.querySelectorAll(".project-item");
+        const buttons = document.querySelectorAll(".filter-btn");
 
-      const setMobileMenuOpen = (isOpen) => {
-        mobileMenu.classList.toggle("hidden", !isOpen);
-        mobileMenuToggle.setAttribute("aria-expanded", String(isOpen));
-        mobileMenuToggle.setAttribute(
-          "aria-label",
-          isOpen ? "Close navigation menu" : "Open navigation menu",
-        );
-        mobileMenuIcon.textContent = isOpen ? "close" : "menu";
-      };
+        buttons.forEach(btn => {
+          if (btn.dataset.filter === category) {
+            btn.classList.add("active");
+            btn.classList.remove("text-ink-muted");
+          } else {
+            btn.classList.remove("active");
+            btn.classList.add("text-ink-muted");
+          }
+        });
 
-      mobileMenuToggle.addEventListener("click", () => {
-        const isOpen =
-          mobileMenuToggle.getAttribute("aria-expanded") === "true";
-        setMobileMenuOpen(!isOpen);
-      });
-
-      document.querySelectorAll(".mobile-menu-link").forEach((link) => {
-        link.addEventListener("click", () => setMobileMenuOpen(false));
-      });
-
-      document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape") setMobileMenuOpen(false);
-      });
-
-      window.addEventListener("resize", () => {
-        if (window.innerWidth >= 768) setMobileMenuOpen(false);
-      });
+        items.forEach(item => {
+          if (category === "all" || item.dataset.category === category) {
+            item.style.display = "";
+          } else {
+            item.style.display = "none";
+          }
+        });
+      }
     </script>
   </body>
 </html>
