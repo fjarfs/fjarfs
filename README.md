@@ -1,7 +1,17 @@
-### Hi there 👋
+Full-Stack Developer with 10+ years of experience building and maintaining web applications across frontend, backend, and cloud infrastructure.
 
-Hello, I am Fajar Sujito. A full stack developer from Indonesia with more than 5 years of experience, especially in building mobile applications and websites. Create a powerful microservices architecture system so that the system has good performance and good security.
+I work with React, Next.js, TypeScript, Laravel, Node.js, Go, and AWS. My experience includes building responsive interfaces, admin dashboards, API integrations, backend services, automation, and maintaining production systems.
 
-![Fajar Sujito's github stats](https://github-readme-stats.vercel.app/api?username=fjarfs)
+I also actively use AI-assisted development tools such as Claude Code, OpenAI Codex, Cursor, and other modern AI tools to improve development speed, explore solutions, automate repetitive tasks, and accelerate software delivery.
 
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=fjarfs)
+Currently serving as Engineering Lead at PT Surya Anugrah Mulya, while staying hands on in software development, architecture, infrastructure reliability, and system modernization.
+
+Some areas I’m passionate about:
+- Frontend development with React, Next.js, and TypeScript
+- Backend development with Laravel, Node.js, and Go
+- Building dashboards, internal tools, and user-facing web applications
+- API integration and system automation
+- Cloud infrastructure, monitoring, and production reliability
+- Creating practical software solutions that solve real business problems
+
+I’m open to discussions around digital transformation, system reliability, and fintech innovation.
