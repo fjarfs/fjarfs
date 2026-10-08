@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0" name="viewport" />
   <title>Fajar Sujito — Engineering Leader &amp; Full Stack Developer</title>
   <meta name="description"
     content="CV and Portfolio of Fajar Sujito, Engineering Leader and Full Stack Developer with 8+ years building and scaling backend platforms for fintech, trading, and enterprise systems." />
@@ -20,6 +20,13 @@
     tailwind.config = {
       darkMode: 'class',
       theme: {
+        screens: {
+          'xs': '420px',
+          'sm': '640px',
+          'md': '768px',
+          'lg': '1024px',
+          'xl': '1280px',
+        },
         extend: {
           fontFamily: {
             sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
@@ -73,6 +80,13 @@
       color-scheme: dark;
     }
 
+    html, body {
+      overflow-x: hidden;
+      width: 100%;
+      max-width: 100vw;
+      position: relative;
+    }
+
     body {
       background-color: #090a0f;
       color: #f3f5f9;
@@ -86,9 +100,9 @@
       color: #ffffff;
     }
 
-    /* Architectural ambient background */
+    /* Ambient background grid */
     .bg-grid {
-      background-size: 44px 44px;
+      background-size: 40px 40px;
       background-image:
         linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
@@ -96,8 +110,8 @@
 
     .ambient-glow-1 {
       position: absolute;
-      width: 650px;
-      height: 650px;
+      width: min(650px, 90vw);
+      height: min(650px, 90vw);
       left: 50%;
       top: -150px;
       transform: translateX(-50%);
@@ -109,9 +123,9 @@
 
     .ambient-glow-2 {
       position: absolute;
-      width: 500px;
-      height: 500px;
-      right: 5%;
+      width: min(500px, 80vw);
+      height: min(500px, 80vw);
+      right: 0%;
       top: 600px;
       background: radial-gradient(circle, rgba(16, 185, 129, 0.06) 0%, transparent 70%);
       pointer-events: none;
@@ -119,7 +133,7 @@
       z-index: 0;
     }
 
-    /* Refined hairline borders */
+    /* Hairline borders */
     .hairline-border {
       border: 1px solid rgba(255, 255, 255, 0.08);
     }
@@ -134,7 +148,7 @@
 
     /* Glass nav */
     .nav-blur {
-      background: rgba(9, 10, 15, 0.82);
+      background: rgba(9, 10, 15, 0.88);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
     }
@@ -152,24 +166,43 @@
     }
 
     /* Active filter pill */
-    .filter-btn.active {
+    .filter-btn.active, .exp-filter-btn.active {
       background: #1a202e;
       color: #f3f5f9;
       border-color: rgba(255, 255, 255, 0.22);
       box-shadow: 0 0 12px rgba(59, 130, 246, 0.2);
     }
 
-    /* Timeline spine */
+    /* Responsive timeline spine */
     .timeline-item::before {
       content: '';
       position: absolute;
-      left: -29px;
-      top: 24px;
-      width: 11px;
-      height: 11px;
+      left: -26px;
+      top: 20px;
+      width: 10px;
+      height: 10px;
       border-radius: 9999px;
       background: #3b82f6;
-      box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2), 0 0 12px #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25), 0 0 10px #3b82f6;
+    }
+
+    @media (min-width: 640px) {
+      .timeline-item::before {
+        left: -42px;
+        top: 24px;
+        width: 11px;
+        height: 11px;
+        box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2), 0 0 12px #3b82f6;
+      }
+    }
+
+    /* Hide scrollbar utility */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
     }
 
     /* Print / ATS View Mode Styles */
@@ -191,11 +224,6 @@
       .text-ink-secondary { color: #374151 !important; }
       .text-ink-muted { color: #6b7280 !important; }
       a { text-decoration: underline !important; color: #1e40af !important; }
-      .badge-print {
-        border: 1px solid #d1d5db !important;
-        color: #374151 !important;
-        background: #f9fafb !important;
-      }
       main { padding-top: 0 !important; }
     }
   </style>
@@ -203,26 +231,28 @@
 
 <body class="bg-canvas text-ink-primary font-sans antialiased min-h-screen relative selection:bg-accent selection:text-white">
 
-  <!-- Background Ambience & Blueprint Grid -->
-  <div class="fixed inset-0 bg-grid pointer-events-none z-0"></div>
-  <div class="ambient-glow-1"></div>
-  <div class="ambient-glow-2"></div>
+  <!-- Background Ambience & Blueprint Grid (Guaranteed zero horizontal overflow) -->
+  <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+    <div class="bg-grid absolute inset-0"></div>
+    <div class="ambient-glow-1"></div>
+    <div class="ambient-glow-2"></div>
+  </div>
 
   <!-- ================= TOP NAVIGATION ================= -->
   <header class="sticky top-0 z-50 nav-blur hairline-border-bottom">
-    <div class="max-w-6xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
 
       <!-- Identity Badge -->
-      <a href="#" class="group flex items-center gap-3">
-        <div class="w-9 h-9 rounded-full overflow-hidden hairline-border bg-surface flex-shrink-0 ring-2 ring-transparent group-hover:ring-accent/40 transition-all duration-300">
+      <a href="#" class="group flex items-center gap-2.5 sm:gap-3 shrink-0">
+        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full overflow-hidden hairline-border bg-surface shrink-0 ring-2 ring-transparent group-hover:ring-accent/40 transition-all duration-300">
           <img src="assets/img/fajar.png" alt="Fajar Sujito"
             class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300" />
         </div>
         <div class="flex flex-col">
-          <span class="font-bold text-sm tracking-tight text-ink-primary group-hover:text-white transition-colors">
+          <span class="font-bold text-xs sm:text-sm tracking-tight text-ink-primary group-hover:text-white transition-colors truncate max-w-[125px] xs:max-w-none">
             FAJAR SUJITO
           </span>
-          <span class="text-[11px] font-mono text-accent leading-none">Engineering Leader</span>
+          <span class="text-[10px] sm:text-[11px] font-mono text-accent leading-none">Engineering Leader</span>
         </div>
       </a>
 
@@ -242,19 +272,20 @@
           class="px-3 py-1.5 rounded-md text-ink-secondary hover:text-ink-primary hover:bg-white/[0.04] transition-all">Contact</a>
       </nav>
 
-      <!-- Action Quick Bar -->
-      <div class="flex items-center gap-2 sm:gap-2.5">
+      <!-- Action Quick Bar (Responsive: compact on mobile, full on tablet+) -->
+      <div class="flex items-center gap-1.5 sm:gap-2.5">
         <!-- Download CV Button -->
         <a href="assets/Fajar_Sujito_CV.pdf" download="Fajar_Sujito_CV.pdf" target="_blank" rel="noopener noreferrer" title="Download CV (PDF)"
-          class="inline-flex items-center gap-1.5 text-xs font-mono px-3 py-1.5 rounded-lg bg-accent text-white hover:bg-accent-hover transition-all cursor-pointer shadow-sm shadow-accent/20">
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          class="inline-flex items-center gap-1 sm:gap-1.5 text-[11px] sm:text-xs font-mono px-2.5 sm:px-3 py-1.5 rounded-lg bg-accent text-white hover:bg-accent-hover transition-all cursor-pointer shadow-sm shadow-accent/20">
+          <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
           </svg>
-          <span>Download CV</span>
+          <span class="hidden xs:inline">Download CV</span>
+          <span class="xs:hidden">CV</span>
         </a>
 
-        <!-- Copy Email Button -->
+        <!-- Copy Email Button (tablet and up) -->
         <button onclick="copyToClipboard('fjarfs@gmail.com', 'Email address copied!')"
           class="hidden md:inline-flex items-center gap-1.5 text-xs font-mono px-3 py-1.5 rounded-lg bg-surface hairline-border hover:border-accent/40 text-ink-secondary hover:text-white transition-all cursor-pointer"
           title="Click to copy email">
@@ -265,9 +296,9 @@
           <span>fjarfs@gmail.com</span>
         </button>
 
-        <!-- WhatsApp / Phone Direct -->
+        <!-- WhatsApp (tablet and up) -->
         <a href="https://wa.me/6281903492372" target="_blank" rel="noopener noreferrer"
-          class="p-2 rounded-lg hairline-border bg-surface text-ink-secondary hover:text-emerald-400 hover:border-emerald-500/30 transition-all"
+          class="hidden sm:inline-flex p-2 rounded-lg hairline-border bg-surface text-ink-secondary hover:text-emerald-400 hover:border-emerald-500/30 transition-all"
           title="Chat on WhatsApp (+6281903492372)">
           <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
             <path
@@ -275,9 +306,9 @@
           </svg>
         </a>
 
-        <!-- LinkedIn -->
+        <!-- LinkedIn (tablet and up) -->
         <a href="https://linkedin.com/in/fajar-sujito" target="_blank" rel="noopener noreferrer"
-          class="p-2 rounded-lg hairline-border bg-surface text-ink-secondary hover:text-white hover:border-surface-borderHover transition-all"
+          class="hidden sm:inline-flex p-2 rounded-lg hairline-border bg-surface text-ink-secondary hover:text-white hover:border-surface-borderHover transition-all"
           title="LinkedIn Profile">
           <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
             <path
@@ -285,9 +316,9 @@
           </svg>
         </a>
 
-        <!-- GitHub -->
+        <!-- GitHub (tablet and up) -->
         <a href="https://github.com/fjarfs" target="_blank" rel="noopener noreferrer"
-          class="p-2 rounded-lg hairline-border bg-surface text-ink-secondary hover:text-white hover:border-surface-borderHover transition-all"
+          class="hidden sm:inline-flex p-2 rounded-lg hairline-border bg-surface text-ink-secondary hover:text-white hover:border-surface-borderHover transition-all"
           title="GitHub Profile">
           <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
             <path
@@ -295,7 +326,7 @@
           </svg>
         </a>
 
-        <!-- Mobile Menu Button -->
+        <!-- Mobile Menu Toggle Button -->
         <button id="mobile-menu-btn"
           class="lg:hidden p-2 rounded-lg hairline-border bg-surface text-ink-secondary hover:text-white"
           aria-label="Toggle navigation">
@@ -306,102 +337,144 @@
       </div>
     </div>
 
-    <!-- Mobile Dropdown Menu -->
-    <div id="mobile-menu" class="hidden lg:hidden hairline-border-top bg-surface/95 px-6 py-4 flex flex-col gap-2 font-mono text-xs">
-      <a href="assets/Fajar_Sujito_CV.pdf" download="Fajar_Sujito_CV.pdf" target="_blank" rel="noopener noreferrer"
-        class="mobile-nav-link py-2 text-accent font-semibold flex items-center gap-2">
-        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-        </svg>
-        <span>Download CV (PDF)</span>
+    <!-- Mobile Dropdown Menu with Complete Quick Actions -->
+    <div id="mobile-menu" class="hidden lg:hidden hairline-border-top bg-surface/98 backdrop-blur-2xl px-5 py-4 flex flex-col gap-3 font-mono text-xs shadow-2xl">
+      <!-- Quick Action Chips for Mobile -->
+      <div class="grid grid-cols-2 gap-2 pb-2 hairline-border-bottom">
+        <a href="assets/Fajar_Sujito_CV.pdf" download="Fajar_Sujito_CV.pdf" target="_blank" rel="noopener noreferrer"
+          class="p-2.5 rounded-lg bg-accent text-white font-semibold flex items-center justify-center gap-1.5 shadow-sm">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+          </svg>
+          <span>Download CV</span>
+        </a>
+        <a href="https://wa.me/6281903492372" target="_blank" rel="noopener noreferrer"
+          class="p-2.5 rounded-lg hairline-border bg-surface-elevated text-emerald-400 font-semibold flex items-center justify-center gap-1.5">
+          <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+            <path
+              d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+          </svg>
+          <span>WhatsApp</span>
+        </a>
+      </div>
+
+      <!-- Navigation Section Links -->
+      <a href="#about" class="mobile-nav-link py-1.5 text-ink-secondary hover:text-white flex items-center justify-between">
+        <span>About &amp; Summary</span>
+        <span class="text-ink-faint">&rarr;</span>
       </a>
-      <a href="#about" class="mobile-nav-link py-2 text-ink-secondary hover:text-white">About</a>
-      <a href="#skills" class="mobile-nav-link py-2 text-ink-secondary hover:text-white">Skills &amp; Capabilities</a>
-      <a href="#experience" class="mobile-nav-link py-2 text-ink-secondary hover:text-white">Career Experience</a>
-      <a href="#projects" class="mobile-nav-link py-2 text-ink-secondary hover:text-white">Featured Projects</a>
-      <a href="#credentials" class="mobile-nav-link py-2 text-ink-secondary hover:text-white">Verified Certifications</a>
-      <a href="#contact" class="mobile-nav-link py-2 text-ink-secondary hover:text-white">Contact &amp; Details</a>
+      <a href="#skills" class="mobile-nav-link py-1.5 text-ink-secondary hover:text-white flex items-center justify-between">
+        <span>Skills &amp; Capabilities</span>
+        <span class="text-ink-faint">&rarr;</span>
+      </a>
+      <a href="#experience" class="mobile-nav-link py-1.5 text-ink-secondary hover:text-white flex items-center justify-between">
+        <span>Career Experience</span>
+        <span class="text-ink-faint">&rarr;</span>
+      </a>
+      <a href="#projects" class="mobile-nav-link py-1.5 text-ink-secondary hover:text-white flex items-center justify-between">
+        <span>Featured Projects</span>
+        <span class="text-ink-faint">&rarr;</span>
+      </a>
+      <a href="#credentials" class="mobile-nav-link py-1.5 text-ink-secondary hover:text-white flex items-center justify-between">
+        <span>Verified Certifications</span>
+        <span class="text-ink-faint">&rarr;</span>
+      </a>
+      <a href="#contact" class="mobile-nav-link py-1.5 text-ink-secondary hover:text-white flex items-center justify-between">
+        <span>Contact &amp; Details</span>
+        <span class="text-ink-faint">&rarr;</span>
+      </a>
+
+      <!-- Quick Socials in Mobile Menu -->
+      <div class="pt-2 hairline-border-top flex items-center justify-between text-xs text-ink-muted">
+        <button onclick="copyToClipboard('fjarfs@gmail.com', 'Email copied: fjarfs@gmail.com')" class="hover:text-white cursor-pointer">Copy Email</button>
+        <span>·</span>
+        <a href="https://linkedin.com/in/fajar-sujito" target="_blank" rel="noopener noreferrer" class="hover:text-white">LinkedIn</a>
+        <span>·</span>
+        <a href="https://github.com/fjarfs" target="_blank" rel="noopener noreferrer" class="hover:text-white">GitHub</a>
+        <span>·</span>
+        <a href="https://fajarsujito.my.id" target="_blank" rel="noopener noreferrer" class="hover:text-white">Portfolio</a>
+      </div>
     </div>
   </header>
 
   <!-- ================= MAIN CONTENT ================= -->
-  <main class="relative z-10 max-w-6xl mx-auto px-5 sm:px-6 pt-10 sm:pt-14 pb-28 space-y-24">
+  <main class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-6 sm:pt-14 pb-20 sm:pb-28 space-y-16 sm:space-y-24">
 
     <!-- ================= HERO & EXECUTIVE SUMMARY ================= -->
     <section id="about" class="pt-2 sm:pt-6">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
 
         <!-- Left: Pitch & Title -->
-        <div class="lg:col-span-8 space-y-6">
+        <div class="lg:col-span-8 space-y-5 sm:space-y-6">
 
           <!-- Status Pill -->
-          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full hairline-border bg-surface text-xs font-mono text-ink-secondary">
-            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span class="text-ink-primary font-medium">Available for Engineering Leadership &amp; High-Impact Architecture</span>
+          <div class="inline-flex items-center gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full hairline-border bg-surface text-[11px] sm:text-xs font-mono text-ink-secondary max-w-full">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
+            <span class="text-ink-primary font-medium truncate">Available for Leadership &amp; Architecture Consulting</span>
           </div>
 
           <!-- Main Title -->
-          <div class="space-y-2">
-            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-ink-primary leading-[1.08]">
+          <div class="space-y-1.5 sm:space-y-2">
+            <h1 class="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-ink-primary leading-[1.08]">
               FAJAR SUJITO
             </h1>
-            <p class="text-lg sm:text-2xl font-semibold bg-gradient-to-r from-accent via-cyan-400 to-emerald-400 bg-clip-text text-transparent">
+            <p class="text-base xs:text-lg sm:text-2xl font-semibold bg-gradient-to-r from-accent via-cyan-400 to-emerald-400 bg-clip-text text-transparent">
               Engineering Leader &amp; Full Stack Developer
             </p>
           </div>
 
-          <!-- Contact Coordinates Metadata Bar -->
-          <div class="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs font-mono text-ink-secondary pt-1">
-            <span class="flex items-center gap-1.5 text-ink-primary">
-              <svg class="w-3.5 h-3.5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <!-- Contact Coordinates Metadata Bar (Responsive pills) -->
+          <div class="flex flex-wrap items-center gap-2 sm:gap-3 text-xs font-mono text-ink-secondary pt-1">
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface hairline-border text-ink-primary">
+              <svg class="w-3.5 h-3.5 text-accent shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
-              Jakarta, Indonesia
+              <span>Jakarta, Indonesia</span>
             </span>
-            <span>·</span>
+
             <button onclick="copyToClipboard('+6281903492372', 'Phone copied: +6281903492372')"
-              class="hover:text-white transition-colors flex items-center gap-1 cursor-pointer">
-              <svg class="w-3.5 h-3.5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface hairline-border hover:border-emerald-500/40 text-ink-primary hover:text-white transition-colors cursor-pointer">
+              <svg class="w-3.5 h-3.5 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
               <span>+6281903492372</span>
             </button>
-            <span>·</span>
+
             <button onclick="copyToClipboard('fjarfs@gmail.com', 'Email copied: fjarfs@gmail.com')"
-              class="hover:text-white transition-colors flex items-center gap-1 cursor-pointer">
-              <svg class="w-3.5 h-3.5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface hairline-border hover:border-accent/40 text-ink-primary hover:text-white transition-colors cursor-pointer">
+              <svg class="w-3.5 h-3.5 text-accent shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
               <span>fjarfs@gmail.com</span>
             </button>
-            <span>·</span>
+
             <a href="https://fajarsujito.my.id" target="_blank" rel="noopener noreferrer"
-              class="hover:text-accent transition-colors flex items-center gap-1 text-ink-primary font-medium">
+              class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface hairline-border hover:border-accent/40 text-ink-primary hover:text-accent transition-colors font-medium">
               <span>fajarsujito.my.id &nearr;</span>
             </a>
           </div>
 
           <!-- Professional Summary Card -->
-          <div class="p-6 rounded-2xl hairline-border bg-surface/70 space-y-3 relative overflow-hidden">
+          <div class="p-4 sm:p-6 rounded-2xl hairline-border bg-surface/70 space-y-2.5 sm:space-y-3 relative overflow-hidden">
             <div class="flex items-center justify-between">
               <span class="text-xs font-mono uppercase tracking-wider text-accent font-semibold">Professional Summary</span>
               <span class="text-[11px] font-mono text-ink-muted">8+ Years Senior Scale</span>
             </div>
-            <p class="text-sm sm:text-base text-ink-secondary leading-relaxed">
+            <p class="text-xs sm:text-sm md:text-base text-ink-secondary leading-relaxed">
               Engineering leader with <strong class="text-ink-primary font-semibold">8+ years</strong> building and scaling backend platforms for fintech and trading. Led teams of up to <strong class="text-ink-primary font-semibold">15 engineers</strong> across backend, DevOps, and QA, and migrated production to AWS with <strong class="text-ink-primary font-semibold">99.95% uptime</strong>. Designed a failover gateway for high-frequency trading and an event-driven architecture (<strong class="text-ink-primary font-semibold">RabbitMQ, CQRS, SAGA</strong>). Experienced in BCP, and driving AI-assisted development adoption across engineering teams.
             </p>
           </div>
 
-          <!-- Primary Actions -->
-          <div class="pt-2 flex flex-wrap items-center gap-3">
+          <!-- Primary Actions (Touch-friendly & flexible) -->
+          <div class="pt-1 flex flex-wrap items-center gap-2.5 sm:gap-3">
             <a href="assets/Fajar_Sujito_CV.pdf" download="Fajar_Sujito_CV.pdf" target="_blank" rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-accent text-white font-semibold text-sm hover:bg-accent-hover transition-all shadow-lg shadow-accent/25 cursor-pointer">
+              class="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 rounded-lg bg-accent text-white font-semibold text-xs sm:text-sm hover:bg-accent-hover transition-all shadow-lg shadow-accent/25 cursor-pointer">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -410,7 +483,7 @@
             </a>
 
             <a href="#contact"
-              class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg hairline-border bg-surface text-ink-primary font-medium text-sm hover:bg-surface-elevated hover:border-surface-borderHover transition-all cursor-pointer">
+              class="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 rounded-lg hairline-border bg-surface text-ink-primary font-medium text-xs sm:text-sm hover:bg-surface-elevated hover:border-surface-borderHover transition-all cursor-pointer">
               <span>Contact Me</span>
               <svg class="w-4 h-4 text-ink-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
@@ -418,16 +491,16 @@
             </a>
 
             <a href="https://wa.me/6281903492372" target="_blank" rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg hairline-border bg-surface hover:border-emerald-500/40 text-emerald-400 font-medium text-sm transition-all">
+              class="inline-flex items-center justify-center gap-2 px-3.5 sm:px-4 py-2.5 rounded-lg hairline-border bg-surface hover:border-emerald-500/40 text-emerald-400 font-medium text-xs sm:text-sm transition-all">
               <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
                 <path
-                  d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z" />
+                  d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
               </svg>
               <span>WhatsApp</span>
             </a>
 
             <a href="https://linkedin.com/in/fajar-sujito" target="_blank" rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg hairline-border bg-surface text-ink-primary font-medium text-sm hover:bg-surface-elevated hover:border-surface-borderHover transition-all">
+              class="inline-flex items-center justify-center gap-2 px-3.5 sm:px-4 py-2.5 rounded-lg hairline-border bg-surface text-ink-primary font-medium text-xs sm:text-sm hover:bg-surface-elevated hover:border-surface-borderHover transition-all">
               <span>LinkedIn</span>
               <svg class="w-3.5 h-3.5 text-ink-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -436,86 +509,77 @@
             </a>
 
             <a href="https://github.com/fjarfs" target="_blank" rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg hairline-border bg-surface text-ink-primary font-medium text-sm hover:bg-surface-elevated hover:border-surface-borderHover transition-all">
+              class="inline-flex items-center justify-center gap-2 px-3.5 sm:px-4 py-2.5 rounded-lg hairline-border bg-surface text-ink-primary font-medium text-xs sm:text-sm hover:bg-surface-elevated hover:border-surface-borderHover transition-all">
               <span>GitHub</span>
               <svg class="w-3.5 h-3.5 text-ink-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
               </svg>
             </a>
-
-            <a href="https://fajarsujito.my.id" target="_blank" rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg hairline-border bg-surface text-ink-primary font-medium text-sm hover:bg-surface-elevated hover:border-surface-borderHover transition-all">
-              <span>Portfolio</span>
-              <svg class="w-3.5 h-3.5 text-ink-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-              </svg>
-            </a>
           </div>
 
         </div>
 
-        <!-- Right: Profile Portrait & Executive Highlights -->
-        <div class="lg:col-span-4 flex flex-col gap-5">
-          <div class="p-6 rounded-2xl hairline-border bg-surface relative overflow-hidden group">
-            <div class="flex items-start gap-4">
+        <!-- Right: Profile Portrait & Highlights Card -->
+        <div class="lg:col-span-4 flex flex-col gap-4 sm:gap-5">
+          <div class="p-5 sm:p-6 rounded-2xl hairline-border bg-surface relative overflow-hidden group">
+            <div class="flex items-start gap-3.5 sm:gap-4">
               <!-- Portrait Image with Ring Glow -->
-              <div class="w-20 h-20 rounded-2xl overflow-hidden hairline-border bg-surface-subtle flex-shrink-0 ring-2 ring-accent/30 relative">
+              <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden hairline-border bg-surface-subtle shrink-0 ring-2 ring-accent/30 relative">
                 <img src="assets/img/fajar.png" alt="Fajar Sujito"
                   class="w-full h-full object-cover object-center group-hover:scale-105 transition-all duration-300" />
               </div>
-              <div>
-                <h3 class="font-bold text-lg text-ink-primary">Fajar Sujito, S.Kom</h3>
-                <p class="text-xs text-accent font-mono mt-0.5">Engineering Leader</p>
+              <div class="min-w-0">
+                <h3 class="font-bold text-base sm:text-lg text-ink-primary truncate">Fajar Sujito, S.Kom</h3>
+                <p class="text-xs text-accent font-mono mt-0.5 truncate">Engineering Leader</p>
                 <p class="text-xs text-ink-muted font-mono mt-0.5">Jakarta, Indonesia</p>
               </div>
             </div>
 
             <!-- Quick Stats Grid -->
-            <div class="mt-6 pt-5 hairline-border-top grid grid-cols-2 gap-4">
+            <div class="mt-5 sm:mt-6 pt-4 sm:pt-5 hairline-border-top grid grid-cols-2 gap-3 sm:gap-4">
               <div>
                 <div class="text-[10px] font-mono uppercase tracking-wider text-ink-muted">Experience</div>
-                <div class="text-base font-bold font-mono text-ink-primary mt-0.5">8+ Years</div>
-                <div class="text-[11px] text-ink-muted leading-tight">Fintech &amp; Trading</div>
+                <div class="text-sm sm:text-base font-bold font-mono text-ink-primary mt-0.5">8+ Years</div>
+                <div class="text-[10px] sm:text-[11px] text-ink-muted leading-tight">Fintech &amp; Trading</div>
               </div>
               <div>
                 <div class="text-[10px] font-mono uppercase tracking-wider text-ink-muted">Team Scope</div>
-                <div class="text-base font-bold font-mono text-ink-primary mt-0.5">Up to 15</div>
-                <div class="text-[11px] text-ink-muted leading-tight">Cross-functional</div>
+                <div class="text-sm sm:text-base font-bold font-mono text-ink-primary mt-0.5">Up to 15</div>
+                <div class="text-[10px] sm:text-[11px] text-ink-muted leading-tight">Cross-functional</div>
               </div>
               <div>
                 <div class="text-[10px] font-mono uppercase tracking-wider text-ink-muted">AWS Migration</div>
-                <div class="text-base font-bold font-mono text-emerald-400 mt-0.5">99.95%</div>
-                <div class="text-[11px] text-ink-muted leading-tight">Production Uptime</div>
+                <div class="text-sm sm:text-base font-bold font-mono text-emerald-400 mt-0.5">99.95%</div>
+                <div class="text-[10px] sm:text-[11px] text-ink-muted leading-tight">Production Uptime</div>
               </div>
               <div>
                 <div class="text-[10px] font-mono uppercase tracking-wider text-ink-muted">Failover</div>
-                <div class="text-base font-bold font-mono text-accent mt-0.5">&lt; 30s</div>
-                <div class="text-[11px] text-ink-muted leading-tight">Recovery Time</div>
+                <div class="text-sm sm:text-base font-bold font-mono text-accent mt-0.5">&lt; 30s</div>
+                <div class="text-[10px] sm:text-[11px] text-ink-muted leading-tight">Recovery Time</div>
               </div>
             </div>
 
             <!-- AI Adoption Highlight Tag -->
-            <div class="mt-5 pt-4 hairline-border-top flex items-center justify-between text-xs font-mono">
-              <span class="text-ink-muted">AI-Assisted Dev</span>
-              <span class="text-cyan-400 font-semibold">+30% Velocity Boost</span>
+            <div class="mt-4 sm:mt-5 pt-3 sm:pt-4 hairline-border-top flex items-center justify-between text-xs font-mono">
+              <span class="text-ink-muted text-[11px] sm:text-xs">AI-Assisted Dev</span>
+              <span class="text-cyan-400 font-semibold text-[11px] sm:text-xs">+30% Velocity Boost</span>
             </div>
           </div>
 
-          <!-- Quick Actions Panel -->
-          <div class="p-5 rounded-2xl hairline-border bg-surface/50 space-y-3">
-            <div class="text-xs font-mono uppercase tracking-wider text-ink-muted">Direct Channels</div>
+          <!-- Quick Actions Direct Channels Panel -->
+          <div class="p-4 sm:p-5 rounded-2xl hairline-border bg-surface/50 space-y-2.5 sm:space-y-3">
+            <div class="text-[11px] sm:text-xs font-mono uppercase tracking-wider text-ink-muted">Direct Channels</div>
             <div class="grid grid-cols-2 gap-2 text-xs font-mono">
               <button onclick="copyToClipboard('fjarfs@gmail.com', 'Email copied!')"
-                class="p-2.5 rounded-lg hairline-border bg-surface-subtle hover:bg-surface-elevated text-ink-secondary hover:text-white transition-all text-left flex items-center gap-2 cursor-pointer">
-                <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
-                <span>Copy Email</span>
+                class="p-2 sm:p-2.5 rounded-lg hairline-border bg-surface-subtle hover:bg-surface-elevated text-ink-secondary hover:text-white transition-all text-left flex items-center gap-1.5 sm:gap-2 cursor-pointer">
+                <span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>
+                <span class="truncate">Copy Email</span>
               </button>
               <button onclick="copyToClipboard('+6281903492372', 'Phone copied!')"
-                class="p-2.5 rounded-lg hairline-border bg-surface-subtle hover:bg-surface-elevated text-ink-secondary hover:text-white transition-all text-left flex items-center gap-2 cursor-pointer">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                <span>Copy Phone</span>
+                class="p-2 sm:p-2.5 rounded-lg hairline-border bg-surface-subtle hover:bg-surface-elevated text-ink-secondary hover:text-white transition-all text-left flex items-center gap-1.5 sm:gap-2 cursor-pointer">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0"></span>
+                <span class="truncate">Copy Phone</span>
               </button>
             </div>
           </div>
@@ -523,50 +587,50 @@
 
       </div>
 
-      <!-- Proven Impact Metric Cards -->
-      <div class="mt-14 pt-8 hairline-border-top grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
-        <div class="p-5 rounded-xl hairline-border bg-surface space-y-1">
-          <div class="text-2xl sm:text-3xl font-extrabold font-mono text-ink-primary">8+ Years</div>
-          <div class="text-xs font-mono uppercase tracking-wider text-accent font-semibold">Scaling Platforms</div>
-          <p class="text-xs text-ink-muted pt-1">High-frequency trading, fintech, and distributed backends</p>
+      <!-- Proven Impact Metric Cards (Responsive 2x2 on mobile, 4 on desktop) -->
+      <div class="mt-10 sm:mt-14 pt-6 sm:pt-8 hairline-border-top grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-5">
+        <div class="p-3.5 sm:p-5 rounded-xl hairline-border bg-surface space-y-1">
+          <div class="text-xl xs:text-2xl sm:text-3xl font-extrabold font-mono text-ink-primary">8+ Years</div>
+          <div class="text-[10px] sm:text-xs font-mono uppercase tracking-wider text-accent font-semibold">Scaling Platforms</div>
+          <p class="text-[11px] sm:text-xs text-ink-muted pt-0.5 leading-snug">High-frequency trading &amp; distributed backends</p>
         </div>
-        <div class="p-5 rounded-xl hairline-border bg-surface space-y-1">
-          <div class="text-2xl sm:text-3xl font-extrabold font-mono text-emerald-400">99.95%</div>
-          <div class="text-xs font-mono uppercase tracking-wider text-emerald-400 font-semibold">Uptime Record</div>
-          <p class="text-xs text-ink-muted pt-1">Production AWS architecture &amp; high availability gateways</p>
+        <div class="p-3.5 sm:p-5 rounded-xl hairline-border bg-surface space-y-1">
+          <div class="text-xl xs:text-2xl sm:text-3xl font-extrabold font-mono text-emerald-400">99.95%</div>
+          <div class="text-[10px] sm:text-xs font-mono uppercase tracking-wider text-emerald-400 font-semibold">Uptime Record</div>
+          <p class="text-[11px] sm:text-xs text-ink-muted pt-0.5 leading-snug">Production AWS architecture &amp; high availability</p>
         </div>
-        <div class="p-5 rounded-xl hairline-border bg-surface space-y-1">
-          <div class="text-2xl sm:text-3xl font-extrabold font-mono text-cyan-400">15 Engineers</div>
-          <div class="text-xs font-mono uppercase tracking-wider text-cyan-400 font-semibold">Led &amp; Mentored</div>
-          <p class="text-xs text-ink-muted pt-1">Cross-functional squads across Backend, DevOps, QA &amp; Frontend</p>
+        <div class="p-3.5 sm:p-5 rounded-xl hairline-border bg-surface space-y-1">
+          <div class="text-xl xs:text-2xl sm:text-3xl font-extrabold font-mono text-cyan-400">15 Engineers</div>
+          <div class="text-[10px] sm:text-xs font-mono uppercase tracking-wider text-cyan-400 font-semibold">Led &amp; Mentored</div>
+          <p class="text-[11px] sm:text-xs text-ink-muted pt-0.5 leading-snug">Cross-functional squads (Backend, QA, DevOps)</p>
         </div>
-        <div class="p-5 rounded-xl hairline-border bg-surface space-y-1">
-          <div class="text-2xl sm:text-3xl font-extrabold font-mono text-amber-400">&lt; 30s</div>
-          <div class="text-xs font-mono uppercase tracking-wider text-amber-400 font-semibold">Trading Failover</div>
-          <p class="text-xs text-ink-muted pt-1">Zero data loss gateway architecture &amp; BCP standards</p>
+        <div class="p-3.5 sm:p-5 rounded-xl hairline-border bg-surface space-y-1">
+          <div class="text-xl xs:text-2xl sm:text-3xl font-extrabold font-mono text-amber-400">&lt; 30s</div>
+          <div class="text-[10px] sm:text-xs font-mono uppercase tracking-wider text-amber-400 font-semibold">Trading Failover</div>
+          <p class="text-[11px] sm:text-xs text-ink-muted pt-0.5 leading-snug">Zero data loss gateway &amp; BCP standards</p>
         </div>
       </div>
     </section>
 
     <!-- ================= SKILLS & TECHNICAL CAPABILITIES ================= -->
-    <section id="skills" class="space-y-8 scroll-mt-24">
+    <section id="skills" class="space-y-6 sm:space-y-8 scroll-mt-20 sm:scroll-mt-24">
       <div class="flex items-center gap-3">
         <span class="text-xs font-mono uppercase tracking-wider text-accent font-bold">01 // Technical Capabilities &amp; Skills</span>
         <div class="h-px flex-1 hairline-border-top"></div>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
         <div class="lg:col-span-4 space-y-3">
-          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-ink-primary">
+          <h2 class="text-xl sm:text-3xl font-bold tracking-tight text-ink-primary">
             Curated Skills &amp; Stack
           </h2>
           <p class="text-xs sm:text-sm text-ink-secondary leading-relaxed">
             Hands-on architectural and engineering stack honed over 8+ years building enterprise fintech, event-driven trading platforms, and modern web applications.
           </p>
 
-          <!-- Core Skills List from CV -->
-          <div class="p-5 rounded-xl hairline-border bg-surface space-y-2 mt-4">
-            <span class="text-[11px] font-mono text-ink-muted uppercase">Summary of Core Competencies</span>
+          <!-- Core Skills Overview -->
+          <div class="p-4 sm:p-5 rounded-xl hairline-border bg-surface space-y-2 mt-4">
+            <span class="text-[10px] sm:text-[11px] font-mono text-ink-muted uppercase">Summary of Core Competencies</span>
             <div class="flex flex-wrap gap-1.5 pt-1">
               <span class="px-2 py-0.5 rounded bg-surface-subtle hairline-border text-[11px] font-mono text-ink-primary">System Design</span>
               <span class="px-2 py-0.5 rounded bg-surface-subtle hairline-border text-[11px] font-mono text-ink-primary">Distributed Systems</span>
@@ -580,103 +644,102 @@
           </div>
         </div>
 
-        <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
 
           <!-- 1. System Architecture & Patterns -->
-          <div class="p-6 rounded-xl hairline-border bg-surface space-y-3 interactive-card">
+          <div class="p-5 sm:p-6 rounded-xl hairline-border bg-surface space-y-3 interactive-card">
             <div class="flex items-center justify-between">
               <span class="text-xs font-mono uppercase tracking-wider text-accent font-semibold">Architecture &amp; Resilience</span>
               <span class="w-2 h-2 rounded-full bg-accent"></span>
             </div>
             <div class="flex flex-wrap gap-1.5 font-mono text-xs">
-              <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">System Design</span>
-              <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">Distributed Systems</span>
-              <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">Event-Driven (Saga / CQRS)</span>
-              <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">Microservices</span>
-              <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">High Availability (HA)</span>
-              <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">Business Continuity Planning (BCP)</span>
-              <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">Failover Gateways</span>
+              <span class="px-2 sm:px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">System Design</span>
+              <span class="px-2 sm:px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">Distributed Systems</span>
+              <span class="px-2 sm:px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">Event-Driven (Saga / CQRS)</span>
+              <span class="px-2 sm:px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">Microservices</span>
+              <span class="px-2 sm:px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">High Availability (HA)</span>
+              <span class="px-2 sm:px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">BCP Frameworks</span>
+              <span class="px-2 sm:px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">Failover Gateways</span>
             </div>
           </div>
 
           <!-- 2. Backend & Core Runtime -->
-          <div class="p-6 rounded-xl hairline-border bg-surface space-y-3 interactive-card">
+          <div class="p-5 sm:p-6 rounded-xl hairline-border bg-surface space-y-3 interactive-card">
             <div class="flex items-center justify-between">
               <span class="text-xs font-mono uppercase tracking-wider text-cyan-400 font-semibold">Backend &amp; Protocols</span>
               <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
             </div>
             <div class="flex flex-wrap gap-1.5 font-mono text-xs">
-              <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">Go (Golang)</span>
-              <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">Node.js</span>
-              <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">Laravel &amp; Lumen</span>
-              <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">Python</span>
-              <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">REST API</span>
-              <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">FIX API (Financial Exchange)</span>
-              <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">WebSocket &amp; Socket.IO</span>
+              <span class="px-2 sm:px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">Go (Golang)</span>
+              <span class="px-2 sm:px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">Node.js</span>
+              <span class="px-2 sm:px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">Laravel &amp; Lumen</span>
+              <span class="px-2 sm:px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">Python</span>
+              <span class="px-2 sm:px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">REST API</span>
+              <span class="px-2 sm:px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">FIX API (Market Data)</span>
+              <span class="px-2 sm:px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">WebSocket &amp; Socket.IO</span>
             </div>
           </div>
 
           <!-- 3. Cloud, DevOps & Observability -->
-          <div class="p-6 rounded-xl hairline-border bg-surface space-y-3 interactive-card">
+          <div class="p-5 sm:p-6 rounded-xl hairline-border bg-surface space-y-3 interactive-card">
             <div class="flex items-center justify-between">
               <span class="text-xs font-mono uppercase tracking-wider text-emerald-400 font-semibold">Cloud &amp; Observability</span>
               <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
             </div>
             <div class="flex flex-wrap gap-1.5 font-mono text-xs">
-              <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">AWS (ECS, EKS, API GW, RDS, EC2)</span>
-              <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">Cloudflare</span>
-              <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">ELK Stack (Elasticsearch, Logstash, Kibana)</span>
-              <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">Docker</span>
-              <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">CI/CD Pipelines</span>
-              <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">Observability &amp; Alerting</span>
-              <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">Vercel</span>
+              <span class="px-2 sm:px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">AWS (ECS, EKS, API GW, RDS)</span>
+              <span class="px-2 sm:px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">Cloudflare</span>
+              <span class="px-2 sm:px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">ELK Stack (Logging)</span>
+              <span class="px-2 sm:px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">Docker</span>
+              <span class="px-2 sm:px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">CI/CD Automation</span>
+              <span class="px-2 sm:px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">Vercel</span>
             </div>
           </div>
 
           <!-- 4. Messaging, Data & Caching -->
-          <div class="p-6 rounded-xl hairline-border bg-surface space-y-3 interactive-card">
+          <div class="p-5 sm:p-6 rounded-xl hairline-border bg-surface space-y-3 interactive-card">
             <div class="flex items-center justify-between">
               <span class="text-xs font-mono uppercase tracking-wider text-amber-400 font-semibold">Messaging &amp; Databases</span>
               <span class="w-2 h-2 rounded-full bg-amber-400"></span>
             </div>
             <div class="flex flex-wrap gap-1.5 font-mono text-xs">
-              <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">RabbitMQ</span>
-              <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">Redis</span>
-              <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">MySQL</span>
-              <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">PostgreSQL</span>
-              <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">DynamoDB</span>
-              <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">Query Optimization</span>
+              <span class="px-2 sm:px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">RabbitMQ</span>
+              <span class="px-2 sm:px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">Redis</span>
+              <span class="px-2 sm:px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">MySQL</span>
+              <span class="px-2 sm:px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">PostgreSQL</span>
+              <span class="px-2 sm:px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">DynamoDB</span>
+              <span class="px-2 sm:px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">Query Optimization</span>
             </div>
           </div>
 
           <!-- 5. Frontend & Mobile -->
-          <div class="p-6 rounded-xl hairline-border bg-surface space-y-3 interactive-card">
+          <div class="p-5 sm:p-6 rounded-xl hairline-border bg-surface space-y-3 interactive-card">
             <div class="flex items-center justify-between">
               <span class="text-xs font-mono uppercase tracking-wider text-cyan-400 font-semibold">Frontend &amp; Mobile</span>
               <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
             </div>
             <div class="flex flex-wrap gap-1.5 font-mono text-xs">
-              <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">TypeScript</span>
-              <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">React</span>
-              <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">Next.js</span>
-              <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">React Native</span>
-              <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">Tailwind CSS</span>
-              <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">Lighthouse 95+ Optimization</span>
+              <span class="px-2 sm:px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">TypeScript</span>
+              <span class="px-2 sm:px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">React</span>
+              <span class="px-2 sm:px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">Next.js</span>
+              <span class="px-2 sm:px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">React Native</span>
+              <span class="px-2 sm:px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">Tailwind CSS</span>
+              <span class="px-2 sm:px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">Lighthouse 95+ Score</span>
             </div>
           </div>
 
           <!-- 6. Leadership & AI-Assisted Engineering -->
-          <div class="p-6 rounded-xl hairline-border bg-surface space-y-3 interactive-card">
+          <div class="p-5 sm:p-6 rounded-xl hairline-border bg-surface space-y-3 interactive-card">
             <div class="flex items-center justify-between">
               <span class="text-xs font-mono uppercase tracking-wider text-accent font-semibold">Leadership &amp; AI Adoption</span>
               <span class="w-2 h-2 rounded-full bg-accent"></span>
             </div>
             <div class="flex flex-wrap gap-1.5 font-mono text-xs">
-              <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">Engineering Leadership</span>
-              <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">Team Building (Up to 15)</span>
-              <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">AI Assisted Development (Kiro, OpenRouter)</span>
-              <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">Automated Code Review &amp; Tests</span>
-              <span class="px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">Sprint Delivery Velocity</span>
+              <span class="px-2 sm:px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">Engineering Leadership</span>
+              <span class="px-2 sm:px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">Team Building (Up to 15)</span>
+              <span class="px-2 sm:px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">AI-Assisted Dev (Kiro, OpenRouter)</span>
+              <span class="px-2 sm:px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">Code Review &amp; CI/CD Standards</span>
+              <span class="px-2 sm:px-2.5 py-1 rounded bg-surface-subtle hairline-border text-ink-primary font-medium">Sprint Velocity Acceleration</span>
             </div>
           </div>
 
@@ -685,7 +748,7 @@
     </section>
 
     <!-- ================= WORK EXPERIENCE ================= -->
-    <section id="experience" class="space-y-8 scroll-mt-24">
+    <section id="experience" class="space-y-6 sm:space-y-8 scroll-mt-20 sm:scroll-mt-24">
       <div class="flex items-center gap-3">
         <span class="text-xs font-mono uppercase tracking-wider text-accent font-bold">02 // Professional Work Experience</span>
         <div class="h-px flex-1 hairline-border-top"></div>
@@ -693,43 +756,43 @@
 
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
         <div>
-          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-ink-primary">Career History</h2>
+          <h2 class="text-xl sm:text-3xl font-bold tracking-tight text-ink-primary">Career History</h2>
           <p class="text-xs font-mono text-ink-muted mt-1">
             Proven track record spanning 8+ years across high-frequency trading, fintech platforms, enterprise retail, and product engineering.
           </p>
         </div>
 
-        <!-- Filter Experience -->
-        <div class="flex items-center gap-1.5 p-1 rounded-lg hairline-border bg-surface text-xs font-mono">
-          <button onclick="filterExperience('all')" class="exp-filter-btn active px-3 py-1 rounded transition-colors"
+        <!-- Filter Experience (Responsive scrollbar on small devices) -->
+        <div class="w-full sm:w-auto overflow-x-auto no-scrollbar flex items-center gap-1 sm:gap-1.5 p-1 rounded-lg hairline-border bg-surface text-xs font-mono">
+          <button onclick="filterExperience('all')" class="exp-filter-btn active px-2.5 sm:px-3 py-1 rounded transition-colors whitespace-nowrap"
             data-exp-filter="all">All (12)</button>
-          <button onclick="filterExperience('lead')" class="exp-filter-btn px-3 py-1 rounded text-ink-muted hover:text-ink-primary transition-colors"
+          <button onclick="filterExperience('lead')" class="exp-filter-btn px-2.5 sm:px-3 py-1 rounded text-ink-muted hover:text-ink-primary transition-colors whitespace-nowrap"
             data-exp-filter="lead">Leadership</button>
-          <button onclick="filterExperience('fintech')" class="exp-filter-btn px-3 py-1 rounded text-ink-muted hover:text-ink-primary transition-colors"
+          <button onclick="filterExperience('fintech')" class="exp-filter-btn px-2.5 sm:px-3 py-1 rounded text-ink-muted hover:text-ink-primary transition-colors whitespace-nowrap"
             data-exp-filter="fintech">Fintech &amp; Trading</button>
         </div>
       </div>
 
-      <!-- Experience Timeline List -->
-      <div class="relative pl-7 sm:pl-9 border-l border-surface-border space-y-6" id="experience-list">
+      <!-- Experience Timeline List (Responsive padding & margins) -->
+      <div class="relative ml-2 sm:ml-0 pl-5 sm:pl-9 border-l border-surface-border space-y-4 sm:space-y-6" id="experience-list">
 
         <!-- 1. Full Stack Developer | Independent Product Builder -->
-        <article class="exp-item timeline-item p-6 sm:p-7 rounded-2xl hairline-border bg-surface interactive-card space-y-4"
+        <article class="exp-item timeline-item p-4 sm:p-7 rounded-xl sm:rounded-2xl hairline-border bg-surface interactive-card space-y-3 sm:space-y-4"
           data-category="lead fintech">
-          <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2">
+          <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-1.5 sm:gap-2">
             <div>
-              <div class="flex items-center gap-2.5 flex-wrap">
-                <h3 class="text-lg sm:text-xl font-bold text-ink-primary">Full Stack Developer</h3>
-                <span class="text-xs font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Current</span>
+              <div class="flex items-center gap-2 flex-wrap">
+                <h3 class="text-base sm:text-xl font-bold text-ink-primary">Full Stack Developer</h3>
+                <span class="text-[10px] sm:text-xs font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Current</span>
               </div>
-              <div class="text-sm font-semibold text-accent mt-0.5">Independent Product Builder</div>
+              <div class="text-xs sm:text-sm font-semibold text-accent mt-0.5">Independent Product Builder</div>
             </div>
-            <div class="text-xs font-mono text-ink-muted sm:text-right">
+            <div class="text-[11px] sm:text-xs font-mono text-ink-muted">
               Jan 2023 — Present
             </div>
           </div>
 
-          <ul class="text-xs sm:text-sm text-ink-secondary space-y-2.5 list-disc list-inside marker:text-accent">
+          <ul class="text-xs sm:text-sm text-ink-secondary space-y-2 list-disc list-inside marker:text-accent">
             <li>Independently owned architecture and product implementation for production web applications built with <strong class="text-ink-primary font-medium">React, Next.js, and TypeScript</strong>.</li>
             <li>Led the design of reusable UI patterns and scalable component structures to keep features consistent, maintainable, and fast to ship.</li>
             <li>Improved frontend responsiveness, SEO, accessibility, and user experience through interface refactoring, page optimization, and cleaner interaction flows, achieving <strong class="text-ink-primary font-medium">Lighthouse scores of 95+</strong> across Performance, Accessibility, Best Practices, and SEO.</li>
@@ -738,7 +801,7 @@
             <li>Drove code quality and workflow improvements that made the application easier to extend and support over time.</li>
           </ul>
 
-          <div class="pt-3 hairline-border-top flex flex-wrap gap-1.5 font-mono text-[11px]">
+          <div class="pt-2.5 sm:pt-3 hairline-border-top flex flex-wrap gap-1 sm:gap-1.5 font-mono text-[10px] sm:text-[11px]">
             <span class="px-2 py-0.5 rounded bg-surface-subtle hairline-border text-ink-primary">React</span>
             <span class="px-2 py-0.5 rounded bg-surface-subtle hairline-border text-ink-primary">Next.js</span>
             <span class="px-2 py-0.5 rounded bg-surface-subtle hairline-border text-ink-primary">Laravel</span>
@@ -754,22 +817,22 @@
         </article>
 
         <!-- 2. Engineering Lead | PT Surya Anugrah Mulya -->
-        <article class="exp-item timeline-item p-6 sm:p-7 rounded-2xl hairline-border bg-surface interactive-card space-y-4"
+        <article class="exp-item timeline-item p-4 sm:p-7 rounded-xl sm:rounded-2xl hairline-border bg-surface interactive-card space-y-3 sm:space-y-4"
           data-category="lead fintech">
-          <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2">
+          <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-1.5 sm:gap-2">
             <div>
-              <div class="flex items-center gap-2.5 flex-wrap">
-                <h3 class="text-lg sm:text-xl font-bold text-ink-primary">Engineering Lead</h3>
-                <span class="text-xs font-mono px-2 py-0.5 rounded bg-accent/10 text-accent border border-accent/25">High Frequency Trading</span>
+              <div class="flex items-center gap-2 flex-wrap">
+                <h3 class="text-base sm:text-xl font-bold text-ink-primary">Engineering Lead</h3>
+                <span class="text-[10px] sm:text-xs font-mono px-2 py-0.5 rounded bg-accent/10 text-accent border border-accent/25">High Frequency Trading</span>
               </div>
-              <div class="text-sm font-semibold text-accent mt-0.5">PT Surya Anugrah Mulya</div>
+              <div class="text-xs sm:text-sm font-semibold text-accent mt-0.5">PT Surya Anugrah Mulya</div>
             </div>
-            <div class="text-xs font-mono text-ink-muted sm:text-right">
+            <div class="text-[11px] sm:text-xs font-mono text-ink-muted">
               Nov 2024 — Aug 2026
             </div>
           </div>
 
-          <ul class="text-xs sm:text-sm text-ink-secondary space-y-2.5 list-disc list-inside marker:text-accent">
+          <ul class="text-xs sm:text-sm text-ink-secondary space-y-2 list-disc list-inside marker:text-accent">
             <li>Architected a failover gateway for high frequency trading operations, ensuring business continuity with <strong class="text-ink-primary font-medium">under 30 second recovery time</strong> and <strong class="text-ink-primary font-medium">99.95% uptime</strong> during market hours.</li>
             <li>Led the production migration to AWS, raising uptime from 99.5% to 99.95% and cutting incident detection time by <strong class="text-ink-primary font-medium">60%</strong> through ELK based observability.</li>
             <li>Built and led a <strong class="text-ink-primary font-medium">12 person cross functional team</strong>, reducing release cycle time from 2 weeks to 3 days while mentoring engineers and strengthening engineering discipline.</li>
@@ -778,7 +841,7 @@
             <li>Drove cross department process automation with IT, Product, Corporate Strategy, and Operations, saving <strong class="text-ink-primary font-medium">~80 hours per month</strong> of manual reporting while securing data flow.</li>
           </ul>
 
-          <div class="pt-3 hairline-border-top flex flex-wrap gap-1.5 font-mono text-[11px]">
+          <div class="pt-2.5 sm:pt-3 hairline-border-top flex flex-wrap gap-1 sm:gap-1.5 font-mono text-[10px] sm:text-[11px]">
             <span class="px-2 py-0.5 rounded bg-surface-subtle hairline-border text-ink-primary">AWS</span>
             <span class="px-2 py-0.5 rounded bg-surface-subtle hairline-border text-ink-primary">Cloudflare</span>
             <span class="px-2 py-0.5 rounded bg-surface-subtle hairline-border text-ink-primary">MySQL</span>
@@ -797,21 +860,21 @@
         </article>
 
         <!-- 3. Research And Development Lead | PT Surya Anugrah Mulya -->
-        <article class="exp-item timeline-item p-6 sm:p-7 rounded-2xl hairline-border bg-surface interactive-card space-y-4"
+        <article class="exp-item timeline-item p-4 sm:p-7 rounded-xl sm:rounded-2xl hairline-border bg-surface interactive-card space-y-3 sm:space-y-4"
           data-category="lead fintech">
-          <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2">
+          <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-1.5 sm:gap-2">
             <div>
-              <div class="flex items-center gap-2.5 flex-wrap">
-                <h3 class="text-lg sm:text-xl font-bold text-ink-primary">Research And Development Lead</h3>
+              <div class="flex items-center gap-2 flex-wrap">
+                <h3 class="text-base sm:text-xl font-bold text-ink-primary">Research And Development Lead</h3>
               </div>
-              <div class="text-sm font-semibold text-accent mt-0.5">PT Surya Anugrah Mulya</div>
+              <div class="text-xs sm:text-sm font-semibold text-accent mt-0.5">PT Surya Anugrah Mulya</div>
             </div>
-            <div class="text-xs font-mono text-ink-muted sm:text-right">
+            <div class="text-[11px] sm:text-xs font-mono text-ink-muted">
               Jan 2024 — Oct 2024
             </div>
           </div>
 
-          <ul class="text-xs sm:text-sm text-ink-secondary space-y-2.5 list-disc list-inside marker:text-accent">
+          <ul class="text-xs sm:text-sm text-ink-secondary space-y-2 list-disc list-inside marker:text-accent">
             <li>Spearheaded the architecture modernization roadmap, decomposing a monolith into <strong class="text-ink-primary font-medium">8 microservices</strong> with event-driven patterns, reducing deployment time from hours to under 15 minutes.</li>
             <li>Pioneered the company's DevOps practice: introduced Git workflow, CI/CD pipelines, and automated deployments, increasing release frequency from monthly to weekly and cutting deployment errors by 70%.</li>
             <li>Built a trading algorithm simulation environment used by the team to backtest and validate 12 strategies before production release.</li>
@@ -819,7 +882,7 @@
             <li>Led a 3 person R&amp;D unit focused on scalability, latency reduction, and real-time data broadcasting, achieving <strong class="text-ink-primary font-medium">40% lower latency</strong> on the market data distribution pipeline.</li>
           </ul>
 
-          <div class="pt-3 hairline-border-top flex flex-wrap gap-1.5 font-mono text-[11px]">
+          <div class="pt-2.5 sm:pt-3 hairline-border-top flex flex-wrap gap-1 sm:gap-1.5 font-mono text-[10px] sm:text-[11px]">
             <span class="px-2 py-0.5 rounded bg-surface-subtle hairline-border text-ink-primary">AWS</span>
             <span class="px-2 py-0.5 rounded bg-surface-subtle hairline-border text-ink-primary">Laravel</span>
             <span class="px-2 py-0.5 rounded bg-surface-subtle hairline-border text-ink-primary">Python</span>
@@ -831,22 +894,22 @@
         </article>
 
         <!-- 4. Engineering Lead | MIFX -->
-        <article class="exp-item timeline-item p-6 sm:p-7 rounded-2xl hairline-border bg-surface interactive-card space-y-4"
+        <article class="exp-item timeline-item p-4 sm:p-7 rounded-xl sm:rounded-2xl hairline-border bg-surface interactive-card space-y-3 sm:space-y-4"
           data-category="lead fintech">
-          <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2">
+          <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-1.5 sm:gap-2">
             <div>
-              <div class="flex items-center gap-2.5 flex-wrap">
-                <h3 class="text-lg sm:text-xl font-bold text-ink-primary">Engineering Lead</h3>
-                <span class="text-xs font-mono px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">Backend Org Head</span>
+              <div class="flex items-center gap-2 flex-wrap">
+                <h3 class="text-base sm:text-xl font-bold text-ink-primary">Engineering Lead</h3>
+                <span class="text-[10px] sm:text-xs font-mono px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">Backend Org Head</span>
               </div>
-              <div class="text-sm font-semibold text-accent mt-0.5">MIFX (Monex Investindo Futures)</div>
+              <div class="text-xs sm:text-sm font-semibold text-accent mt-0.5">MIFX (Monex Investindo Futures)</div>
             </div>
-            <div class="text-xs font-mono text-ink-muted sm:text-right">
+            <div class="text-[11px] sm:text-xs font-mono text-ink-muted">
               Jan 2023 — Dec 2023
             </div>
           </div>
 
-          <ul class="text-xs sm:text-sm text-ink-secondary space-y-2.5 list-disc list-inside marker:text-accent">
+          <ul class="text-xs sm:text-sm text-ink-secondary space-y-2 list-disc list-inside marker:text-accent">
             <li>Led the Backend organization of <strong class="text-ink-primary font-medium">13+ engineers</strong>, directly managing 3 tribe leads / technical leads and setting technical direction across squads.</li>
             <li>Introduced an event driven microservices architecture using <strong class="text-ink-primary font-medium">RabbitMQ, SAGA, and CQRS patterns</strong>, improving data consistency across 9 services and reducing order processing latency by 35%.</li>
             <li>Designed the API layer with AWS API Gateway and service/repository patterns, supporting <strong class="text-ink-primary font-medium">~500,000 requests per day</strong> with p95 response time under 250 ms.</li>
@@ -855,7 +918,7 @@
             <li>Shipped scalable APIs and frontend integrations for 4 financial products, contributing to 25% growth in active trading accounts.</li>
           </ul>
 
-          <div class="pt-3 hairline-border-top flex flex-wrap gap-1.5 font-mono text-[11px]">
+          <div class="pt-2.5 sm:pt-3 hairline-border-top flex flex-wrap gap-1 sm:gap-1.5 font-mono text-[10px] sm:text-[11px]">
             <span class="px-2 py-0.5 rounded bg-surface-subtle hairline-border text-ink-primary">Laravel</span>
             <span class="px-2 py-0.5 rounded bg-surface-subtle hairline-border text-ink-primary">MySQL</span>
             <span class="px-2 py-0.5 rounded bg-surface-subtle hairline-border text-ink-primary">Redis</span>
@@ -868,21 +931,21 @@
         </article>
 
         <!-- 5. Technical Lead | MIFX -->
-        <article class="exp-item timeline-item p-6 sm:p-7 rounded-2xl hairline-border bg-surface interactive-card space-y-4"
+        <article class="exp-item timeline-item p-4 sm:p-7 rounded-xl sm:rounded-2xl hairline-border bg-surface interactive-card space-y-3 sm:space-y-4"
           data-category="lead fintech">
-          <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2">
+          <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-1.5 sm:gap-2">
             <div>
-              <div class="flex items-center gap-2.5 flex-wrap">
-                <h3 class="text-lg sm:text-xl font-bold text-ink-primary">Technical Lead</h3>
+              <div class="flex items-center gap-2 flex-wrap">
+                <h3 class="text-base sm:text-xl font-bold text-ink-primary">Technical Lead</h3>
               </div>
-              <div class="text-sm font-semibold text-accent mt-0.5">MIFX</div>
+              <div class="text-xs sm:text-sm font-semibold text-accent mt-0.5">MIFX</div>
             </div>
-            <div class="text-xs font-mono text-ink-muted sm:text-right">
+            <div class="text-[11px] sm:text-xs font-mono text-ink-muted">
               May 2022 — Dec 2022
             </div>
           </div>
 
-          <ul class="text-xs sm:text-sm text-ink-secondary space-y-2.5 list-disc list-inside marker:text-accent">
+          <ul class="text-xs sm:text-sm text-ink-secondary space-y-2 list-disc list-inside marker:text-accent">
             <li>Architected the microservices infrastructure for the trading platform on AWS (API Gateway, NLB, ECS, Aurora, Redis, Docker), supporting ~2,000 concurrent users with <strong class="text-ink-primary font-medium">99.9% uptime</strong>.</li>
             <li>Designed and deployed the ELK stack for centralized logging and monitoring, reducing mean time to detect incidents from ~4 hours to ~15 minutes.</li>
             <li>Architected the MIFX platform on Alibaba Cloud, delivering a multi-cloud track record across AWS and Alibaba Cloud, with 7 services deployed and zero downtime releases.</li>
@@ -891,7 +954,7 @@
             <li>Led technical hiring and onboarding: planned the hiring process and recruited 6 engineers within 4 months, reducing time to hire by 30%.</li>
           </ul>
 
-          <div class="pt-3 hairline-border-top flex flex-wrap gap-1.5 font-mono text-[11px]">
+          <div class="pt-2.5 sm:pt-3 hairline-border-top flex flex-wrap gap-1 sm:gap-1.5 font-mono text-[10px] sm:text-[11px]">
             <span class="px-2 py-0.5 rounded bg-surface-subtle hairline-border text-ink-primary">AWS</span>
             <span class="px-2 py-0.5 rounded bg-surface-subtle hairline-border text-ink-primary">Laravel</span>
             <span class="px-2 py-0.5 rounded bg-surface-subtle hairline-border text-ink-primary">Node.js</span>
@@ -905,22 +968,22 @@
         </article>
 
         <!-- 6. Technical Lead | DXTR ASIA -->
-        <article class="exp-item timeline-item p-6 sm:p-7 rounded-2xl hairline-border bg-surface interactive-card space-y-4"
+        <article class="exp-item timeline-item p-4 sm:p-7 rounded-xl sm:rounded-2xl hairline-border bg-surface interactive-card space-y-3 sm:space-y-4"
           data-category="lead">
-          <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2">
+          <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-1.5 sm:gap-2">
             <div>
-              <div class="flex items-center gap-2.5 flex-wrap">
-                <h3 class="text-lg sm:text-xl font-bold text-ink-primary">Technical Lead</h3>
-                <span class="text-xs font-mono px-2 py-0.5 rounded bg-accent/10 text-accent border border-accent/25">15 Engineers Led</span>
+              <div class="flex items-center gap-2 flex-wrap">
+                <h3 class="text-base sm:text-xl font-bold text-ink-primary">Technical Lead</h3>
+                <span class="text-[10px] sm:text-xs font-mono px-2 py-0.5 rounded bg-accent/10 text-accent border border-accent/25">15 Engineers Led</span>
               </div>
-              <div class="text-sm font-semibold text-accent mt-0.5">DXTR ASIA</div>
+              <div class="text-xs sm:text-sm font-semibold text-accent mt-0.5">DXTR ASIA</div>
             </div>
-            <div class="text-xs font-mono text-ink-muted sm:text-right">
+            <div class="text-[11px] sm:text-xs font-mono text-ink-muted">
               Aug 2020 — May 2022
             </div>
           </div>
 
-          <ul class="text-xs sm:text-sm text-ink-secondary space-y-2.5 list-disc list-inside marker:text-accent">
+          <ul class="text-xs sm:text-sm text-ink-secondary space-y-2 list-disc list-inside marker:text-accent">
             <li>Led a cross-functional team of <strong class="text-ink-primary font-medium">~15 engineers</strong> (Backend, Frontend, QA), coordinating delivery across 3 vendors and 4 squads while partnering with the CTO and Project Manager on roadmap and priorities.</li>
             <li>Designed and scaled a notification platform delivering <strong class="text-ink-primary font-medium">~5 million notifications per day</strong> and large scale data exports, sustaining ~20,000 messages per minute at peak with 99.9% delivery success.</li>
             <li>Evolved microservices and event driven systems on AWS (ECS, EKS, API Gateway, Aurora, DynamoDB), cutting infrastructure cost by ~25% and improving p95 response time from ~800 ms to ~300 ms.</li>
@@ -929,7 +992,7 @@
             <li>Raised engineering quality through code review standards, security reviews, and Agile practices; mentored engineers and supported hiring, onboarding, and performance reviews.</li>
           </ul>
 
-          <div class="pt-3 hairline-border-top flex flex-wrap gap-1.5 font-mono text-[11px]">
+          <div class="pt-2.5 sm:pt-3 hairline-border-top flex flex-wrap gap-1 sm:gap-1.5 font-mono text-[10px] sm:text-[11px]">
             <span class="px-2 py-0.5 rounded bg-surface-subtle hairline-border text-ink-primary">Angular</span>
             <span class="px-2 py-0.5 rounded bg-surface-subtle hairline-border text-ink-primary">React</span>
             <span class="px-2 py-0.5 rounded bg-surface-subtle hairline-border text-ink-primary">Node.js</span>
@@ -945,22 +1008,22 @@
         </article>
 
         <!-- 7. Lead Backend Developer | DXTR ASIA -->
-        <article class="exp-item timeline-item p-6 sm:p-7 rounded-2xl hairline-border bg-surface interactive-card space-y-4"
+        <article class="exp-item timeline-item p-4 sm:p-7 rounded-xl sm:rounded-2xl hairline-border bg-surface interactive-card space-y-3 sm:space-y-4"
           data-category="lead">
-          <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2">
+          <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-1.5 sm:gap-2">
             <div>
-              <div class="flex items-center gap-2.5 flex-wrap">
-                <h3 class="text-lg sm:text-xl font-bold text-ink-primary">Lead Backend Developer</h3>
-                <span class="text-xs font-mono px-2 py-0.5 rounded bg-surface-subtle text-ink-muted border hairline-border">SRC Project Migration</span>
+              <div class="flex items-center gap-2 flex-wrap">
+                <h3 class="text-base sm:text-xl font-bold text-ink-primary">Lead Backend Developer</h3>
+                <span class="text-[10px] sm:text-xs font-mono px-2 py-0.5 rounded bg-surface-subtle text-ink-muted border hairline-border">SRC Project Migration</span>
               </div>
-              <div class="text-sm font-semibold text-accent mt-0.5">DXTR ASIA</div>
+              <div class="text-xs sm:text-sm font-semibold text-accent mt-0.5">DXTR ASIA</div>
             </div>
-            <div class="text-xs font-mono text-ink-muted sm:text-right">
+            <div class="text-[11px] sm:text-xs font-mono text-ink-muted">
               Aug 2019 — Jul 2020
             </div>
           </div>
 
-          <ul class="text-xs sm:text-sm text-ink-secondary space-y-2.5 list-disc list-inside marker:text-accent">
+          <ul class="text-xs sm:text-sm text-ink-secondary space-y-2 list-disc list-inside marker:text-accent">
             <li>Led the migration of SRC projects from monolith to microservices on AWS (ECS), cutting deployment time from ~1 hour to ~10 minutes and improving API response time by ~45%.</li>
             <li>Led and mentored a backend team of 5 engineers, setting technical direction on performance, reliability, and maintainability; reduced production bugs by ~35% through code review standards and SonarQube quality gates.</li>
             <li>Designed and implemented asynchronous messaging with AWS SQS and SNS, decoupling services and handling ~100,000 events per day with zero message loss.</li>
@@ -968,7 +1031,7 @@
             <li>Improved CI/CD with Jenkins and monitoring with New Relic, raising test coverage from ~15% to ~65% and reducing incident response time by ~40%.</li>
           </ul>
 
-          <div class="pt-3 hairline-border-top flex flex-wrap gap-1.5 font-mono text-[11px]">
+          <div class="pt-2.5 sm:pt-3 hairline-border-top flex flex-wrap gap-1 sm:gap-1.5 font-mono text-[10px] sm:text-[11px]">
             <span class="px-2 py-0.5 rounded bg-surface-subtle hairline-border text-ink-primary">PHP</span>
             <span class="px-2 py-0.5 rounded bg-surface-subtle hairline-border text-ink-primary">Laravel</span>
             <span class="px-2 py-0.5 rounded bg-surface-subtle hairline-border text-ink-primary">MySQL</span>
@@ -981,29 +1044,29 @@
         </article>
 
         <!-- 8. Senior Backend Developer | DXTR ASIA -->
-        <article class="exp-item timeline-item p-6 sm:p-7 rounded-2xl hairline-border bg-surface interactive-card space-y-4"
+        <article class="exp-item timeline-item p-4 sm:p-7 rounded-xl sm:rounded-2xl hairline-border bg-surface interactive-card space-y-3 sm:space-y-4"
           data-category="fintech">
-          <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2">
+          <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-1.5 sm:gap-2">
             <div>
-              <div class="flex items-center gap-2.5 flex-wrap">
-                <h3 class="text-lg sm:text-xl font-bold text-ink-primary">Senior Backend Developer</h3>
-                <span class="text-xs font-mono px-2 py-0.5 rounded bg-surface-subtle text-ink-muted border hairline-border">SRC Core Backend</span>
+              <div class="flex items-center gap-2 flex-wrap">
+                <h3 class="text-base sm:text-xl font-bold text-ink-primary">Senior Backend Developer</h3>
+                <span class="text-[10px] sm:text-xs font-mono px-2 py-0.5 rounded bg-surface-subtle text-ink-muted border hairline-border">SRC Core Backend</span>
               </div>
-              <div class="text-sm font-semibold text-accent mt-0.5">DXTR ASIA</div>
+              <div class="text-xs sm:text-sm font-semibold text-accent mt-0.5">DXTR ASIA</div>
             </div>
-            <div class="text-xs font-mono text-ink-muted sm:text-right">
+            <div class="text-[11px] sm:text-xs font-mono text-ink-muted">
               Jul 2018 — Jul 2019
             </div>
           </div>
 
-          <ul class="text-xs sm:text-sm text-ink-secondary space-y-2.5 list-disc list-inside marker:text-accent">
+          <ul class="text-xs sm:text-sm text-ink-secondary space-y-2 list-disc list-inside marker:text-accent">
             <li>Built the SRC backend from the ground up (B2B, B2C, and DTE platforms), supporting ~3,000 concurrent users at launch with 99.5% uptime.</li>
             <li>Designed REST APIs in Laravel and Lumen, with MySQL, Redis, and DynamoDB caching strategies that cut average API response time by ~50% and database load by ~40%.</li>
             <li>Integrated OTP messaging and Gojek delivery services, achieving &gt;98% OTP delivery success and enabling same day delivery for ~500 orders per day.</li>
             <li>Monitored performance with New Relic and Flare, reducing production errors by ~30% and resolving critical incidents in under 2 hours on average.</li>
           </ul>
 
-          <div class="pt-3 hairline-border-top flex flex-wrap gap-1.5 font-mono text-[11px]">
+          <div class="pt-2.5 sm:pt-3 hairline-border-top flex flex-wrap gap-1 sm:gap-1.5 font-mono text-[10px] sm:text-[11px]">
             <span class="px-2 py-0.5 rounded bg-surface-subtle hairline-border text-ink-primary">Laravel</span>
             <span class="px-2 py-0.5 rounded bg-surface-subtle hairline-border text-ink-primary">Lumen</span>
             <span class="px-2 py-0.5 rounded bg-surface-subtle hairline-border text-ink-primary">MySQL</span>
@@ -1015,22 +1078,22 @@
         </article>
 
         <!-- 9. Lead Engineer | PT Rayanusa Tekno Medika -->
-        <article class="exp-item timeline-item p-6 sm:p-7 rounded-2xl hairline-border bg-surface interactive-card space-y-4"
+        <article class="exp-item timeline-item p-4 sm:p-7 rounded-xl sm:rounded-2xl hairline-border bg-surface interactive-card space-y-3 sm:space-y-4"
           data-category="lead">
-          <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2">
+          <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-1.5 sm:gap-2">
             <div>
-              <div class="flex items-center gap-2.5 flex-wrap">
-                <h3 class="text-lg sm:text-xl font-bold text-ink-primary">Lead Engineer</h3>
-                <span class="text-xs font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">ISO 27001 Security</span>
+              <div class="flex items-center gap-2 flex-wrap">
+                <h3 class="text-base sm:text-xl font-bold text-ink-primary">Lead Engineer</h3>
+                <span class="text-[10px] sm:text-xs font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">ISO 27001 Security</span>
               </div>
-              <div class="text-sm font-semibold text-accent mt-0.5">PT Rayanusa Tekno Medika</div>
+              <div class="text-xs sm:text-sm font-semibold text-accent mt-0.5">PT Rayanusa Tekno Medika</div>
             </div>
-            <div class="text-xs font-mono text-ink-muted sm:text-right">
+            <div class="text-[11px] sm:text-xs font-mono text-ink-muted">
               Apr 2020 — Apr 2026
             </div>
           </div>
 
-          <ul class="text-xs sm:text-sm text-ink-secondary space-y-2.5 list-disc list-inside marker:text-accent">
+          <ul class="text-xs sm:text-sm text-ink-secondary space-y-2 list-disc list-inside marker:text-accent">
             <li>Architected and delivered the EMOP electronic office management platform (Laravel, React, MySQL), serving ~2,000 users with a ~3-month go-live.</li>
             <li>Designed the cloud infrastructure for EMOP and advised on AWS security architecture for the ICE ON IMERI project, closing ~25 security findings from the initial assessment.</li>
             <li>Implemented OWASP Top 10 safeguards aligned with ISO 27001 controls, passing 2 penetration test rounds with zero critical findings.</li>
@@ -1038,7 +1101,7 @@
             <li>Integrated payment gateways (DOKU, Midtrans, iPaymu) into Travel Pass, supporting 3 payment methods with ~96% payment success rate.</li>
           </ul>
 
-          <div class="pt-3 hairline-border-top flex flex-wrap gap-1.5 font-mono text-[11px]">
+          <div class="pt-2.5 sm:pt-3 hairline-border-top flex flex-wrap gap-1 sm:gap-1.5 font-mono text-[10px] sm:text-[11px]">
             <span class="px-2 py-0.5 rounded bg-surface-subtle hairline-border text-ink-primary">Laravel</span>
             <span class="px-2 py-0.5 rounded bg-surface-subtle hairline-border text-ink-primary">React</span>
             <span class="px-2 py-0.5 rounded bg-surface-subtle hairline-border text-ink-primary">Payment Gateway</span>
@@ -1051,28 +1114,28 @@
         </article>
 
         <!-- 10. Senior Backend Engineer | Crocodic -->
-        <article class="exp-item timeline-item p-6 sm:p-7 rounded-2xl hairline-border bg-surface interactive-card space-y-4"
+        <article class="exp-item timeline-item p-4 sm:p-7 rounded-xl sm:rounded-2xl hairline-border bg-surface interactive-card space-y-3 sm:space-y-4"
           data-category="lead">
-          <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2">
+          <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-1.5 sm:gap-2">
             <div>
-              <div class="flex items-center gap-2.5 flex-wrap">
-                <h3 class="text-lg sm:text-xl font-bold text-ink-primary">Senior Backend Engineer</h3>
-                <span class="text-xs font-mono px-2 py-0.5 rounded bg-surface-subtle text-ink-muted border hairline-border">Government LKPP Platform</span>
+              <div class="flex items-center gap-2 flex-wrap">
+                <h3 class="text-base sm:text-xl font-bold text-ink-primary">Senior Backend Engineer</h3>
+                <span class="text-[10px] sm:text-xs font-mono px-2 py-0.5 rounded bg-surface-subtle text-ink-muted border hairline-border">Government LKPP Platform</span>
               </div>
-              <div class="text-sm font-semibold text-accent mt-0.5">Crocodic</div>
+              <div class="text-xs sm:text-sm font-semibold text-accent mt-0.5">Crocodic</div>
             </div>
-            <div class="text-xs font-mono text-ink-muted sm:text-right">
+            <div class="text-[11px] sm:text-xs font-mono text-ink-muted">
               Sep 2021 — Dec 2021
             </div>
           </div>
 
-          <ul class="text-xs sm:text-sm text-ink-secondary space-y-2.5 list-disc list-inside marker:text-accent">
+          <ul class="text-xs sm:text-sm text-ink-secondary space-y-2 list-disc list-inside marker:text-accent">
             <li>Built RESTful APIs with Lumen and MySQL in a microservices architecture for Toko Daring LKPP, a national government e-procurement marketplace.</li>
             <li>Developed the Request for Quotation (RFQ) system, enabling buyers to request and compare vendor offers.</li>
             <li>Implemented real-time chat and notifications with WebSocket (Node.js, Socket.io), supporting ~1,500 concurrent connections with under 1-second delivery.</li>
           </ul>
 
-          <div class="pt-3 hairline-border-top flex flex-wrap gap-1.5 font-mono text-[11px]">
+          <div class="pt-2.5 sm:pt-3 hairline-border-top flex flex-wrap gap-1 sm:gap-1.5 font-mono text-[10px] sm:text-[11px]">
             <span class="px-2 py-0.5 rounded bg-surface-subtle hairline-border text-ink-primary">PHP</span>
             <span class="px-2 py-0.5 rounded bg-surface-subtle hairline-border text-ink-primary">Lumen</span>
             <span class="px-2 py-0.5 rounded bg-surface-subtle hairline-border text-ink-primary">Node.js</span>
@@ -1082,22 +1145,22 @@
         </article>
 
         <!-- 11. Lead Engineer | PT Satuu Teknologi Utama -->
-        <article class="exp-item timeline-item p-6 sm:p-7 rounded-2xl hairline-border bg-surface interactive-card space-y-4"
+        <article class="exp-item timeline-item p-4 sm:p-7 rounded-xl sm:rounded-2xl hairline-border bg-surface interactive-card space-y-3 sm:space-y-4"
           data-category="lead">
-          <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2">
+          <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-1.5 sm:gap-2">
             <div>
-              <div class="flex items-center gap-2.5 flex-wrap">
-                <h3 class="text-lg sm:text-xl font-bold text-ink-primary">Lead Engineer</h3>
-                <span class="text-xs font-mono px-2 py-0.5 rounded bg-surface-subtle text-ink-muted border hairline-border">Hybrid ERP &amp; PWA</span>
+              <div class="flex items-center gap-2 flex-wrap">
+                <h3 class="text-base sm:text-xl font-bold text-ink-primary">Lead Engineer</h3>
+                <span class="text-[10px] sm:text-xs font-mono px-2 py-0.5 rounded bg-surface-subtle text-ink-muted border hairline-border">Hybrid ERP &amp; PWA</span>
               </div>
-              <div class="text-sm font-semibold text-accent mt-0.5">PT Satuu Teknologi Utama</div>
+              <div class="text-xs sm:text-sm font-semibold text-accent mt-0.5">PT Satuu Teknologi Utama</div>
             </div>
-            <div class="text-xs font-mono text-ink-muted sm:text-right">
+            <div class="text-[11px] sm:text-xs font-mono text-ink-muted">
               Jan 2021 — Apr 2022
             </div>
           </div>
 
-          <ul class="text-xs sm:text-sm text-ink-secondary space-y-2.5 list-disc list-inside marker:text-accent">
+          <ul class="text-xs sm:text-sm text-ink-secondary space-y-2 list-disc list-inside marker:text-accent">
             <li>Built an ERP system (inventory, purchasing, and sales modules) with automatic hybrid online/offline mode, letting warehouse staff keep working through connectivity loss and syncing data once back online with zero data loss.</li>
             <li>Designed the backend with a service-pattern architecture (Lumen, MySQL), supporting ~200 users across 21 warehouses and branches.</li>
             <li>Implemented a Progressive Web App (PWA) with offline caching, cutting page load time by ~50% and eliminating downtime-related stock-entry delays.</li>
@@ -1105,7 +1168,7 @@
             <li>Set up and managed the AWS cloud environment (EC2, RDS, S3), achieving 99.9% uptime and reducing hosting cost by ~20% versus the previous setup.</li>
           </ul>
 
-          <div class="pt-3 hairline-border-top flex flex-wrap gap-1.5 font-mono text-[11px]">
+          <div class="pt-2.5 sm:pt-3 hairline-border-top flex flex-wrap gap-1 sm:gap-1.5 font-mono text-[10px] sm:text-[11px]">
             <span class="px-2 py-0.5 rounded bg-surface-subtle hairline-border text-ink-primary">PHP</span>
             <span class="px-2 py-0.5 rounded bg-surface-subtle hairline-border text-ink-primary">Lumen</span>
             <span class="px-2 py-0.5 rounded bg-surface-subtle hairline-border text-ink-primary">MySQL</span>
@@ -1116,27 +1179,27 @@
         </article>
 
         <!-- 12. Full Stack Developer | PT Internet Solusi Layanan Informasi Mandiri -->
-        <article class="exp-item timeline-item p-6 sm:p-7 rounded-2xl hairline-border bg-surface interactive-card space-y-4"
+        <article class="exp-item timeline-item p-4 sm:p-7 rounded-xl sm:rounded-2xl hairline-border bg-surface interactive-card space-y-3 sm:space-y-4"
           data-category="lead">
-          <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2">
+          <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-1.5 sm:gap-2">
             <div>
-              <div class="flex items-center gap-2.5 flex-wrap">
-                <h3 class="text-lg sm:text-xl font-bold text-ink-primary">Full Stack Developer</h3>
+              <div class="flex items-center gap-2 flex-wrap">
+                <h3 class="text-base sm:text-xl font-bold text-ink-primary">Full Stack Developer</h3>
               </div>
-              <div class="text-sm font-semibold text-accent mt-0.5">PT Internet Solusi Layanan Informasi Mandiri</div>
+              <div class="text-xs sm:text-sm font-semibold text-accent mt-0.5">PT Internet Solusi Layanan Informasi Mandiri</div>
             </div>
-            <div class="text-xs font-mono text-ink-muted sm:text-right">
+            <div class="text-[11px] sm:text-xs font-mono text-ink-muted">
               Apr 2018 — Jun 2018
             </div>
           </div>
 
-          <ul class="text-xs sm:text-sm text-ink-secondary space-y-2.5 list-disc list-inside marker:text-accent">
+          <ul class="text-xs sm:text-sm text-ink-secondary space-y-2 list-disc list-inside marker:text-accent">
             <li>Delivered ~2 web applications end to end, including company profiles, e-commerce, e-government, and GIS platforms, for ~2 clients.</li>
             <li>Translated requirements from the CTO and business team into database designs and user interfaces, reducing rework by ~30%.</li>
             <li>Built admin dashboards and reporting modules that replaced manual spreadsheet reporting.</li>
           </ul>
 
-          <div class="pt-3 hairline-border-top flex flex-wrap gap-1.5 font-mono text-[11px]">
+          <div class="pt-2.5 sm:pt-3 hairline-border-top flex flex-wrap gap-1 sm:gap-1.5 font-mono text-[10px] sm:text-[11px]">
             <span class="px-2 py-0.5 rounded bg-surface-subtle hairline-border text-ink-primary">PHP</span>
             <span class="px-2 py-0.5 rounded bg-surface-subtle hairline-border text-ink-primary">CodeIgniter</span>
             <span class="px-2 py-0.5 rounded bg-surface-subtle hairline-border text-ink-primary">PostgreSQL</span>
@@ -1149,7 +1212,7 @@
     </section>
 
     <!-- ================= FEATURED PROJECTS ================= -->
-    <section id="projects" class="space-y-8 scroll-mt-24">
+    <section id="projects" class="space-y-6 sm:space-y-8 scroll-mt-20 sm:scroll-mt-24">
       <div class="flex items-center gap-3">
         <span class="text-xs font-mono uppercase tracking-wider text-accent font-bold">03 // Selected Projects &amp; Products</span>
         <div class="h-px flex-1 hairline-border-top"></div>
@@ -1157,45 +1220,45 @@
 
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
         <div>
-          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-ink-primary">11 Featured Deployments</h2>
+          <h2 class="text-xl sm:text-3xl font-bold tracking-tight text-ink-primary">11 Featured Deployments</h2>
           <p class="text-xs font-mono text-ink-muted mt-1">
             Production systems across quantitative fintech, liquidity brokerage, enterprise retail, and SaaS portals.
           </p>
         </div>
 
-        <!-- Category Filter Tabs -->
-        <div class="flex items-center gap-1.5 p-1 rounded-lg hairline-border bg-surface text-xs font-mono flex-wrap">
-          <button onclick="filterProjects('all')" class="filter-btn active px-2.5 py-1 rounded transition-colors"
+        <!-- Category Filter Tabs (Responsive overflow scroll) -->
+        <div class="w-full sm:w-auto overflow-x-auto no-scrollbar flex items-center gap-1 sm:gap-1.5 p-1 rounded-lg hairline-border bg-surface text-xs font-mono">
+          <button onclick="filterProjects('all')" class="filter-btn active px-2.5 sm:px-3 py-1 rounded transition-colors whitespace-nowrap"
             data-filter="all">All (11)</button>
           <button onclick="filterProjects('fintech')"
-            class="filter-btn px-2.5 py-1 rounded text-ink-muted hover:text-ink-primary transition-colors"
+            class="filter-btn px-2.5 sm:px-3 py-1 rounded text-ink-muted hover:text-ink-primary transition-colors whitespace-nowrap"
             data-filter="fintech">Fintech &amp; Trading</button>
           <button onclick="filterProjects('enterprise')"
-            class="filter-btn px-2.5 py-1 rounded text-ink-muted hover:text-ink-primary transition-colors"
+            class="filter-btn px-2.5 sm:px-3 py-1 rounded text-ink-muted hover:text-ink-primary transition-colors whitespace-nowrap"
             data-filter="enterprise">Enterprise &amp; ERP</button>
           <button onclick="filterProjects('platform')"
-            class="filter-btn px-2.5 py-1 rounded text-ink-muted hover:text-ink-primary transition-colors"
+            class="filter-btn px-2.5 sm:px-3 py-1 rounded text-ink-muted hover:text-ink-primary transition-colors whitespace-nowrap"
             data-filter="platform">Portals &amp; SaaS</button>
         </div>
       </div>
 
       <!-- Flagship Case Study: Sampoerna Retail Community (SRC) -->
-      <div class="project-item p-7 sm:p-9 rounded-2xl hairline-border bg-surface interactive-card space-y-6"
+      <div class="project-item p-5 sm:p-9 rounded-xl sm:rounded-2xl hairline-border bg-surface interactive-card space-y-4 sm:space-y-6"
         data-category="enterprise">
-        <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+        <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 sm:gap-4">
           <div class="space-y-1">
             <div class="flex items-center gap-2 flex-wrap">
-              <span class="text-[11px] font-mono uppercase tracking-wider text-emerald-400 font-semibold">Flagship Enterprise Scale</span>
+              <span class="text-[10px] sm:text-[11px] font-mono uppercase tracking-wider text-emerald-400 font-semibold">Flagship Enterprise Scale</span>
               <span class="text-ink-muted">·</span>
-              <span class="text-[11px] font-mono text-ink-muted">Technical Lead · 2018</span>
+              <span class="text-[10px] sm:text-[11px] font-mono text-ink-muted">Technical Lead · 2018</span>
             </div>
-            <h3 class="text-xl sm:text-2xl font-bold text-ink-primary tracking-tight">
+            <h3 class="text-lg xs:text-xl sm:text-2xl font-bold text-ink-primary tracking-tight">
               Sampoerna Retail Community (SRC)
             </h3>
           </div>
 
           <a href="https://www.src.id/" target="_blank" rel="noopener noreferrer"
-            class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg hairline-border bg-surface-subtle text-xs font-mono text-ink-primary hover:bg-surface-elevated hover:border-accent/40 transition-all flex-shrink-0">
+            class="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-lg hairline-border bg-surface-subtle text-xs font-mono text-ink-primary hover:bg-surface-elevated hover:border-accent/40 transition-all self-start sm:self-auto shrink-0">
             <span>src.id</span>
             <svg class="w-3.5 h-3.5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -1204,48 +1267,48 @@
           </a>
         </div>
 
-        <p class="text-sm sm:text-base text-ink-secondary leading-relaxed max-w-3xl">
+        <p class="text-xs sm:text-sm md:text-base text-ink-secondary leading-relaxed max-w-3xl">
           A comprehensive ecosystem of 7 interconnected web and mobile platforms modernizing Indonesia's traditional grocery and retail community. Engineered with a scalable microservices backbone on AWS, enabling high-volume transactions, inventory coordination, order fulfilment, and store analytics.
         </p>
 
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-3 hairline-border-top">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 pt-3 hairline-border-top">
           <div>
-            <div class="text-[11px] font-mono text-ink-muted uppercase">Architecture</div>
+            <div class="text-[10px] sm:text-[11px] font-mono text-ink-muted uppercase">Architecture</div>
             <div class="text-xs sm:text-sm font-medium text-ink-primary mt-0.5">Distributed Microservices on AWS</div>
           </div>
           <div>
-            <div class="text-[11px] font-mono text-ink-muted uppercase">Scope</div>
+            <div class="text-[10px] sm:text-[11px] font-mono text-ink-muted uppercase">Scope</div>
             <div class="text-xs sm:text-sm font-medium text-ink-primary mt-0.5">7 Interconnected Web &amp; Mobile Apps</div>
           </div>
           <div>
-            <div class="text-[11px] font-mono text-ink-muted uppercase">Key Technologies</div>
+            <div class="text-[10px] sm:text-[11px] font-mono text-ink-muted uppercase">Key Technologies</div>
             <div class="text-xs sm:text-sm font-mono text-ink-secondary mt-0.5">Laravel · Angular · React Native · AWS</div>
           </div>
         </div>
       </div>
 
       <!-- Project Grid (10 Other Projects) -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-5" id="projects-grid">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5" id="projects-grid">
 
         <!-- 1. Sobat Saham -->
-        <article class="project-item p-6 rounded-2xl hairline-border bg-surface interactive-card flex flex-col justify-between space-y-4"
+        <article class="project-item p-4 sm:p-6 rounded-xl sm:rounded-2xl hairline-border bg-surface interactive-card flex flex-col justify-between space-y-3.5 sm:space-y-4"
           data-category="fintech">
-          <div class="space-y-3">
+          <div class="space-y-2 sm:space-y-3">
             <div class="flex items-center justify-between">
-              <span class="text-[11px] font-mono uppercase text-accent font-semibold">Quantitative Analytics</span>
+              <span class="text-[10px] sm:text-[11px] font-mono uppercase text-accent font-semibold">Quantitative Analytics</span>
               <span class="text-xs font-mono text-ink-muted">2026</span>
             </div>
-            <h3 class="text-lg font-bold text-ink-primary">Sobat Saham</h3>
+            <h3 class="text-base sm:text-lg font-bold text-ink-primary">Sobat Saham</h3>
             <p class="text-xs sm:text-sm text-ink-secondary leading-relaxed">
               Quantitative analytics platform for the Indonesia Stock Exchange (IDX), providing retail investors with disciplined valuation screeners, technical signals, and portfolio tracking.
             </p>
           </div>
-          <div class="pt-3 hairline-border-top flex items-center justify-between">
+          <div class="pt-3 hairline-border-top flex flex-col sm:flex-row sm:items-center justify-between gap-2">
             <div class="flex flex-wrap gap-1 font-mono text-[10px] text-ink-muted">
               <span>Full Stack Developer</span> · <span>IDX</span> · <span>Next.js</span>
             </div>
             <a href="https://www.sobatsaham.com/" target="_blank" rel="noopener noreferrer"
-              class="text-xs font-mono text-accent hover:underline flex items-center gap-1">
+              class="text-xs font-mono text-accent hover:underline flex items-center gap-1 self-start sm:self-auto">
               <span>sobatsaham.com</span>
               <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -1256,24 +1319,24 @@
         </article>
 
         <!-- 2. AMB Megatrend -->
-        <article class="project-item p-6 rounded-2xl hairline-border bg-surface interactive-card flex flex-col justify-between space-y-4"
+        <article class="project-item p-4 sm:p-6 rounded-xl sm:rounded-2xl hairline-border bg-surface interactive-card flex flex-col justify-between space-y-3.5 sm:space-y-4"
           data-category="fintech">
-          <div class="space-y-3">
+          <div class="space-y-2 sm:space-y-3">
             <div class="flex items-center justify-between">
-              <span class="text-[11px] font-mono uppercase text-cyan-400 font-semibold">Liquidity Provider</span>
+              <span class="text-[10px] sm:text-[11px] font-mono uppercase text-cyan-400 font-semibold">Liquidity Provider</span>
               <span class="text-xs font-mono text-ink-muted">2026</span>
             </div>
-            <h3 class="text-lg font-bold text-ink-primary">AMB Megatrend</h3>
+            <h3 class="text-base sm:text-lg font-bold text-ink-primary">AMB Megatrend</h3>
             <p class="text-xs sm:text-sm text-ink-secondary leading-relaxed">
               Liquidity provider and institutional administration dashboard built for precision financial operations, position risk assessment, and high-frequency reporting.
             </p>
           </div>
-          <div class="pt-3 hairline-border-top flex items-center justify-between">
+          <div class="pt-3 hairline-border-top flex flex-col sm:flex-row sm:items-center justify-between gap-2">
             <div class="flex flex-wrap gap-1 font-mono text-[10px] text-ink-muted">
               <span>Engineering Lead</span> · <span>Risk Assessment</span>
             </div>
             <a href="https://ambmegatrend.com/" target="_blank" rel="noopener noreferrer"
-              class="text-xs font-mono text-accent hover:underline flex items-center gap-1">
+              class="text-xs font-mono text-accent hover:underline flex items-center gap-1 self-start sm:self-auto">
               <span>ambmegatrend.com</span>
               <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -1284,24 +1347,24 @@
         </article>
 
         <!-- 3. Alzubara -->
-        <article class="project-item p-6 rounded-2xl hairline-border bg-surface interactive-card flex flex-col justify-between space-y-4"
+        <article class="project-item p-4 sm:p-6 rounded-xl sm:rounded-2xl hairline-border bg-surface interactive-card flex flex-col justify-between space-y-3.5 sm:space-y-4"
           data-category="platform">
-          <div class="space-y-3">
+          <div class="space-y-2 sm:space-y-3">
             <div class="flex items-center justify-between">
-              <span class="text-[11px] font-mono uppercase text-emerald-400 font-semibold">Global Placement</span>
+              <span class="text-[10px] sm:text-[11px] font-mono uppercase text-emerald-400 font-semibold">Global Placement</span>
               <span class="text-xs font-mono text-ink-muted">2025</span>
             </div>
-            <h3 class="text-lg font-bold text-ink-primary">Alzubara</h3>
+            <h3 class="text-base sm:text-lg font-bold text-ink-primary">Alzubara</h3>
             <p class="text-xs sm:text-sm text-ink-secondary leading-relaxed">
               Verified international career placement platform connecting Indonesian skilled professionals with certified, legal employment opportunities across the Middle East and globally.
             </p>
           </div>
-          <div class="pt-3 hairline-border-top flex items-center justify-between">
+          <div class="pt-3 hairline-border-top flex flex-col sm:flex-row sm:items-center justify-between gap-2">
             <div class="flex flex-wrap gap-1 font-mono text-[10px] text-ink-muted">
               <span>Full Stack Developer</span> · <span>Compliance</span>
             </div>
             <a href="https://www.alzubara.co.id/" target="_blank" rel="noopener noreferrer"
-              class="text-xs font-mono text-accent hover:underline flex items-center gap-1">
+              class="text-xs font-mono text-accent hover:underline flex items-center gap-1 self-start sm:self-auto">
               <span>alzubara.co.id</span>
               <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -1312,24 +1375,24 @@
         </article>
 
         <!-- 4. GOGOJALAN -->
-        <article class="project-item p-6 rounded-2xl hairline-border bg-surface interactive-card flex flex-col justify-between space-y-4"
+        <article class="project-item p-4 sm:p-6 rounded-xl sm:rounded-2xl hairline-border bg-surface interactive-card flex flex-col justify-between space-y-3.5 sm:space-y-4"
           data-category="platform">
-          <div class="space-y-3">
+          <div class="space-y-2 sm:space-y-3">
             <div class="flex items-center justify-between">
-              <span class="text-[11px] font-mono uppercase text-amber-400 font-semibold">Flight Booking Platform</span>
+              <span class="text-[10px] sm:text-[11px] font-mono uppercase text-amber-400 font-semibold">Flight Booking Platform</span>
               <span class="text-xs font-mono text-ink-muted">2025</span>
             </div>
-            <h3 class="text-lg font-bold text-ink-primary">GOGOJALAN</h3>
+            <h3 class="text-base sm:text-lg font-bold text-ink-primary">GOGOJALAN</h3>
             <p class="text-xs sm:text-sm text-ink-secondary leading-relaxed">
               GOGOJALAN is a flight booking platform for domestic and international travel, providing flight search, booking inquiries, pricing, and customer support through an integrated web experience.
             </p>
           </div>
-          <div class="pt-3 hairline-border-top flex items-center justify-between">
+          <div class="pt-3 hairline-border-top flex flex-col sm:flex-row sm:items-center justify-between gap-2">
             <div class="flex flex-wrap gap-1 font-mono text-[10px] text-ink-muted">
               <span>Full Stack Developer</span> · <span>Travel Tech</span>
             </div>
             <a href="https://www.gogojalan.com/" target="_blank" rel="noopener noreferrer"
-              class="text-xs font-mono text-accent hover:underline flex items-center gap-1">
+              class="text-xs font-mono text-accent hover:underline flex items-center gap-1 self-start sm:self-auto">
               <span>gogojalan.com</span>
               <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -1340,24 +1403,24 @@
         </article>
 
         <!-- 5. M2 (Valutrades) -->
-        <article class="project-item p-6 rounded-2xl hairline-border bg-surface interactive-card flex flex-col justify-between space-y-4"
+        <article class="project-item p-4 sm:p-6 rounded-xl sm:rounded-2xl hairline-border bg-surface interactive-card flex flex-col justify-between space-y-3.5 sm:space-y-4"
           data-category="fintech">
-          <div class="space-y-3">
+          <div class="space-y-2 sm:space-y-3">
             <div class="flex items-center justify-between">
-              <span class="text-[11px] font-mono uppercase text-accent font-semibold">Global Brokerage Portal</span>
+              <span class="text-[10px] sm:text-[11px] font-mono uppercase text-accent font-semibold">Global Brokerage Portal</span>
               <span class="text-xs font-mono text-ink-muted">2023</span>
             </div>
-            <h3 class="text-lg font-bold text-ink-primary">M2 (Valutrades)</h3>
+            <h3 class="text-base sm:text-lg font-bold text-ink-primary">M2 (Valutrades)</h3>
             <p class="text-xs sm:text-sm text-ink-secondary leading-relaxed">
               High-performance portal and trading interface for global forex, indices, and commodities trading prioritizing strict execution speed, data transparency, and security.
             </p>
           </div>
-          <div class="pt-3 hairline-border-top flex items-center justify-between">
+          <div class="pt-3 hairline-border-top flex flex-col sm:flex-row sm:items-center justify-between gap-2">
             <div class="flex flex-wrap gap-1 font-mono text-[10px] text-ink-muted">
               <span>Engineering Lead</span> · <span>Forex &amp; Commodities</span>
             </div>
             <a href="https://www.valutrades.com/" target="_blank" rel="noopener noreferrer"
-              class="text-xs font-mono text-accent hover:underline flex items-center gap-1">
+              class="text-xs font-mono text-accent hover:underline flex items-center gap-1 self-start sm:self-auto">
               <span>valutrades.com</span>
               <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -1368,24 +1431,24 @@
         </article>
 
         <!-- 6. MIFX -->
-        <article class="project-item p-6 rounded-2xl hairline-border bg-surface interactive-card flex flex-col justify-between space-y-4"
+        <article class="project-item p-4 sm:p-6 rounded-xl sm:rounded-2xl hairline-border bg-surface interactive-card flex flex-col justify-between space-y-3.5 sm:space-y-4"
           data-category="fintech">
-          <div class="space-y-3">
+          <div class="space-y-2 sm:space-y-3">
             <div class="flex items-center justify-between">
-              <span class="text-[11px] font-mono uppercase text-accent font-semibold">Fintech Trading Platform</span>
+              <span class="text-[10px] sm:text-[11px] font-mono uppercase text-accent font-semibold">Fintech Trading Platform</span>
               <span class="text-xs font-mono text-ink-muted">2022</span>
             </div>
-            <h3 class="text-lg font-bold text-ink-primary">MIFX</h3>
+            <h3 class="text-base sm:text-lg font-bold text-ink-primary">MIFX</h3>
             <p class="text-xs sm:text-sm text-ink-secondary leading-relaxed">
               Forex and commodity trading web applications featuring low-latency market order execution, real-time WebSocket notifications, and event-driven architecture with RabbitMQ.
             </p>
           </div>
-          <div class="pt-3 hairline-border-top flex items-center justify-between">
+          <div class="pt-3 hairline-border-top flex flex-col sm:flex-row sm:items-center justify-between gap-2">
             <div class="flex flex-wrap gap-1 font-mono text-[10px] text-ink-muted">
               <span>Engineering Lead</span> · <span>RabbitMQ</span> · <span>Socket.IO</span>
             </div>
             <a href="https://mifx.com/" target="_blank" rel="noopener noreferrer"
-              class="text-xs font-mono text-accent hover:underline flex items-center gap-1">
+              class="text-xs font-mono text-accent hover:underline flex items-center gap-1 self-start sm:self-auto">
               <span>mifx.com</span>
               <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -1396,24 +1459,24 @@
         </article>
 
         <!-- 7. ERP Khasanahsari -->
-        <article class="project-item p-6 rounded-2xl hairline-border bg-surface interactive-card flex flex-col justify-between space-y-4"
+        <article class="project-item p-4 sm:p-6 rounded-xl sm:rounded-2xl hairline-border bg-surface interactive-card flex flex-col justify-between space-y-3.5 sm:space-y-4"
           data-category="enterprise">
-          <div class="space-y-3">
+          <div class="space-y-2 sm:space-y-3">
             <div class="flex items-center justify-between">
-              <span class="text-[11px] font-mono uppercase text-emerald-400 font-semibold">Industrial Bakery ERP</span>
+              <span class="text-[10px] sm:text-[11px] font-mono uppercase text-emerald-400 font-semibold">Industrial Bakery ERP</span>
               <span class="text-xs font-mono text-ink-muted">2021</span>
             </div>
-            <h3 class="text-lg font-bold text-ink-primary">ERP Khasanahsari</h3>
+            <h3 class="text-base sm:text-lg font-bold text-ink-primary">ERP Khasanahsari</h3>
             <p class="text-xs sm:text-sm text-ink-secondary leading-relaxed">
               End-to-end Enterprise Resource Planning platform tailored for bakery production, raw material forecasting, batch tracking, outlet logistics, and automated ledger balancing.
             </p>
           </div>
-          <div class="pt-3 hairline-border-top flex items-center justify-between">
+          <div class="pt-3 hairline-border-top flex flex-col sm:flex-row sm:items-center justify-between gap-2">
             <div class="flex flex-wrap gap-1 font-mono text-[10px] text-ink-muted">
               <span>Lead Engineer</span> · <span>Supply Chain</span> · <span>PostgreSQL</span>
             </div>
             <a href="https://erpkhasanahsari.com/" target="_blank" rel="noopener noreferrer"
-              class="text-xs font-mono text-accent hover:underline flex items-center gap-1">
+              class="text-xs font-mono text-accent hover:underline flex items-center gap-1 self-start sm:self-auto">
               <span>erpkhasanahsari.com</span>
               <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -1424,24 +1487,24 @@
         </article>
 
         <!-- 8. EMOP -->
-        <article class="project-item p-6 rounded-2xl hairline-border bg-surface interactive-card flex flex-col justify-between space-y-4"
+        <article class="project-item p-4 sm:p-6 rounded-xl sm:rounded-2xl hairline-border bg-surface interactive-card flex flex-col justify-between space-y-3.5 sm:space-y-4"
           data-category="platform">
-          <div class="space-y-3">
+          <div class="space-y-2 sm:space-y-3">
             <div class="flex items-center justify-between">
-              <span class="text-[11px] font-mono uppercase text-cyan-400 font-semibold">Medical Office Management</span>
+              <span class="text-[10px] sm:text-[11px] font-mono uppercase text-cyan-400 font-semibold">Medical Office Management</span>
               <span class="text-xs font-mono text-ink-muted">2020</span>
             </div>
-            <h3 class="text-lg font-bold text-ink-primary">EMOP (POGI)</h3>
+            <h3 class="text-base sm:text-lg font-bold text-ink-primary">EMOP (POGI)</h3>
             <p class="text-xs sm:text-sm text-ink-secondary leading-relaxed">
               Integrated medical membership portals for the Indonesian Society of Obstetrics and Gynecology, managing professional accreditation, clinical education records, and digital congress events.
             </p>
           </div>
-          <div class="pt-3 hairline-border-top flex items-center justify-between">
+          <div class="pt-3 hairline-border-top flex flex-col sm:flex-row sm:items-center justify-between gap-2">
             <div class="flex flex-wrap gap-1 font-mono text-[10px] text-ink-muted">
               <span>Lead Engineer</span> · <span>Laravel</span> · <span>React</span>
             </div>
             <a href="https://emop.pogi.or.id/" target="_blank" rel="noopener noreferrer"
-              class="text-xs font-mono text-accent hover:underline flex items-center gap-1">
+              class="text-xs font-mono text-accent hover:underline flex items-center gap-1 self-start sm:self-auto">
               <span>emop.pogi.or.id</span>
               <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -1452,24 +1515,24 @@
         </article>
 
         <!-- 9. ONEPOGI -->
-        <article class="project-item p-6 rounded-2xl hairline-border bg-surface interactive-card flex flex-col justify-between space-y-4"
+        <article class="project-item p-4 sm:p-6 rounded-xl sm:rounded-2xl hairline-border bg-surface interactive-card flex flex-col justify-between space-y-3.5 sm:space-y-4"
           data-category="platform">
-          <div class="space-y-3">
+          <div class="space-y-2 sm:space-y-3">
             <div class="flex items-center justify-between">
-              <span class="text-[11px] font-mono uppercase text-amber-400 font-semibold">Unified Member Program</span>
+              <span class="text-[10px] sm:text-[11px] font-mono uppercase text-amber-400 font-semibold">Unified Member Program</span>
               <span class="text-xs font-mono text-ink-muted">2020</span>
             </div>
-            <h3 class="text-lg font-bold text-ink-primary">ONEPOGI</h3>
+            <h3 class="text-base sm:text-lg font-bold text-ink-primary">ONEPOGI</h3>
             <p class="text-xs sm:text-sm text-ink-secondary leading-relaxed">
               ONEPOGI is a unified membership contribution program that provides POGI members with eight key benefits, supported by POGI’s Electronic Management Office (EMOP-POGI). Initiated by the POGI Central Board.
             </p>
           </div>
-          <div class="pt-3 hairline-border-top flex items-center justify-between">
+          <div class="pt-3 hairline-border-top flex flex-col sm:flex-row sm:items-center justify-between gap-2">
             <div class="flex flex-wrap gap-1 font-mono text-[10px] text-ink-muted">
               <span>Lead Engineer</span> · <span>Security</span> · <span>Central Board</span>
             </div>
             <a href="https://one.pogi.or.id/" target="_blank" rel="noopener noreferrer"
-              class="text-xs font-mono text-accent hover:underline flex items-center gap-1">
+              class="text-xs font-mono text-accent hover:underline flex items-center gap-1 self-start sm:self-auto">
               <span>one.pogi.or.id</span>
               <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -1480,24 +1543,24 @@
         </article>
 
         <!-- 10. QuickMath -->
-        <article class="project-item p-6 rounded-2xl hairline-border bg-surface interactive-card flex flex-col justify-between space-y-4"
+        <article class="project-item p-4 sm:p-6 rounded-xl sm:rounded-2xl hairline-border bg-surface interactive-card flex flex-col justify-between space-y-3.5 sm:space-y-4"
           data-category="platform">
-          <div class="space-y-3">
+          <div class="space-y-2 sm:space-y-3">
             <div class="flex items-center justify-between">
-              <span class="text-[11px] font-mono uppercase text-cyan-400 font-semibold">EdTech &amp; Tutoring</span>
+              <span class="text-[10px] sm:text-[11px] font-mono uppercase text-cyan-400 font-semibold">EdTech &amp; Tutoring</span>
               <span class="text-xs font-mono text-ink-muted">2020</span>
             </div>
-            <h3 class="text-lg font-bold text-ink-primary">QuickMath</h3>
+            <h3 class="text-base sm:text-lg font-bold text-ink-primary">QuickMath</h3>
             <p class="text-xs sm:text-sm text-ink-secondary leading-relaxed">
               Online learning and automated tutoring platform featuring step-by-step mathematical reasoning, tutor booking consultation flows, and interactive problem solving.
             </p>
           </div>
-          <div class="pt-3 hairline-border-top flex items-center justify-between">
+          <div class="pt-3 hairline-border-top flex flex-col sm:flex-row sm:items-center justify-between gap-2">
             <div class="flex flex-wrap gap-1 font-mono text-[10px] text-ink-muted">
               <span>Full Stack Developer</span> · <span>Interactive Math</span>
             </div>
             <a href="https://quickmath.id/" target="_blank" rel="noopener noreferrer"
-              class="text-xs font-mono text-accent hover:underline flex items-center gap-1">
+              class="text-xs font-mono text-accent hover:underline flex items-center gap-1 self-start sm:self-auto">
               <span>quickmath.id</span>
               <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -1511,7 +1574,7 @@
     </section>
 
     <!-- ================= VERIFIED CERTIFICATIONS ================= -->
-    <section id="credentials" class="space-y-8 scroll-mt-24">
+    <section id="credentials" class="space-y-6 sm:space-y-8 scroll-mt-20 sm:scroll-mt-24">
       <div class="flex items-center gap-3">
         <span class="text-xs font-mono uppercase tracking-wider text-accent font-bold">04 // Verified Certifications &amp; Credentials</span>
         <div class="h-px flex-1 hairline-border-top"></div>
@@ -1519,17 +1582,17 @@
 
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
         <div>
-          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-ink-primary">Verified Credentials</h2>
+          <h2 class="text-xl sm:text-3xl font-bold tracking-tight text-ink-primary">Verified Credentials</h2>
           <p class="text-xs font-mono text-ink-muted mt-1">
             Certifications across Cloud Architecture, Microservices, ISO 27001 Security, and Backend Design.
           </p>
         </div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-4">
 
         <!-- 1. Google Cloud Engineer -->
-        <div class="p-5 rounded-xl hairline-border bg-surface interactive-card flex flex-col justify-between space-y-3">
+        <div class="p-4 sm:p-5 rounded-xl hairline-border bg-surface interactive-card flex flex-col justify-between space-y-3">
           <div class="space-y-1">
             <div class="flex items-center justify-between">
               <span class="text-[10px] font-mono uppercase text-accent font-semibold">Google Cloud</span>
@@ -1538,15 +1601,15 @@
             <h4 class="text-sm font-bold text-ink-primary">Menjadi Google Cloud Engineer</h4>
             <p class="text-xs text-ink-muted">Dicoding Indonesia</p>
           </div>
-          <div class="pt-3 hairline-border-top flex items-center justify-between text-xs font-mono">
-            <span class="text-ink-muted truncate max-w-[170px]" title="Credential ID: 0LZ01R2QQP65">ID: 0LZ01R2QQP65</span>
+          <div class="pt-2.5 sm:pt-3 hairline-border-top flex items-center justify-between text-xs font-mono gap-2">
+            <span class="text-ink-muted truncate text-[11px]" title="Credential ID: 0LZ01R2QQP65">ID: 0LZ01R2QQP65</span>
             <button onclick="copyToClipboard('0LZ01R2QQP65', 'Credential ID copied: 0LZ01R2QQP65')"
-              class="text-accent hover:underline text-[11px] cursor-pointer">Copy ID &rarr;</button>
+              class="text-accent hover:underline text-[11px] shrink-0 cursor-pointer">Copy ID &rarr;</button>
           </div>
         </div>
 
         <!-- 2. AWS Services for Solutions Architect -->
-        <div class="p-5 rounded-xl hairline-border bg-surface interactive-card flex flex-col justify-between space-y-3">
+        <div class="p-4 sm:p-5 rounded-xl hairline-border bg-surface interactive-card flex flex-col justify-between space-y-3">
           <div class="space-y-1">
             <div class="flex items-center justify-between">
               <span class="text-[10px] font-mono uppercase text-accent font-semibold">AWS Architecture</span>
@@ -1555,15 +1618,15 @@
             <h4 class="text-sm font-bold text-ink-primary">AWS Services for Solutions Architect Associate [2021]</h4>
             <p class="text-xs text-ink-muted">Udemy</p>
           </div>
-          <div class="pt-3 hairline-border-top flex items-center justify-between text-xs font-mono">
-            <span class="text-ink-muted truncate max-w-[170px]" title="UC-d6bd0959-450d-4370-b721-28be2e3cc795">ID: UC-d6bd...795</span>
+          <div class="pt-2.5 sm:pt-3 hairline-border-top flex items-center justify-between text-xs font-mono gap-2">
+            <span class="text-ink-muted truncate text-[11px]" title="UC-d6bd0959-450d-4370-b721-28be2e3cc795">ID: UC-d6bd...795</span>
             <button onclick="copyToClipboard('UC-d6bd0959-450d-4370-b721-28be2e3cc795', 'Credential ID copied!')"
-              class="text-accent hover:underline text-[11px] cursor-pointer">Copy ID &rarr;</button>
+              class="text-accent hover:underline text-[11px] shrink-0 cursor-pointer">Copy ID &rarr;</button>
           </div>
         </div>
 
         <!-- 3. Architecting on AWS -->
-        <div class="p-5 rounded-xl hairline-border bg-surface interactive-card flex flex-col justify-between space-y-3">
+        <div class="p-4 sm:p-5 rounded-xl hairline-border bg-surface interactive-card flex flex-col justify-between space-y-3">
           <div class="space-y-1">
             <div class="flex items-center justify-between">
               <span class="text-[10px] font-mono uppercase text-accent font-semibold">AWS Cloud</span>
@@ -1572,15 +1635,15 @@
             <h4 class="text-sm font-bold text-ink-primary">Architecting on AWS (Membangun Arsitektur Cloud di AWS)</h4>
             <p class="text-xs text-ink-muted">Dicoding Indonesia</p>
           </div>
-          <div class="pt-3 hairline-border-top flex items-center justify-between text-xs font-mono">
-            <span class="text-ink-muted truncate max-w-[170px]" title="Credential ID: 1OP8L72L2ZQK">ID: 1OP8L72L2ZQK</span>
+          <div class="pt-2.5 sm:pt-3 hairline-border-top flex items-center justify-between text-xs font-mono gap-2">
+            <span class="text-ink-muted truncate text-[11px]" title="Credential ID: 1OP8L72L2ZQK">ID: 1OP8L72L2ZQK</span>
             <button onclick="copyToClipboard('1OP8L72L2ZQK', 'Credential ID copied: 1OP8L72L2ZQK')"
-              class="text-accent hover:underline text-[11px] cursor-pointer">Copy ID &rarr;</button>
+              class="text-accent hover:underline text-[11px] shrink-0 cursor-pointer">Copy ID &rarr;</button>
           </div>
         </div>
 
         <!-- 4. Microservices with Istio -->
-        <div class="p-5 rounded-xl hairline-border bg-surface interactive-card flex flex-col justify-between space-y-3">
+        <div class="p-4 sm:p-5 rounded-xl hairline-border bg-surface interactive-card flex flex-col justify-between space-y-3">
           <div class="space-y-1">
             <div class="flex items-center justify-between">
               <span class="text-[10px] font-mono uppercase text-cyan-400 font-semibold">Microservices &amp; Mesh</span>
@@ -1589,15 +1652,15 @@
             <h4 class="text-sm font-bold text-ink-primary">Microservices with Istio &amp; IBM Cloud Kubernetes</h4>
             <p class="text-xs text-ink-muted">IBM</p>
           </div>
-          <div class="pt-3 hairline-border-top flex items-center justify-between text-xs font-mono">
-            <span class="text-ink-muted truncate max-w-[170px]" title="b3d117c9-e592-48a0-ac8c-49a4a5e02816">ID: b3d117c9...816</span>
+          <div class="pt-2.5 sm:pt-3 hairline-border-top flex items-center justify-between text-xs font-mono gap-2">
+            <span class="text-ink-muted truncate text-[11px]" title="b3d117c9-e592-48a0-ac8c-49a4a5e02816">ID: b3d117c9...816</span>
             <button onclick="copyToClipboard('b3d117c9-e592-48a0-ac8c-49a4a5e02816', 'Credential ID copied!')"
-              class="text-accent hover:underline text-[11px] cursor-pointer">Copy ID &rarr;</button>
+              class="text-accent hover:underline text-[11px] shrink-0 cursor-pointer">Copy ID &rarr;</button>
           </div>
         </div>
 
         <!-- 5. ISO 27001 -->
-        <div class="p-5 rounded-xl hairline-border bg-surface interactive-card flex flex-col justify-between space-y-3">
+        <div class="p-4 sm:p-5 rounded-xl hairline-border bg-surface interactive-card flex flex-col justify-between space-y-3">
           <div class="space-y-1">
             <div class="flex items-center justify-between">
               <span class="text-[10px] font-mono uppercase text-emerald-400 font-semibold">Information Security</span>
@@ -1606,15 +1669,15 @@
             <h4 class="text-sm font-bold text-ink-primary">ISO 27001 - Network &amp; Communication Security</h4>
             <p class="text-xs text-ink-muted">Udemy</p>
           </div>
-          <div class="pt-3 hairline-border-top flex items-center justify-between text-xs font-mono">
-            <span class="text-ink-muted truncate max-w-[170px]" title="UC-b64bcf50-79ba-4d03-8c49-51cf875c8592">ID: UC-b64b...592</span>
+          <div class="pt-2.5 sm:pt-3 hairline-border-top flex items-center justify-between text-xs font-mono gap-2">
+            <span class="text-ink-muted truncate text-[11px]" title="UC-b64bcf50-79ba-4d03-8c49-51cf875c8592">ID: UC-b64b...592</span>
             <button onclick="copyToClipboard('UC-b64bcf50-79ba-4d03-8c49-51cf875c8592', 'Credential ID copied!')"
-              class="text-accent hover:underline text-[11px] cursor-pointer">Copy ID &rarr;</button>
+              class="text-accent hover:underline text-[11px] shrink-0 cursor-pointer">Copy ID &rarr;</button>
           </div>
         </div>
 
         <!-- 6. Oracle Cloud Foundations -->
-        <div class="p-5 rounded-xl hairline-border bg-surface interactive-card flex flex-col justify-between space-y-3">
+        <div class="p-4 sm:p-5 rounded-xl hairline-border bg-surface interactive-card flex flex-col justify-between space-y-3">
           <div class="space-y-1">
             <div class="flex items-center justify-between">
               <span class="text-[10px] font-mono uppercase text-amber-400 font-semibold">Cloud Infrastructure</span>
@@ -1623,15 +1686,15 @@
             <h4 class="text-sm font-bold text-ink-primary">Oracle Cloud Infrastructure Foundations 2021 Associate</h4>
             <p class="text-xs text-ink-muted">Oracle</p>
           </div>
-          <div class="pt-3 hairline-border-top flex items-center justify-between text-xs font-mono">
-            <span class="text-ink-muted truncate max-w-[170px]" title="74FC7A2D6EB468B96E1C4D411B3E2D3C01DD76BDADACF099B80DA912370B9440">ID: 74FC7A2D...</span>
+          <div class="pt-2.5 sm:pt-3 hairline-border-top flex items-center justify-between text-xs font-mono gap-2">
+            <span class="text-ink-muted truncate text-[11px]" title="74FC7A2D6EB468B96E1C4D411B3E2D3C01DD76BDADACF099B80DA912370B9440">ID: 74FC7A2D...</span>
             <button onclick="copyToClipboard('74FC7A2D6EB468B96E1C4D411B3E2D3C01DD76BDADACF099B80DA912370B9440', 'Credential ID copied!')"
-              class="text-accent hover:underline text-[11px] cursor-pointer">Copy ID &rarr;</button>
+              class="text-accent hover:underline text-[11px] shrink-0 cursor-pointer">Copy ID &rarr;</button>
           </div>
         </div>
 
         <!-- 7. Software Architecture & Clean Code -->
-        <div class="p-5 rounded-xl hairline-border bg-surface interactive-card flex flex-col justify-between space-y-3">
+        <div class="p-4 sm:p-5 rounded-xl hairline-border bg-surface interactive-card flex flex-col justify-between space-y-3">
           <div class="space-y-1">
             <div class="flex items-center justify-between">
               <span class="text-[10px] font-mono uppercase text-accent font-semibold">Clean Code &amp; OOP</span>
@@ -1640,15 +1703,15 @@
             <h4 class="text-sm font-bold text-ink-primary">Software Architecture &amp; Clean Code Design in OOP</h4>
             <p class="text-xs text-ink-muted">Udemy</p>
           </div>
-          <div class="pt-3 hairline-border-top flex items-center justify-between text-xs font-mono">
-            <span class="text-ink-muted truncate max-w-[170px]" title="UC-05db6418-d664-4c6e-b127-8424283c553c">ID: UC-05db...53c</span>
+          <div class="pt-2.5 sm:pt-3 hairline-border-top flex items-center justify-between text-xs font-mono gap-2">
+            <span class="text-ink-muted truncate text-[11px]" title="UC-05db6418-d664-4c6e-b127-8424283c553c">ID: UC-05db...53c</span>
             <button onclick="copyToClipboard('UC-05db6418-d664-4c6e-b127-8424283c553c', 'Credential ID copied!')"
-              class="text-accent hover:underline text-[11px] cursor-pointer">Copy ID &rarr;</button>
+              class="text-accent hover:underline text-[11px] shrink-0 cursor-pointer">Copy ID &rarr;</button>
           </div>
         </div>
 
         <!-- 8. Pentesting & Securing Web Applications -->
-        <div class="p-5 rounded-xl hairline-border bg-surface interactive-card flex flex-col justify-between space-y-3">
+        <div class="p-4 sm:p-5 rounded-xl hairline-border bg-surface interactive-card flex flex-col justify-between space-y-3">
           <div class="space-y-1">
             <div class="flex items-center justify-between">
               <span class="text-[10px] font-mono uppercase text-emerald-400 font-semibold">Security &amp; Pentesting</span>
@@ -1657,15 +1720,15 @@
             <h4 class="text-sm font-bold text-ink-primary">Pentesting &amp; Securing Web Applications (Ethical Hacking)</h4>
             <p class="text-xs text-ink-muted">Udemy</p>
           </div>
-          <div class="pt-3 hairline-border-top flex items-center justify-between text-xs font-mono">
-            <span class="text-ink-muted truncate max-w-[170px]" title="UC-185040b9-07c9-4526-9895-3474bbae3099">ID: UC-1850...099</span>
+          <div class="pt-2.5 sm:pt-3 hairline-border-top flex items-center justify-between text-xs font-mono gap-2">
+            <span class="text-ink-muted truncate text-[11px]" title="UC-185040b9-07c9-4526-9895-3474bbae3099">ID: UC-1850...099</span>
             <button onclick="copyToClipboard('UC-185040b9-07c9-4526-9895-3474bbae3099', 'Credential ID copied!')"
-              class="text-accent hover:underline text-[11px] cursor-pointer">Copy ID &rarr;</button>
+              class="text-accent hover:underline text-[11px] shrink-0 cursor-pointer">Copy ID &rarr;</button>
           </div>
         </div>
 
         <!-- 9. Back End Development & APIs -->
-        <div class="p-5 rounded-xl hairline-border bg-surface interactive-card flex flex-col justify-between space-y-3">
+        <div class="p-4 sm:p-5 rounded-xl hairline-border bg-surface interactive-card flex flex-col justify-between space-y-3">
           <div class="space-y-1">
             <div class="flex items-center justify-between">
               <span class="text-[10px] font-mono uppercase text-cyan-400 font-semibold">Backend Engineering</span>
@@ -1674,10 +1737,10 @@
             <h4 class="text-sm font-bold text-ink-primary">Back End Development and APIs</h4>
             <p class="text-xs text-ink-muted">freeCodeCamp</p>
           </div>
-          <div class="pt-3 hairline-border-top flex items-center justify-between text-xs font-mono">
-            <span class="text-ink-muted truncate max-w-[170px]" title="fcc52f59178-46f6-4ce4-b2c0-7953d242f204">ID: fcc52f59...</span>
+          <div class="pt-2.5 sm:pt-3 hairline-border-top flex items-center justify-between text-xs font-mono gap-2">
+            <span class="text-ink-muted truncate text-[11px]" title="fcc52f59178-46f6-4ce4-b2c0-7953d242f204">ID: fcc52f59...</span>
             <button onclick="copyToClipboard('fcc52f59178-46f6-4ce4-b2c0-7953d242f204', 'Credential ID copied!')"
-              class="text-accent hover:underline text-[11px] cursor-pointer">Copy ID &rarr;</button>
+              class="text-accent hover:underline text-[11px] shrink-0 cursor-pointer">Copy ID &rarr;</button>
           </div>
         </div>
 
@@ -1685,44 +1748,44 @@
     </section>
 
     <!-- ================= EDUCATION & LANGUAGES ================= -->
-    <section class="space-y-8">
+    <section class="space-y-6 sm:space-y-8">
       <div class="flex items-center gap-3">
         <span class="text-xs font-mono uppercase tracking-wider text-accent font-bold">05 // Education &amp; Languages</span>
         <div class="h-px flex-1 hairline-border-top"></div>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6">
 
         <!-- Education (8 cols) -->
         <div class="lg:col-span-8 space-y-4">
-          <h3 class="text-lg font-bold text-ink-primary tracking-tight">Academic Foundations</h3>
+          <h3 class="text-base sm:text-lg font-bold text-ink-primary tracking-tight">Academic Foundations</h3>
 
           <!-- UNNES -->
-          <div class="p-6 rounded-xl hairline-border bg-surface interactive-card space-y-2">
+          <div class="p-4 sm:p-6 rounded-xl hairline-border bg-surface interactive-card space-y-2">
             <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-1">
               <div>
-                <h4 class="font-bold text-base text-ink-primary">Universitas Negeri Semarang</h4>
+                <h4 class="font-bold text-sm sm:text-base text-ink-primary">Universitas Negeri Semarang</h4>
                 <div class="text-xs sm:text-sm text-accent font-medium mt-0.5">Bachelor of Computer Science (S.Kom)</div>
               </div>
-              <span class="text-xs font-mono text-ink-muted">2016 — 2020</span>
+              <span class="text-[11px] sm:text-xs font-mono text-ink-muted">2016 — 2020</span>
             </div>
             <p class="text-xs text-ink-secondary leading-relaxed pt-1">
               Focus on Software Engineering, Web Technologies &amp; Distributed Systems.
             </p>
-            <div class="pt-2 flex items-center gap-2">
+            <div class="pt-2 flex items-center gap-2 flex-wrap">
               <span class="px-2.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-mono font-semibold">GPA 3.6 / 4.00</span>
               <span class="text-xs font-mono text-ink-muted">Cum Laude Honor</span>
             </div>
           </div>
 
           <!-- Hiroshima University -->
-          <div class="p-6 rounded-xl hairline-border bg-surface interactive-card space-y-2">
+          <div class="p-4 sm:p-6 rounded-xl hairline-border bg-surface interactive-card space-y-2">
             <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-1">
               <div>
-                <h4 class="font-bold text-base text-ink-primary">Hiroshima University, Japan</h4>
+                <h4 class="font-bold text-sm sm:text-base text-ink-primary">Hiroshima University, Japan</h4>
                 <div class="text-xs sm:text-sm text-accent font-medium mt-0.5">Short Academic Course</div>
               </div>
-              <span class="text-xs font-mono text-ink-muted">2016</span>
+              <span class="text-[11px] sm:text-xs font-mono text-ink-muted">2016</span>
             </div>
             <p class="text-xs text-ink-secondary leading-relaxed pt-1">
               International Academic &amp; Research Exchange · Hiroshima, Japan.
@@ -1732,9 +1795,9 @@
 
         <!-- Languages & Publications (4 cols) -->
         <div class="lg:col-span-4 space-y-4">
-          <h3 class="text-lg font-bold text-ink-primary tracking-tight">Languages</h3>
+          <h3 class="text-base sm:text-lg font-bold text-ink-primary tracking-tight">Languages</h3>
 
-          <div class="p-6 rounded-xl hairline-border bg-surface space-y-4">
+          <div class="p-4 sm:p-6 rounded-xl hairline-border bg-surface space-y-4">
             <div class="space-y-1">
               <div class="flex items-center justify-between text-xs font-mono">
                 <span class="font-bold text-ink-primary">Indonesian</span>
@@ -1757,8 +1820,8 @@
           </div>
 
           <!-- Research / Peer-Reviewed Papers Reference -->
-          <div class="p-5 rounded-xl hairline-border bg-surface/60 space-y-2">
-            <span class="text-[11px] font-mono uppercase text-ink-muted">Academic Publications</span>
+          <div class="p-4 sm:p-5 rounded-xl hairline-border bg-surface/60 space-y-2">
+            <span class="text-[10px] sm:text-[11px] font-mono uppercase text-ink-muted">Academic Publications</span>
             <p class="text-xs text-ink-secondary leading-relaxed">
               Co-authored peer-reviewed research papers in <strong class="text-ink-primary">System Usability (SUS &amp; GOMS)</strong> and <strong class="text-ink-primary">MVC Frameworks for SDLC</strong> (IOP Journal of Physics &amp; JAIST).
             </p>
@@ -1769,34 +1832,35 @@
     </section>
 
     <!-- ================= CONTACT & ENGAGEMENT ================= -->
-    <section id="contact" class="space-y-8 scroll-mt-24">
+    <section id="contact" class="space-y-6 sm:space-y-8 scroll-mt-20 sm:scroll-mt-24">
       <div class="flex items-center gap-3">
         <span class="text-xs font-mono uppercase tracking-wider text-accent font-bold">06 // Initiate Contact</span>
         <div class="h-px flex-1 hairline-border-top"></div>
       </div>
 
-      <div class="p-8 sm:p-12 rounded-3xl hairline-border bg-surface relative overflow-hidden">
+      <div class="p-5 sm:p-10 lg:p-12 rounded-2xl sm:rounded-3xl hairline-border bg-surface relative overflow-hidden">
         <div class="ambient-glow-2"></div>
-        <div class="max-w-3xl space-y-6 relative z-10">
+        <div class="max-w-3xl space-y-5 sm:space-y-6 relative z-10">
 
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full hairline-border bg-surface-subtle text-xs font-mono text-emerald-400">
             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
             <span>Open to Strategic Discussions</span>
           </div>
 
-          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-ink-primary leading-tight">
+          <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-ink-primary leading-tight">
             Ready to architect and scale mission-critical platforms together?
           </h2>
 
-          <p class="text-sm sm:text-base text-ink-secondary leading-relaxed">
+          <p class="text-xs sm:text-sm md:text-base text-ink-secondary leading-relaxed">
             Whether you need seasoned engineering leadership, distributed systems architecture consulting, high-availability failover design, or full-stack platform execution, feel free to reach out directly.
           </p>
 
-          <div class="pt-3 flex flex-wrap items-center gap-3">
+          <!-- Contact Actions (Fully responsive stack on mobile) -->
+          <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3">
             <!-- Email -->
             <a href="mailto:fjarfs@gmail.com"
-              class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-accent text-white font-semibold text-sm hover:bg-accent-hover transition-all shadow-lg shadow-accent/20 cursor-pointer">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-accent text-white font-semibold text-sm hover:bg-accent-hover transition-all shadow-lg shadow-accent/20 cursor-pointer w-full sm:w-auto">
+              <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
               </svg>
@@ -1805,18 +1869,18 @@
 
             <!-- WhatsApp -->
             <a href="https://wa.me/6281903492372" target="_blank" rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 px-5 py-3 rounded-xl hairline-border bg-surface hover:border-emerald-500/40 text-emerald-400 font-medium text-sm transition-all">
-              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+              class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl hairline-border bg-surface hover:border-emerald-500/40 text-emerald-400 font-medium text-sm transition-all w-full sm:w-auto">
+              <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24">
                 <path
-                  d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z" />
+                  d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
               </svg>
               <span>+6281903492372</span>
             </a>
 
-            <!-- Download CV PDF -->
+            <!-- Download CV -->
             <a href="assets/Fajar_Sujito_CV.pdf" download="Fajar_Sujito_CV.pdf" target="_blank" rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-accent text-white hover:bg-accent-hover font-semibold text-sm transition-all shadow-lg shadow-accent/20 cursor-pointer">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-surface-elevated hairline-border hover:border-accent/40 text-white font-mono text-xs transition-all w-full sm:w-auto shadow-sm cursor-pointer">
+              <svg class="w-4 h-4 text-accent shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
               </svg>
@@ -1824,7 +1888,7 @@
             </a>
           </div>
 
-          <div class="pt-6 hairline-border-top flex flex-wrap items-center gap-6 text-xs font-mono text-ink-muted">
+          <div class="pt-6 hairline-border-top flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-3 sm:gap-6 text-xs font-mono text-ink-muted">
             <a href="https://fajarsujito.my.id" target="_blank" rel="noopener noreferrer"
               class="hover:text-ink-primary transition-colors flex items-center gap-1">
               <span>Portfolio: fajarsujito.my.id</span>
@@ -1851,8 +1915,8 @@
 
   <!-- ================= FOOTER ================= -->
   <footer class="hairline-border-top bg-canvas/90 text-xs font-mono text-ink-muted relative z-10">
-    <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div class="flex items-center gap-2">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-8 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 text-center sm:text-left">
+      <div class="flex items-center gap-2 flex-wrap justify-center sm:justify-start">
         <span class="font-bold text-ink-primary">FAJAR SUJITO</span>
         <span>·</span>
         <span>Engineering Leader &amp; Full Stack Developer</span>
@@ -1865,9 +1929,9 @@
 
   <!-- ================= INTERACTIVE TOAST FEEDBACK ================= -->
   <div id="toast"
-    class="fixed bottom-6 right-6 z-50 px-4 py-2.5 rounded-xl bg-surface-elevated hairline-border shadow-2xl text-xs font-mono text-ink-primary flex items-center gap-2.5 opacity-0 pointer-events-none translate-y-3 transition-all duration-300">
-    <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-    <span id="toast-message">Copied to clipboard!</span>
+    class="fixed bottom-4 sm:bottom-6 left-4 right-4 sm:left-auto sm:right-6 max-w-sm z-50 px-4 py-2.5 rounded-xl bg-surface-elevated hairline-border shadow-2xl text-xs font-mono text-ink-primary flex items-center gap-2.5 opacity-0 pointer-events-none translate-y-3 transition-all duration-300">
+    <span class="w-2 h-2 rounded-full bg-emerald-400 shrink-0"></span>
+    <span id="toast-message" class="truncate">Copied to clipboard!</span>
   </div>
 
   <!-- ================= CLIENT SCRIPTS ================= -->
