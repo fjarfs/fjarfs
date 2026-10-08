@@ -1,0 +1,12 @@
+{
+  "name": "fjarfs-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portfolio and CV of Fajar Sujito - Engineering Leader",
+  "scripts": {
+    "build:css": "tailwindcss -c tailwind.config.js -i src/input.css -o assets/css/style.min.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}
